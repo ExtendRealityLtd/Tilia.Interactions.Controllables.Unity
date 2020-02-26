@@ -1,7 +1,7 @@
 [![Tilia logo][Tilia-Image]](#)
 
-> ### Tilia {scope} {feature} {platform?}
-> {Description of feature}.
+> ### Interactions -> Controllables for the Unity Software
+> Mechanisms that provide physics based and non-physics based linear and angular interactable controls for the Unity software.
 
 [![Release][Version-Release]][Releases]
 [![License][License-Badge]][License]
@@ -9,9 +9,16 @@
 
 ## Introduction
 
-{Introduction into the purpose of the feature.}
+The controllable prefabs provide a way of creating an Interactable that is restricted to either a linear or angular motion and can either use [Unity] joints to work within the physics system or by simply updating the Interactable transform properties to not use any Unity physics at all. The four prefabs that are provided are:
 
-> **Requires** {platform and minimum version number}.
+* `Physics Joint` - Uses Unity joints for physics based interactions
+  * `Linear Joint Drive` - Moves in a single axis direction along a configured Unity joint for a limited distance.
+  * `Angular Joint Drive` - Rotates around a single axis around a Unity hinge joint for a limited angular distance.
+* `Transform` - Directly manipulates the Transform position of the drive to move or rotate without being part of the Unity physics system.
+  * `Linear Transform Drive` - Moves in a single axis direction for a limited distance.
+  * `Angular Transform Drive` - Rotates around a single axis for a limited angular distance.
+
+> **Requires** the Unity software version `2018.3.10f1` (or above).
 
 ## Getting Started
 
@@ -35,9 +42,9 @@ Please refer to the Extend Reality [Code of Conduct].
 
 Code released under the [MIT License][License].
 
-[License-Badge]: https://img.shields.io/github/license/ExtendRealityLtd/Tilia.{scope}.{feature}.{platform?}.svg
-[Version-Release]: https://img.shields.io/github/release/ExtendRealityLtd/Tilia.{scope}.{feature}.{platform?}.svg
-[project coding conventions]: https://github.com/ExtendRealityLtd/.github/blob/master/CONVENTIONS/{project_type}
+[License-Badge]: https://img.shields.io/github/license/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity.svg
+[Version-Release]: https://img.shields.io/github/release/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity.svg
+[project coding conventions]: https://github.com/ExtendRealityLtd/.github/blob/master/CONVENTIONS/UNITY3D.md
 
 [Tilia-Image]: https://user-images.githubusercontent.com/1029673/67681496-5bf10700-f985-11e9-9413-e61801b6eab5.png
 [License]: LICENSE.md
@@ -49,3 +56,5 @@ Code released under the [MIT License][License].
 [Releases]: ../../releases
 [Contributing guidelines]: https://github.com/ExtendRealityLtd/.github/blob/master/CONTRIBUTING.md
 [Code of Conduct]: https://github.com/ExtendRealityLtd/.github/blob/master/CODE_OF_CONDUCT.md
+
+[Unity]: https://unity3d.com/

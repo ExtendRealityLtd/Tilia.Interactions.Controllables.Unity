@@ -1,0 +1,20 @@
+{
+    "name": "Tilia.Interactions.Controllables.Unity.Runtime",
+    "references": [
+        "Zinnia.Runtime",
+        "Tilia.Interactions.Interactables.Unity.Runtime"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Malimbe.BehaviourStateRequirementMethod.dll",
+        "Malimbe.PropertySerializationAttribute.dll",
+        "Malimbe.XmlDocumentationAttribute.dll",
+        "Malimbe.MemberChangeMethod.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
