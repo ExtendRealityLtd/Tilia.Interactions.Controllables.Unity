@@ -16,22 +16,34 @@
     /// <typeparam name="TSelf">The actual concrete implementation of the drive being used.</typeparam>
     public abstract class Drive<TFacade, TSelf> : MonoBehaviour, IProcessable where TFacade : DriveFacade<TSelf, TFacade> where TSelf : Drive<TFacade, TSelf>
     {
-        #region Facade Settings
+        #region Reference Settings
         /// <summary>
         /// The public interface facade.
         /// </summary>
         [Serialized]
-        [field: Header("Facade Settings"), DocumentedByXml, Restricted]
+        [field: Header("Reference Settings"), DocumentedByXml, Restricted]
         public TFacade Facade { get; protected set; }
+        /// <summary>
+        /// The <see cref="GameObject"/> containing the output event actions.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml, Restricted]
+        public GameObject EventOutputContainer { get; protected set; }
         #endregion
 
-        #region Threshold Settings
+        #region Target Settings
         /// <summary>
         /// The threshold that the current normalized value of the control can be within to consider the target value has been reached.
         /// </summary>
         [Serialized]
-        [field: Header("Threshold Settings"), DocumentedByXml]
+        [field: Header("Target Settings"), DocumentedByXml]
         public float TargetValueReachedThreshold { get; set; } = 0.025f;
+        /// <summary>
+        /// Determines whether to emit the drive events.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public bool EmitEvents { get; set; } = true;
         #endregion
 
         /// <summary>
@@ -75,6 +87,26 @@
         /// Whether the control is moving or not.
         /// </summary>
         protected bool isMoving;
+        /// <summary>
+        /// Whether the drive is moving to the initial target value.
+        /// </summary>
+        protected bool isMovingToInitialTargetValue;
+        /// <summary>
+        /// The cached value for <see cref="EmitEvents"/>.
+        /// </summary>
+        protected bool cachedEmitEvents;
+        /// <summary>
+        /// The cached value for <see cref="MoveToTargetValue"/>.
+        /// </summary>
+        protected bool cachedMoveToTargetValue;
+        /// <summary>
+        /// The cached value for <see cref="TargetValue"/>.
+        /// </summary>
+        protected float cachedTargetValue;
+        /// <summary>
+        /// The cached value for <see cref="DriveSpeed"/>.
+        /// </summary>
+        protected float cachedDriveSpeed;
 
         /// <summary>
         /// Sets up the drive mechanism.
@@ -191,6 +223,7 @@
         protected virtual void OnEnable()
         {
             SetUp();
+            MoveToInitialTargetValue();
         }
 
         /// <summary>
@@ -203,6 +236,11 @@
         /// </summary>
         /// <param name="targetValue">The value to set the drive target to.</param>
         protected virtual void SetDriveTargetValue(Vector3 targetValue) { }
+
+        /// <summary>
+        /// Removes any velocity being applied to the drive.
+        /// </summary>
+        protected virtual void EliminateDriveVelocity() { }
 
         /// <summary>
         /// Gets the drive control target value.
@@ -237,6 +275,11 @@
         /// </summary>
         protected virtual void EmitValueChanged()
         {
+            if (!EmitEvents)
+            {
+                return;
+            }
+
             Facade.ValueChanged?.Invoke(Value);
         }
 
@@ -245,6 +288,17 @@
         /// </summary>
         protected virtual void EmitNormalizedValueChanged()
         {
+            if (isMovingToInitialTargetValue && NormalizedValue.ApproxEquals(Facade.InitialTargetValue))
+            {
+                ResetToCacheAfterReachedInitialTargetValue();
+                return;
+            }
+
+            if (!EmitEvents)
+            {
+                return;
+            }
+
             Facade.NormalizedValueChanged?.Invoke(NormalizedValue);
         }
 
@@ -253,6 +307,11 @@
         /// </summary>
         protected virtual void EmitStepValueChanged()
         {
+            if (!EmitEvents)
+            {
+                return;
+            }
+
             Facade.StepValueChanged?.Invoke(StepValue);
         }
 
@@ -261,6 +320,11 @@
         /// </summary>
         protected virtual void EmitTargetValueReached()
         {
+            if (!EmitEvents)
+            {
+                return;
+            }
+
             Facade.TargetValueReached?.Invoke(NormalizedValue);
         }
 
@@ -269,6 +333,11 @@
         /// </summary>
         protected virtual void EmitStartedMoving()
         {
+            if (!EmitEvents)
+            {
+                return;
+            }
+
             Facade.StartedMoving?.Invoke(0f);
         }
 
@@ -277,7 +346,49 @@
         /// </summary>
         protected virtual void EmitStoppedMoving()
         {
+            if (!EmitEvents)
+            {
+                return;
+            }
+
             Facade.StoppedMoving?.Invoke(0f);
+        }
+
+        /// <summary>
+        /// Moves the drive to the initial target value.
+        /// </summary>
+        protected virtual void MoveToInitialTargetValue()
+        {
+            if (!Facade.StartAtInitialTargetValue)
+            {
+                return;
+            }
+
+            cachedEmitEvents = EmitEvents;
+            cachedMoveToTargetValue = Facade.MoveToTargetValue;
+            cachedTargetValue = Facade.TargetValue;
+            cachedDriveSpeed = Facade.DriveSpeed;
+
+            isMovingToInitialTargetValue = true;
+            EmitEvents = false;
+            Facade.MoveToTargetValue = true;
+            Facade.TargetValue = Facade.InitialTargetValue;
+            Facade.DriveSpeed = float.MaxValue;
+            SetUp();
+        }
+
+        /// <summary>
+        /// Resets the drive parameters to the cached values after the initial target value is reached.
+        /// </summary>
+        protected virtual void ResetToCacheAfterReachedInitialTargetValue()
+        {
+            EliminateDriveVelocity();
+            isMovingToInitialTargetValue = false;
+            EmitEvents = cachedEmitEvents;
+            Facade.MoveToTargetValue = cachedMoveToTargetValue;
+            Facade.TargetValue = cachedTargetValue;
+            Facade.DriveSpeed = cachedDriveSpeed;
+            SetUp();
         }
     }
 }

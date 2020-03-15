@@ -81,6 +81,13 @@
         }
 
         /// <inheritdoc />
+        protected override void EliminateDriveVelocity()
+        {
+            jointRigidbody.velocity = Vector3.zero;
+            jointRigidbody.angularVelocity = Vector3.zero;
+        }
+
+        /// <inheritdoc />
         protected override Transform GetDriveTransform()
         {
             return Joint.transform;
@@ -98,8 +105,7 @@
         {
             if (!Joint.useLimits && ApplyLimits())
             {
-                jointRigidbody.velocity = Vector3.zero;
-                jointRigidbody.angularVelocity = Vector3.zero;
+                EliminateDriveVelocity();
             }
         }
 
