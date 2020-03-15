@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.1.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.0.2...v1.1.0) (2020-03-15)
+
+#### Features
+
+* **Drive:** provide initial target value for drive to start at ([fd6ef0d](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/fd6ef0df8b73459c7e1ef9d9708f550400554bd4))
+  > The Initial Target Value allows a drive to be given an initial normalized value to drive the control to when it is first enabled without any events being triggered.
+  > 
+  > This is useful for starting controls at a certain point as by default they all start in their central position due to the way Unity works out drive extends for joints.
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.interactions.interactables.unity ([5ed470b](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/5ed470b062c8f6e3ab5b60e6a4e6fdf2f1d5477e))
+  > Bumps [io.extendreality.tilia.interactions.interactables.unity](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity) from 1.4.4 to 1.5.0. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/compare/v1.4.4...v1.5.0)
+  > 
+  > Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
 ### [1.0.2](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.0.1...v1.0.2) (2020-03-05)
 
 #### Miscellaneous Chores
