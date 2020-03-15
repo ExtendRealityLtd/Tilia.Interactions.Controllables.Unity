@@ -22,6 +22,11 @@
         public ConfigurableJoint Joint { get; protected set; }
         #endregion
 
+        /// <summary>
+        /// The <see cref="Rigidbody"/> that the joint is using.
+        /// </summary>
+        protected Rigidbody jointRigidbody;
+
         /// <inheritdoc />
         [RequiresBehaviourState]
         public override Vector3 CalculateDriveAxis(DriveAxis.Axis driveAxis)
@@ -63,6 +68,12 @@
             Joint.yDrive = snapDriver;
             Joint.zDrive = snapDriver;
         }
+        /// <inheritdoc />
+        protected override void SetUpInternals()
+        {
+            jointRigidbody = Joint.GetComponent<Rigidbody>();
+            base.SetUpInternals();
+        }
 
         /// <inheritdoc />
         protected override Transform GetDriveTransform()
@@ -74,6 +85,13 @@
         protected override void SetDriveTargetValue(Vector3 targetValue)
         {
             Joint.targetPosition = targetValue;
+        }
+
+        /// <inheritdoc />
+        protected override void EliminateDriveVelocity()
+        {
+            jointRigidbody.velocity = Vector3.zero;
+            jointRigidbody.angularVelocity = Vector3.zero;
         }
     }
 }

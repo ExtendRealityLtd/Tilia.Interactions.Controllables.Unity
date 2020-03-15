@@ -74,6 +74,27 @@
         [field: Header("Drive Settings"), DocumentedByXml]
         public DriveAxis.Axis DriveAxis { get; set; } = Driver.DriveAxis.Axis.XAxis;
         /// <summary>
+        /// The speed in which the drive will attempt to move the control to the desired value.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public float DriveSpeed { get; set; } = 10f;
+        #endregion
+
+        #region Target Value Settings
+        /// <summary>
+        /// Determines if the drive should start the control at the <see cref="InitialTargetValue"/> when it is first enabled (no events will be emitted).
+        /// </summary>
+        [Serialized]
+        [field: Header("Target Value Settings"), DocumentedByXml]
+        public bool StartAtInitialTargetValue { get; set; }
+        /// <summary>
+        /// The normalized value to attempt to drive the control to when it is first enabled.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml, Range(0f, 1f)]
+        public float InitialTargetValue { get; set; } = 0.5f;
+        /// <summary>
         /// Determines if the drive should move the element to the set <see cref="TargetValue"/>.
         /// </summary>
         [Serialized]
@@ -85,12 +106,6 @@
         [Serialized]
         [field: DocumentedByXml, Range(0f, 1f)]
         public float TargetValue { get; set; } = 0.5f;
-        /// <summary>
-        /// The speed in which the drive will attempt to move the control to the desired value.
-        /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public float DriveSpeed { get; set; } = 10f;
         #endregion
 
         #region Step Settings

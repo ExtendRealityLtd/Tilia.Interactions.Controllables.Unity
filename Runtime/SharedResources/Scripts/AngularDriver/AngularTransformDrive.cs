@@ -81,6 +81,13 @@
         }
 
         /// <inheritdoc />
+        protected override void EliminateDriveVelocity()
+        {
+            VelocityApplier.Velocity = Vector3.zero;
+            VelocityApplier.AngularVelocity = Vector3.zero;
+        }
+
+        /// <inheritdoc />
         protected override Transform GetDriveTransform()
         {
             return Interactable.transform;
@@ -91,8 +98,7 @@
         {
             if (ApplyLimits())
             {
-                VelocityApplier.Velocity = Vector3.zero;
-                VelocityApplier.AngularVelocity = Vector3.zero;
+                EliminateDriveVelocity();
             }
         }
 
