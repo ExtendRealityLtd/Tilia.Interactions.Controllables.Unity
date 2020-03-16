@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.1.0...v1.2.0) (2020-03-16)
+
+#### Features
+
+* **Drive:** emit event when the initial target value is reached ([3975153](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/3975153244b2ff7f363b727f892096422e80273c))
+  > The new InitialTargetValueReached event is emitted when the initial target value is reached and is useful for setting up initial configuration as by default the initial target value process will not emit any events even when the target value is reached so this new InitialTargetValueReached event can be used to set up any initial state required by the control.
+
 ## [1.1.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.0.2...v1.1.0) (2020-03-15)
 
 #### Features
