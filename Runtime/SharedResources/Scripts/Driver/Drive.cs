@@ -389,6 +389,13 @@
             Facade.TargetValue = cachedTargetValue;
             Facade.DriveSpeed = cachedDriveSpeed;
             SetUp();
+
+            if (!EmitEvents)
+            {
+                return;
+            }
+
+            Facade.InitialTargetValueReached?.Invoke(NormalizedValue);
         }
     }
 }

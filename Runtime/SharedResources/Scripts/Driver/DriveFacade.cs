@@ -50,6 +50,11 @@
         [DocumentedByXml]
         public DriveUnityEvent NormalizedValueChanged = new DriveUnityEvent();
         /// <summary>
+        /// Emitted when <see cref="InitialTargetValue"/> has been reached by the control.
+        /// </summary>
+        [DocumentedByXml]
+        public DriveUnityEvent InitialTargetValueReached = new DriveUnityEvent();
+        /// <summary>
         /// Emitted when <see cref="TargetValue"/> has been reached by the control.
         /// </summary>
         [DocumentedByXml]
