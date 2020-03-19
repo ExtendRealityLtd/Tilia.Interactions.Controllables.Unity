@@ -8,7 +8,7 @@
 
 ## Introduction
 
-A slider is a very simple control that allows distinct values to be selected by sliding an Interactable along a limited drive axis. We're going to use a Linear Drive to create a slider control that allows us to change the color of a GameObject based on the specific value assoicated with positions on our slider.
+A slider is a very simple control that allows distinct values to be selected by sliding an Interactable along a limited drive axis. We're going to use a Linear Drive to create a slider control that allows us to change the color of a GameObject based on the specific value associated with positions on our slider.
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ Rename the new empty `GameObject` to `Slider`.
 
 ### Step 2
 
-Right click on the `Slider` GameObjet, select `3D Object -> Cube` and change the Transform properties to:
+Right click on the `Slider` GameObject, select `3D Object -> Cube` and change the Transform properties to:
 
 * Scale: `X = 1.11, Y = 0.01, Z = 0.02`
 
