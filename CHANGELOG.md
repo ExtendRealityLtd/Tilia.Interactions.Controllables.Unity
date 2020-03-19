@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.2.0...v1.3.0) (2020-03-19)
+
+#### Features
+
+* **HowToGuides:** add documentation for creating a slider ([bbd9e21](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/bbd9e21fe1bf7b30881fa8887a0084ebb0108927))
+  > A guide that shows how to create a slider utilizing the linear drive from the controllables.
+* **HowToGuides:** add guide for creating interactable drawer ([4c813e3](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/4c813e3e6dd2c18b73e60209b9c0f23e1a727845))
+  > Added a guide to show how to make an interactable drawer.
+
 ## [1.2.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.1.0...v1.2.0) (2020-03-16)
 
 #### Features
