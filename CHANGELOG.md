@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.3.1...v1.4.0) (2020-04-03)
+
+#### Features
+
+* **HowToGuides:** add guide on how to create a door ([9e450ef](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/9e450ef02625ee1746a194232b27f3591ca8002d))
+  > The Angular Drive has been used to create an interactable door.
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.interactions.interactables.unity ([f520070](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/f52007085d8d43603d42f39bbef69bf286717ba7))
+  > Bumps [io.extendreality.tilia.interactions.interactables.unity](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity) from 1.5.0 to 1.5.1. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/compare/v1.5.0...v1.5.1)
+  > 
+  > Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
 ### [1.3.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.3.0...v1.3.1) (2020-04-03)
 
 #### Miscellaneous Chores
