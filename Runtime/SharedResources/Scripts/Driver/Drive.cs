@@ -72,6 +72,10 @@
         public FloatRange DriveLimits { get; protected set; }
 
         /// <summary>
+        /// The value to set the drive speed to when driving the control to the initial start value.
+        /// </summary>
+        protected const float initialValueDriveSpeed = 5000f;
+        /// <summary>
         /// The previous state of <see cref="Value"/>.
         /// </summary>
         protected float previousValue = float.MaxValue;
@@ -288,7 +292,7 @@
         /// </summary>
         protected virtual void EmitNormalizedValueChanged()
         {
-            if (isMovingToInitialTargetValue && NormalizedValue.ApproxEquals(Facade.InitialTargetValue))
+            if (isMovingToInitialTargetValue && NormalizedValue.ApproxEquals(Facade.InitialTargetValue, TargetValueReachedThreshold))
             {
                 ResetToCacheAfterReachedInitialTargetValue();
                 return;
@@ -373,7 +377,7 @@
             EmitEvents = false;
             Facade.MoveToTargetValue = true;
             Facade.TargetValue = Facade.InitialTargetValue;
-            Facade.DriveSpeed = float.MaxValue;
+            Facade.DriveSpeed = initialValueDriveSpeed;
             SetUp();
         }
 
