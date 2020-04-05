@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.4.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.4.0...v1.4.1) (2020-04-05)
+
+#### Bug Fixes
+
+* **Drive:** use actual value for initial start drive speed ([f317c95](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/f317c9560cb7f980f3e3c5f7a988fdc338ca24d1))
+  > Using a drive speed that is too high causes problems with Unity joints and can cause them to break their restrictions.
+  > 
+  > Instead of using a float max value, it now uses just a high value that is fast enough to not notice but not fast enough to break the Unity joints system.
+  > 
+  > Whilst 5000f seems like a magic number, it's just a number that was decided that fell into the category of not breaking things but being fast enough to not notice.
+
 ## [1.4.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.3.1...v1.4.0) (2020-04-03)
 
 #### Features
