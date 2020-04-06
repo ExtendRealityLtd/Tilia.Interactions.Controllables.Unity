@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.4.1...v1.5.0) (2020-04-06)
+
+#### Features
+
+* **HowToGuides:** add guide to show how to create a physics button ([1c75c02](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/1c75c026004a97eb722cae939078bf72b0751d7f))
+  > Added a guide demonstrating how to make a physics button.
+
 ### [1.4.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.4.0...v1.4.1) (2020-04-05)
 
 #### Bug Fixes
