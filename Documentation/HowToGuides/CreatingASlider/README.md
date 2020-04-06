@@ -15,10 +15,6 @@ A slider is a very simple control that allows distinct values to be selected by 
 * [Add the Tilia.Interactions.Interactor.Unity] prefab to the scene Hierarchy.
 * [Install the Tilia.Interactions.Controllables.Unity] package dependency in to your [Unity] project.
 
-[Add the Tilia.Interactions.Interactor.Unity]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor/README.md
-[Install the Tilia.Interactions.Controllables.Unity]: ../Installation/README.md
-[Unity]: https://unity3d.com/
-
 ## Let's Start
 
 ### Step 1
@@ -199,3 +195,7 @@ Select a function to perform when the `Ungrabbde` event is emitted. For this exa
 Play the Unity scene and grab the slider cube again, you'll notice now that when you release the slider it will automatically snap to the nearest step notch.
 
 ![Slider Snaps To Step Value](assets/images/SliderSnapsToStepValue.png)
+
+[Add the Tilia.Interactions.Interactor.Unity]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor/README.md
+[Install the Tilia.Interactions.Controllables.Unity]: ../Installation/README.md
+[Unity]: https://unity3d.com/
