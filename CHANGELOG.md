@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.5.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.5.0...v1.5.1) (2020-04-06)
+
+#### Bug Fixes
+
+* **HowToGuides:** move page links to bottom of page ([7eecd84](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/7eecd84cdd9915e9ecacc98ece1f8a99b811100d))
+  > The page links on the Creating A Slider guide were in the wrong place and have now been moved to the bottom.
+* **HowToGuides:** remove erroneous image ([64e8602](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/64e86022d34cd196b2bb9a88784282003e1c52b8))
+  > There was an image for the Creating A Physics Button guide that was not being used. It has now been deleted.
+
 ## [1.5.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.4.1...v1.5.0) (2020-04-06)
 
 #### Features
