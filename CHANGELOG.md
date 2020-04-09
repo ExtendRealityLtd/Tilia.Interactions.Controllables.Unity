@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.6.0...v1.7.0) (2020-04-09)
+
+#### Features
+
+* **HowToGuides:** add guide showing how to create a wheel ([61e9d1e](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/61e9d1efb590f9d683fbb4a7e50d56e9c56c1d47))
+  > Added a guide demonstrating how to create a wheel.
+
 ## [1.6.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.5.3...v1.6.0) (2020-04-09)
 
 #### Features
