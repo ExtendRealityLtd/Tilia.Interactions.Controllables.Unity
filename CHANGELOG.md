@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.5.3...v1.6.0) (2020-04-09)
+
+#### Features
+
+* **HowToGuides:** add guide showing how to create a lever ([f48649c](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/f48649c7fba6e5ea227a8a8de5a78c5fb8c8d8e6))
+  > Added guide showing how to create a lever.
+
 ### [1.5.3](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.5.2...v1.5.3) (2020-04-08)
 
 #### Miscellaneous Chores
