@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.7.7](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.7.6...v1.7.7) (2020-05-22)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.zinnia.unity from 1.17.0 to 1.17.1 ([b007fa7](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/b007fa7a8e48985a88e3cdb11234aaa49da48db3))
+  > Bumps [io.extendreality.zinnia.unity](https://github.com/ExtendRealityLtd/Zinnia.Unity) from 1.17.0 to 1.17.1. - [Release notes](https://github.com/ExtendRealityLtd/Zinnia.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Zinnia.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Zinnia.Unity/compare/v1.17.0...v1.17.1)
+  > 
+  > Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
 ### [1.7.6](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.7.5...v1.7.6) (2020-05-22)
 
 #### Miscellaneous Chores
