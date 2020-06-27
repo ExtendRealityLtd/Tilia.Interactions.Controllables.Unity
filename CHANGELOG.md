@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.7.14](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.7.13...v1.7.14) (2020-06-27)
+
+#### Bug Fixes
+
+* **Interactables:** update Interactables namespace to latest ([4eb88fa](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/4eb88fa6e31e634da3e4aaba51e65da365545ac3))
+  > The Interactables namespace changed in version 1.9.0 of the Interactables package, so it has been updated accordingly.
+
 ### [1.7.13](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.7.12...v1.7.13) (2020-06-08)
 
 #### Miscellaneous Chores
