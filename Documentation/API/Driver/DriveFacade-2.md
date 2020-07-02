@@ -1,0 +1,457 @@
+# Class DriveFacade<TDrive, TSelf>
+
+The basis of the public interface that will drive a control in relation to a specified world axis.
+
+## Contents
+
+* [Inheritance]
+* [Namespace]
+* [Syntax]
+* [Fields]
+  * [InitialTargetValueReached]
+  * [NormalizedValueChanged]
+  * [StartedMoving]
+  * [StepValueChanged]
+  * [StoppedMoving]
+  * [TargetValueReached]
+  * [ValueChanged]
+* [Properties]
+  * [Drive]
+  * [DriveAxis]
+  * [DriveSpeed]
+  * [InitialTargetValue]
+  * [MoveToTargetValue]
+  * [StartAtInitialTargetValue]
+  * [StepIncrement]
+  * [StepRange]
+  * [TargetValue]
+* [Methods]
+  * [CalculateDriveAxis(DriveAxis.Axis)]
+  * [ForceSnapToStepValue(Single)]
+  * [OnAfterDriveAxisChange()]
+  * [OnAfterDriveSpeedChange()]
+  * [OnAfterMoveToTargetValueChange()]
+  * [OnAfterStepIncrementChange()]
+  * [OnAfterStepRangeChange()]
+  * [OnAfterTargetValueChange()]
+  * [ProcessAutoDrive(Boolean)]
+  * [ProcessDriveSpeed(Single, Boolean)]
+  * [SetTargetValue(Single)]
+  * [SetTargetValueByStepValue()]
+  * [SetTargetValueByStepValue(Single)]
+
+## Details
+
+##### Inheritance
+
+* System.Object
+* DriveFacade<TDrive, TSelf>
+* [AngularDriveFacade]
+* [LinearDriveFacade]
+
+##### Namespace
+
+* [Tilia.Interactions.Controllables.Driver]
+
+##### Syntax
+
+```
+public abstract class DriveFacade<TDrive, TSelf> : MonoBehaviour where TDrive : Drive<TSelf, TDrive> where TSelf : DriveFacade<TDrive, TSelf>
+```
+
+##### Type Parameters
+
+| Name | Description |
+| --- | --- |
+| TDrive | The [Drive<TFacade, TSelf>] to operate with the facade. |
+| TSelf | The actual concrete implementation of the drive facade being used. |
+
+### Fields
+
+#### InitialTargetValueReached
+
+Emitted when [InitialTargetValue] has been reached by the control.
+
+##### Declaration
+
+```
+public DriveUnityEvent InitialTargetValueReached
+```
+
+#### NormalizedValueChanged
+
+Emitted when the normalized value changes with the normalized value data.
+
+##### Declaration
+
+```
+public DriveUnityEvent NormalizedValueChanged
+```
+
+#### StartedMoving
+
+Emitted when the drive starts moving the control.
+
+##### Declaration
+
+```
+public DriveUnityEvent StartedMoving
+```
+
+#### StepValueChanged
+
+Emitted when the step value changes with the step value data.
+
+##### Declaration
+
+```
+public DriveUnityEvent StepValueChanged
+```
+
+#### StoppedMoving
+
+Emitted when the drive is no longer moving the control and it is stationary.
+
+##### Declaration
+
+```
+public DriveUnityEvent StoppedMoving
+```
+
+#### TargetValueReached
+
+Emitted when [TargetValue] has been reached by the control.
+
+##### Declaration
+
+```
+public DriveUnityEvent TargetValueReached
+```
+
+#### ValueChanged
+
+Emitted when the raw value changes with the raw value data.
+
+##### Declaration
+
+```
+public DriveUnityEvent ValueChanged
+```
+
+### Properties
+
+#### Drive
+
+The linked TDrive
+
+##### Declaration
+
+```
+public TDrive Drive { get; protected set; }
+```
+
+#### DriveAxis
+
+The axis to operate the drive motion on.
+
+##### Declaration
+
+```
+public DriveAxis.Axis DriveAxis { get; set; }
+```
+
+#### DriveSpeed
+
+The speed in which the drive will attempt to move the control to the desired value.
+
+##### Declaration
+
+```
+public float DriveSpeed { get; set; }
+```
+
+#### InitialTargetValue
+
+The normalized value to attempt to drive the control to when it is first enabled.
+
+##### Declaration
+
+```
+public float InitialTargetValue { get; set; }
+```
+
+#### MoveToTargetValue
+
+Determines if the drive should move the element to the set [TargetValue].
+
+##### Declaration
+
+```
+public bool MoveToTargetValue { get; set; }
+```
+
+#### StartAtInitialTargetValue
+
+Determines if the drive should start the control at the [InitialTargetValue] when it is first enabled (no events will be emitted).
+
+##### Declaration
+
+```
+public bool StartAtInitialTargetValue { get; set; }
+```
+
+#### StepIncrement
+
+The increment to increase the steps in value by.
+
+##### Declaration
+
+```
+public float StepIncrement { get; set; }
+```
+
+#### StepRange
+
+The range of step values to use.
+
+##### Declaration
+
+```
+public FloatRange StepRange { get; set; }
+```
+
+#### TargetValue
+
+The normalized value to attempt to drive the control to if the [MoveToTargetValue] is set to true.
+
+##### Declaration
+
+```
+public float TargetValue { get; set; }
+```
+
+### Methods
+
+#### CalculateDriveAxis(DriveAxis.Axis)
+
+Calculates the axis to use for the given [DriveAxis.Axis].
+
+##### Declaration
+
+```
+protected virtual void CalculateDriveAxis(DriveAxis.Axis driveAxis)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| [DriveAxis.Axis] | driveAxis | The new value. |
+
+#### ForceSnapToStepValue(Single)
+
+Forces the drive to move to the current step value at the given speed.
+
+##### Declaration
+
+```
+public virtual void ForceSnapToStepValue(float driveSpeed)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | driveSpeed | The speed the drive will move the control at. |
+
+#### OnAfterDriveAxisChange()
+
+Called after [DriveAxis] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterDriveAxisChange()
+```
+
+#### OnAfterDriveSpeedChange()
+
+Called after [DriveSpeed] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterDriveSpeedChange()
+```
+
+#### OnAfterMoveToTargetValueChange()
+
+Called after [MoveToTargetValue] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterMoveToTargetValueChange()
+```
+
+#### OnAfterStepIncrementChange()
+
+Called after [StepIncrement] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterStepIncrementChange()
+```
+
+#### OnAfterStepRangeChange()
+
+Called after [StepRange] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterStepRangeChange()
+```
+
+#### OnAfterTargetValueChange()
+
+Called after [TargetValue] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterTargetValueChange()
+```
+
+#### ProcessAutoDrive(Boolean)
+
+Processes the drive's ability to automatically drive the control.
+
+##### Declaration
+
+```
+protected virtual void ProcessAutoDrive(bool autoDrive)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Boolean | autoDrive | Whether the drive can automatically drive the control. |
+
+#### ProcessDriveSpeed(Single, Boolean)
+
+Processes the changes to the [DriveSpeed].
+
+##### Declaration
+
+```
+protected virtual void ProcessDriveSpeed(float driveSpeed, bool moveToTargetValue)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | driveSpeed | The new value. |
+| System.Boolean | moveToTargetValue | Whether the new value should be processed. |
+
+#### SetTargetValue(Single)
+
+Sets the new [TargetValue].
+
+##### Declaration
+
+```
+protected virtual void SetTargetValue(float targetValue)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | targetValue | The new value. |
+
+#### SetTargetValueByStepValue()
+
+Sets the [TargetValue] to the position that the current step value represents.
+
+##### Declaration
+
+```
+public virtual void SetTargetValueByStepValue()
+```
+
+#### SetTargetValueByStepValue(Single)
+
+Sets the [TargetValue] to the position that the given step value represents.
+
+##### Declaration
+
+```
+public virtual void SetTargetValueByStepValue(float stepValue)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | stepValue | The step value that represents the new target value. |
+
+[AngularDriveFacade]: ../AngularDriver/AngularDriveFacade.md
+[LinearDriveFacade]: ../LinearDriver/LinearDriveFacade.md
+[Tilia.Interactions.Controllables.Driver]: README.md
+[Drive<TFacade, TSelf>]: Drive-2.md
+[InitialTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_InitialTargetValue
+[TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
+[DriveUnityEvent]: DriveUnityEvent.md
+[TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
+[InitialTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_InitialTargetValue
+[MoveToTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_MoveToTargetValue
+[DriveAxis.Axis]: DriveAxis.Axis.md
+[DriveAxis]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveAxis
+[DriveSpeed]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveSpeed
+[MoveToTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_MoveToTargetValue
+[StepIncrement]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepIncrement
+[StepRange]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepRange
+[TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
+[DriveSpeed]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveSpeed
+[TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
+[TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
+[TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
+[Inheritance]: #Inheritance
+[Namespace]: #Namespace
+[Syntax]: #Syntax
+[Fields]: #Fields
+[InitialTargetValueReached]: #InitialTargetValueReached
+[NormalizedValueChanged]: #NormalizedValueChanged
+[StartedMoving]: #StartedMoving
+[StepValueChanged]: #StepValueChanged
+[StoppedMoving]: #StoppedMoving
+[TargetValueReached]: #TargetValueReached
+[ValueChanged]: #ValueChanged
+[Properties]: #Properties
+[Drive]: #Drive
+[DriveAxis]: #DriveAxis
+[DriveSpeed]: #DriveSpeed
+[InitialTargetValue]: #InitialTargetValue
+[MoveToTargetValue]: #MoveToTargetValue
+[StartAtInitialTargetValue]: #StartAtInitialTargetValue
+[StepIncrement]: #StepIncrement
+[StepRange]: #StepRange
+[TargetValue]: #TargetValue
+[Methods]: #Methods
+[CalculateDriveAxis(DriveAxis.Axis)]: #CalculateDriveAxisDriveAxis.Axis
+[ForceSnapToStepValue(Single)]: #ForceSnapToStepValueSingle
+[OnAfterDriveAxisChange()]: #OnAfterDriveAxisChange
+[OnAfterDriveSpeedChange()]: #OnAfterDriveSpeedChange
+[OnAfterMoveToTargetValueChange()]: #OnAfterMoveToTargetValueChange
+[OnAfterStepIncrementChange()]: #OnAfterStepIncrementChange
+[OnAfterStepRangeChange()]: #OnAfterStepRangeChange
+[OnAfterTargetValueChange()]: #OnAfterTargetValueChange
+[ProcessAutoDrive(Boolean)]: #ProcessAutoDriveBoolean
+[ProcessDriveSpeed(Single, Boolean)]: #ProcessDriveSpeedSingle-Boolean
+[SetTargetValue(Single)]: #SetTargetValueSingle
+[SetTargetValueByStepValue()]: #SetTargetValueByStepValue
+[SetTargetValueByStepValue(Single)]: #SetTargetValueByStepValueSingle
