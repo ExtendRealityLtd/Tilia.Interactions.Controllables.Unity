@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.8.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.7.14...v1.8.0) (2020-07-03)
+
+#### Features
+
+* **API:** add auto-generated API documentation ([40e4e9a](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/40e4e9aab0726f74f254f231cd43614ba3f2567b))
+  > The API documentation is auto generated with docfx and converted to markdown via turndown in a custom nodejs script.
+
+#### Bug Fixes
+
+* **package.json:** add docfx.json file ([6ebcd16](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/6ebcd1685f03dd72c59e891eaaf0adc99ec793c2))
+  > The docfx.json file was missing from the package.json causing the build process to fail. It has now been added.
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.interactions.interactables.unity ([71fa274](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/71fa274b6d8491deab6f5c3f75a2e2366437ee50))
+  > Bumps [io.extendreality.tilia.interactions.interactables.unity](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity) from 1.9.0 to 1.10.0. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/compare/v1.9.0...v1.10.0)
+  > 
+  > Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
 ### [1.7.14](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.7.13...v1.7.14) (2020-06-27)
 
 #### Bug Fixes
