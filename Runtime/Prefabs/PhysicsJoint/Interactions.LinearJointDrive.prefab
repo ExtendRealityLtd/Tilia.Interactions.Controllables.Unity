@@ -299,6 +299,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Tilia.Interactions.Controllables.Driver.DriveUnityEvent, Tilia.Interactions.Controllables.Unity.Runtime,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  InitialTargetValueReached:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Tilia.Interactions.Controllables.Driver.DriveUnityEvent, Tilia.Interactions.Controllables.Unity.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   TargetValueReached:
     m_PersistentCalls:
       m_Calls: []
@@ -315,9 +320,11 @@ MonoBehaviour:
     m_TypeName: Tilia.Interactions.Controllables.Driver.DriveUnityEvent, Tilia.Interactions.Controllables.Unity.Runtime,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   driveAxis: 0
+  driveSpeed: 10
+  startAtInitialTargetValue: 0
+  initialTargetValue: 0.5
   moveToTargetValue: 0
   targetValue: 0.5
-  driveSpeed: 10
   stepRange:
     minimum: 0
     maximum: 10
@@ -459,6 +466,7 @@ MonoBehaviour:
   facade: {fileID: 2321230931700777055}
   eventOutputContainer: {fileID: 7344147712558315100}
   targetValueReachedThreshold: 0.025
+  emitEvents: 1
   joint: {fileID: 2051297999214337113}
 --- !u!114 &1069736518602212927
 MonoBehaviour:
@@ -651,21 +659,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable.GrabAction.Follow
       objectReference: {fileID: 0}
-    - target: {fileID: 3607323991379943426, guid: 702caa48c730e92469a1c5144fd8ed46,
-        type: 3}
-      propertyPath: followTracking
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3607323991379943426, guid: 702caa48c730e92469a1c5144fd8ed46,
-        type: 3}
-      propertyPath: grabOffset
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3607323991379943426, guid: 702caa48c730e92469a1c5144fd8ed46,
-        type: 3}
-      propertyPath: isKinematicWhenActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2857845961663347754, guid: 702caa48c730e92469a1c5144fd8ed46,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -719,6 +712,21 @@ PrefabInstance:
     - target: {fileID: 2857845961663347754, guid: 702caa48c730e92469a1c5144fd8ed46,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607323991379943426, guid: 702caa48c730e92469a1c5144fd8ed46,
+        type: 3}
+      propertyPath: followTracking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607323991379943426, guid: 702caa48c730e92469a1c5144fd8ed46,
+        type: 3}
+      propertyPath: grabOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607323991379943426, guid: 702caa48c730e92469a1c5144fd8ed46,
+        type: 3}
+      propertyPath: isKinematicWhenActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

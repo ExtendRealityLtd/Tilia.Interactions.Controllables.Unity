@@ -129,6 +129,37 @@
         #endregion
 
         /// <summary>
+        /// Sets <see cref="DriveAxis"/>.
+        /// </summary>
+        /// <param name="axisIndex">The index of the <see cref="DriveAxis.Axis"/>.</param>
+        public virtual void SetDriveAxis(int axisIndex)
+        {
+            DriveAxis = (DriveAxis.Axis)Mathf.Clamp(axisIndex, 0, Enum.GetValues(typeof(DriveAxis.Axis)).Length);
+        }
+
+        /// <summary>
+        /// Sets the <see cref="StepRange"/> minimum value.
+        /// </summary>
+        /// <param name="value">The new minimum value.</param>
+        public virtual void SetStepRangeMinimum(float value)
+        {
+            FloatRange newLimit = new FloatRange(StepRange.ToVector2());
+            newLimit.minimum = value;
+            StepRange = newLimit;
+        }
+
+        /// <summary>
+        /// Sets the <see cref="StepRange"/> maximum value.
+        /// </summary>
+        /// <param name="value">The new maximum value.</param>
+        public virtual void SetStepRangeMaximum(float value)
+        {
+            FloatRange newLimit = new FloatRange(StepRange.ToVector2());
+            newLimit.maximum = value;
+            StepRange = newLimit;
+        }
+
+        /// <summary>
         /// Sets the <see cref="TargetValue"/> to the position that the current step value represents.
         /// </summary>
         public virtual void SetTargetValueByStepValue()

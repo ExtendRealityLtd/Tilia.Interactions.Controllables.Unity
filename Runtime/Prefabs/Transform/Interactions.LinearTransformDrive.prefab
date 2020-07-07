@@ -94,6 +94,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Tilia.Interactions.Controllables.Driver.DriveUnityEvent, Tilia.Interactions.Controllables.Unity.Runtime,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  InitialTargetValueReached:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Tilia.Interactions.Controllables.Driver.DriveUnityEvent, Tilia.Interactions.Controllables.Unity.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   TargetValueReached:
     m_PersistentCalls:
       m_Calls: []
@@ -110,9 +115,11 @@ MonoBehaviour:
     m_TypeName: Tilia.Interactions.Controllables.Driver.DriveUnityEvent, Tilia.Interactions.Controllables.Unity.Runtime,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   driveAxis: 0
+  driveSpeed: 10
+  startAtInitialTargetValue: 0
+  initialTargetValue: 0.5
   moveToTargetValue: 0
   targetValue: 0.5
-  driveSpeed: 10
   stepRange:
     minimum: 0
     maximum: 10
@@ -295,6 +302,7 @@ MonoBehaviour:
     zState: 0
   applyTransformations: 1
   transitionDuration: 0
+  shouldApplyToEqualProperties: 0
   transitionDestinationThreshold: 0.01
   isTransitionDestinationDynamic: 0
   BeforeTransformUpdated:
@@ -351,8 +359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c79c0a1b4e65e41beb97b9f66a29fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 743822601413769979}
-  useLocal: 1
   Extracted:
     m_PersistentCalls:
       m_Calls:
@@ -369,6 +375,13 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Zinnia.Data.Operation.Extraction.TransformVector3PropertyExtractor+UnityEvent,
       Zinnia.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  Failed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  source: {fileID: 743822601413769979}
+  useLocal: 1
 --- !u!114 &7040976075969279408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +579,10 @@ MonoBehaviour:
     yState: 1
     zState: 1
   facingDirection: {fileID: 0}
+  applyFacingDirectionOnAxis:
+    xState: 1
+    yState: 1
+    zState: 1
 --- !u!1 &7040976076263384066
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +698,7 @@ MonoBehaviour:
   facade: {fileID: 7040976075344879994}
   eventOutputContainer: {fileID: 7468202290724158542}
   targetValueReachedThreshold: 0.025
+  emitEvents: 1
   interactable: {fileID: 7736847107121358400}
   positionClamper: {fileID: 7040976076037122787}
   propertyApplier: {fileID: 7040976075776713638}
@@ -1036,16 +1054,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable.GrabAction.Follow
       objectReference: {fileID: 0}
-    - target: {fileID: 3607323991379943426, guid: 702caa48c730e92469a1c5144fd8ed46,
-        type: 3}
-      propertyPath: grabOffset
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3607323991379943426, guid: 702caa48c730e92469a1c5144fd8ed46,
-        type: 3}
-      propertyPath: isKinematicWhenInactive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2857845961663347754, guid: 702caa48c730e92469a1c5144fd8ed46,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1100,6 +1108,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607323991379943426, guid: 702caa48c730e92469a1c5144fd8ed46,
+        type: 3}
+      propertyPath: grabOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607323991379943426, guid: 702caa48c730e92469a1c5144fd8ed46,
+        type: 3}
+      propertyPath: isKinematicWhenInactive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3860205902975461033, guid: 702caa48c730e92469a1c5144fd8ed46,
         type: 3}
