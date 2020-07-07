@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.9.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.8.2...v1.9.0) (2020-07-07)
+
+#### Features
+
+* **Driver:** add methods for properties in UnityEvents ([7a93c4e](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/7a93c4e37c450418f7955d79dcbbd1dd55277388))
+  > A number of properties cannot be changed via UnityEvents because they are non-standard data types, so methods have been added that allow for these data types to be changed.
+  > 
+  > A small fix for the DriveLimits not being updated has been added and the Setup code has been refactored so the individual setup elements can now be run individually if need be.
+  > 
+  > Also, now when the DriveAxis is changed, it will reset the rotation on the axis as otherwise the rotations cause adverse effects. It needs looking into further in the future to see if the rotational data can be kept when switching axes as this would be a nice feature.
+
+#### Bug Fixes
+
+* **dependabot:** remove bddckr from default reviewer ([7c7a812](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/7c7a8124c00d41006943a2e08b51284dcc34ad95))
+  > Only need one reviewer in the dependabot config.
+
 ### [1.8.2](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.8.1...v1.8.2) (2020-07-07)
 
 #### Miscellaneous Chores
