@@ -42,6 +42,8 @@ IProcessable
 
 ##### Inherited Members
 
+[AngularDrive.ResetRotationsOnSetup]
+
 [AngularDrive.PreviousActualAngle]
 
 [AngularDrive.CurrentActualAngle]
@@ -67,6 +69,8 @@ IProcessable
 [AngularDrive.currentActualRotation]
 
 [AngularDrive.Process()]
+
+[AngularDrive.ResetRotations()]
 
 [AngularDrive.CalculateDriveLimits(AngularDriveFacade)]
 
@@ -127,6 +131,10 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.SetUp()]
 
 [Drive<AngularDriveFacade, AngularDrive>.Process()]
+
+[Drive<AngularDriveFacade, AngularDrive>.SetDriveLimits()]
+
+[Drive<AngularDriveFacade, AngularDrive>.SetAxisDirection()]
 
 [Drive<AngularDriveFacade, AngularDrive>.ProcessDriveSpeed(Single, Boolean)]
 
@@ -423,6 +431,7 @@ IProcessable
 [Drive]: ../Driver/Drive-2.md
 [AngularDriveFacade]: AngularDriveFacade.md
 [AngularDrive]: AngularDrive.md
+[AngularDrive.ResetRotationsOnSetup]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_ResetRotationsOnSetup
 [AngularDrive.PreviousActualAngle]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_PreviousActualAngle
 [AngularDrive.CurrentActualAngle]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_CurrentActualAngle
 [AngularDrive.ActualTargetAngle]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_ActualTargetAngle
@@ -436,6 +445,7 @@ IProcessable
 [AngularDrive.previousActualRotation]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_previousActualRotation
 [AngularDrive.currentActualRotation]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_currentActualRotation
 [AngularDrive.Process()]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_Process
+[AngularDrive.ResetRotations()]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_ResetRotations
 [AngularDrive.CalculateDriveLimits(AngularDriveFacade)]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_CalculateDriveLimits_Tilia_Interactions_Controllables_AngularDriver_AngularDriveFacade_
 [AngularDrive.CalculateValue(DriveAxis.Axis, FloatRange)]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_CalculateValue_Tilia_Interactions_Controllables_Driver_DriveAxis_Axis_FloatRange_
 [AngularDrive.GetSimpleEulerAngles()]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_GetSimpleEulerAngles
@@ -466,6 +476,8 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.cachedDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_cachedDriveSpeed
 [Drive<AngularDriveFacade, AngularDrive>.SetUp()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUp
 [Drive<AngularDriveFacade, AngularDrive>.Process()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Process
+[Drive<AngularDriveFacade, AngularDrive>.SetDriveLimits()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetDriveLimits
+[Drive<AngularDriveFacade, AngularDrive>.SetAxisDirection()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetAxisDirection
 [Drive<AngularDriveFacade, AngularDrive>.ProcessDriveSpeed(Single, Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ProcessDriveSpeed_System_Single_System_Boolean_
 [Drive<AngularDriveFacade, AngularDrive>.SetTargetValue(Single)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetTargetValue_System_Single_
 [Drive<AngularDriveFacade, AngularDrive>.CalculateDriveAxis(DriveAxis.Axis)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateDriveAxis_Tilia_Interactions_Controllables_Driver_DriveAxis_Axis_

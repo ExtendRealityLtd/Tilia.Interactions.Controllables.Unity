@@ -115,16 +115,12 @@
         /// <summary>
         /// Sets up the drive mechanism.
         /// </summary>
+        [RequiresBehaviourState]
         public virtual void SetUp()
         {
-            if (!Application.isPlaying)
-            {
-                return;
-            }
-
             SetUpInternals();
-            DriveLimits = CalculateDriveLimits(Facade);
-            AxisDirection = CalculateDriveAxis(Facade.DriveAxis);
+            SetDriveLimits();
+            SetAxisDirection();
             ProcessDriveSpeed(Facade.DriveSpeed, Facade.MoveToTargetValue);
             SetTargetValue(Facade.TargetValue);
         }
@@ -173,10 +169,29 @@
         }
 
         /// <summary>
+        /// Sets the <see cref="DriveLimits"/> based on the <see cref="Facade"/> drive limit settings.
+        /// </summary>
+        [RequiresBehaviourState]
+        public virtual void SetDriveLimits()
+        {
+            DriveLimits = CalculateDriveLimits(Facade);
+        }
+
+        /// <summary>
+        /// Sets the <see cref="AxisDirection"/> based on the <see cref="Facade.DriveAxis"/> value.
+        /// </summary>
+        [RequiresBehaviourState]
+        public virtual void SetAxisDirection()
+        {
+            AxisDirection = CalculateDriveAxis(Facade.DriveAxis);
+        }
+
+        /// <summary>
         /// Processes the speed in which the drive can affect the control.
         /// </summary>
         /// <param name="driveSpeed">The speed to drive the control at.</param>
         /// <param name="moveToTargetValue">Whether to allow the drive to automatically move the control to the desired target value.</param>
+        [RequiresBehaviourState]
         public virtual void ProcessDriveSpeed(float driveSpeed, bool moveToTargetValue) { }
 
         /// <summary>

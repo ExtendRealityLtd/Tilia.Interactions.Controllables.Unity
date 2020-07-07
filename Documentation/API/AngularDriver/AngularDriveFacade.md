@@ -13,8 +13,14 @@ The public interface into any RotationalDrive prefab.
   * [GizmoSphereRadius]
   * [HingeLocation]
 * [Methods]
+  * [OnAfterDriveLimitChange()]
   * [OnAfterHingeLocationChange()]
   * [OnDrawGizmosSelected()]
+  * [SetDriveLimitMaximum(Single)]
+  * [SetDriveLimitMinimum(Single)]
+  * [SetHingeLocationX(Single)]
+  * [SetHingeLocationY(Single)]
+  * [SetHingeLocationZ(Single)]
 
 ## Details
 
@@ -57,6 +63,12 @@ The public interface into any RotationalDrive prefab.
 [DriveFacade<AngularDrive, AngularDriveFacade>.StepRange]
 
 [DriveFacade<AngularDrive, AngularDriveFacade>.StepIncrement]
+
+[DriveFacade<AngularDrive, AngularDriveFacade>.SetDriveAxis(Int32)]
+
+[DriveFacade<AngularDrive, AngularDriveFacade>.SetStepRangeMinimum(Single)]
+
+[DriveFacade<AngularDrive, AngularDriveFacade>.SetStepRangeMaximum(Single)]
 
 [DriveFacade<AngularDrive, AngularDriveFacade>.SetTargetValueByStepValue()]
 
@@ -138,6 +150,16 @@ public Vector3 HingeLocation { get; set; }
 
 ### Methods
 
+#### OnAfterDriveLimitChange()
+
+Called after [DriveLimit] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterDriveLimitChange()
+```
+
 #### OnAfterHingeLocationChange()
 
 Called after [HingeLocation] has been changed.
@@ -155,6 +177,86 @@ protected virtual void OnAfterHingeLocationChange()
 ```
 protected virtual void OnDrawGizmosSelected()
 ```
+
+#### SetDriveLimitMaximum(Single)
+
+Sets the [DriveLimit] maximum value.
+
+##### Declaration
+
+```
+public virtual void SetDriveLimitMaximum(float value)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | value | The new maximum value. |
+
+#### SetDriveLimitMinimum(Single)
+
+Sets the [DriveLimit] minimum value.
+
+##### Declaration
+
+```
+public virtual void SetDriveLimitMinimum(float value)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | value | The new minimum value. |
+
+#### SetHingeLocationX(Single)
+
+Sets the [HingeLocation] x value.
+
+##### Declaration
+
+```
+public virtual void SetHingeLocationX(float value)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | value | The new x value. |
+
+#### SetHingeLocationY(Single)
+
+Sets the [HingeLocation] y value.
+
+##### Declaration
+
+```
+public virtual void SetHingeLocationY(float value)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | value | The new y value. |
+
+#### SetHingeLocationZ(Single)
+
+Sets the [HingeLocation] z value.
+
+##### Declaration
+
+```
+public virtual void SetHingeLocationZ(float value)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | value | The new z value. |
 
 [DriveFacade]: ../Driver/DriveFacade-2.md
 [AngularDrive]: AngularDrive.md
@@ -175,6 +277,9 @@ protected virtual void OnDrawGizmosSelected()
 [DriveFacade<AngularDrive, AngularDriveFacade>.TargetValue]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
 [DriveFacade<AngularDrive, AngularDriveFacade>.StepRange]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepRange
 [DriveFacade<AngularDrive, AngularDriveFacade>.StepIncrement]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepIncrement
+[DriveFacade<AngularDrive, AngularDriveFacade>.SetDriveAxis(Int32)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetDriveAxis_System_Int32_
+[DriveFacade<AngularDrive, AngularDriveFacade>.SetStepRangeMinimum(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetStepRangeMinimum_System_Single_
+[DriveFacade<AngularDrive, AngularDriveFacade>.SetStepRangeMaximum(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetStepRangeMaximum_System_Single_
 [DriveFacade<AngularDrive, AngularDriveFacade>.SetTargetValueByStepValue()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetTargetValueByStepValue
 [DriveFacade<AngularDrive, AngularDriveFacade>.SetTargetValueByStepValue(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetTargetValueByStepValue_System_Single_
 [DriveFacade<AngularDrive, AngularDriveFacade>.ForceSnapToStepValue(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_ForceSnapToStepValue_System_Single_
@@ -189,6 +294,12 @@ protected virtual void OnDrawGizmosSelected()
 [DriveFacade<AngularDrive, AngularDriveFacade>.OnAfterStepRangeChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterStepRangeChange
 [DriveFacade<AngularDrive, AngularDriveFacade>.OnAfterStepIncrementChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterStepIncrementChange
 [Tilia.Interactions.Controllables.AngularDriver]: README.md
+[DriveLimit]: AngularDriveFacade.md#DriveLimit
+[HingeLocation]: AngularDriveFacade.md#HingeLocation
+[DriveLimit]: AngularDriveFacade.md#DriveLimit
+[DriveLimit]: AngularDriveFacade.md#DriveLimit
+[HingeLocation]: AngularDriveFacade.md#HingeLocation
+[HingeLocation]: AngularDriveFacade.md#HingeLocation
 [HingeLocation]: AngularDriveFacade.md#HingeLocation
 [Inheritance]: #Inheritance
 [Namespace]: #Namespace
@@ -199,5 +310,11 @@ protected virtual void OnDrawGizmosSelected()
 [GizmoSphereRadius]: #GizmoSphereRadius
 [HingeLocation]: #HingeLocation
 [Methods]: #Methods
+[OnAfterDriveLimitChange()]: #OnAfterDriveLimitChange
 [OnAfterHingeLocationChange()]: #OnAfterHingeLocationChange
 [OnDrawGizmosSelected()]: #OnDrawGizmosSelected
+[SetDriveLimitMaximum(Single)]: #SetDriveLimitMaximumSingle
+[SetDriveLimitMinimum(Single)]: #SetDriveLimitMinimumSingle
+[SetHingeLocationX(Single)]: #SetHingeLocationXSingle
+[SetHingeLocationY(Single)]: #SetHingeLocationYSingle
+[SetHingeLocationZ(Single)]: #SetHingeLocationZSingle

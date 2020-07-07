@@ -56,6 +56,12 @@ The public interface into any Linear Drive prefab.
 
 [DriveFacade<LinearDrive, LinearDriveFacade>.StepIncrement]
 
+[DriveFacade<LinearDrive, LinearDriveFacade>.SetDriveAxis(Int32)]
+
+[DriveFacade<LinearDrive, LinearDriveFacade>.SetStepRangeMinimum(Single)]
+
+[DriveFacade<LinearDrive, LinearDriveFacade>.SetStepRangeMaximum(Single)]
+
 [DriveFacade<LinearDrive, LinearDriveFacade>.SetTargetValueByStepValue()]
 
 [DriveFacade<LinearDrive, LinearDriveFacade>.SetTargetValueByStepValue(Single)]
@@ -153,6 +159,9 @@ protected virtual void OnDrawGizmosSelected()
 [DriveFacade<LinearDrive, LinearDriveFacade>.TargetValue]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
 [DriveFacade<LinearDrive, LinearDriveFacade>.StepRange]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepRange
 [DriveFacade<LinearDrive, LinearDriveFacade>.StepIncrement]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepIncrement
+[DriveFacade<LinearDrive, LinearDriveFacade>.SetDriveAxis(Int32)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetDriveAxis_System_Int32_
+[DriveFacade<LinearDrive, LinearDriveFacade>.SetStepRangeMinimum(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetStepRangeMinimum_System_Single_
+[DriveFacade<LinearDrive, LinearDriveFacade>.SetStepRangeMaximum(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetStepRangeMaximum_System_Single_
 [DriveFacade<LinearDrive, LinearDriveFacade>.SetTargetValueByStepValue()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetTargetValueByStepValue
 [DriveFacade<LinearDrive, LinearDriveFacade>.SetTargetValueByStepValue(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetTargetValueByStepValue_System_Single_
 [DriveFacade<LinearDrive, LinearDriveFacade>.ForceSnapToStepValue(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_ForceSnapToStepValue_System_Single_

@@ -21,6 +21,7 @@ The basis to drive a control in a rotational angle.
   * [ActualTargetAngle]
   * [CurrentActualAngle]
   * [PreviousActualAngle]
+  * [ResetRotationsOnSetup]
 * [Methods]
   * [ApplyExistingAngularVelocity(Single)]
   * [ApplyLimits()]
@@ -35,6 +36,7 @@ The basis to drive a control in a rotational angle.
   * [MatchActualTargetAngle(Single)]
   * [Process()]
   * [ProcessAutoDrive(Single)]
+  * [ResetRotations()]
   * [SetUpInternals()]
 * [Implements]
 
@@ -97,6 +99,10 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.SetUp()]
 
 [Drive<AngularDriveFacade, AngularDrive>.Process()]
+
+[Drive<AngularDriveFacade, AngularDrive>.SetDriveLimits()]
+
+[Drive<AngularDriveFacade, AngularDrive>.SetAxisDirection()]
 
 [Drive<AngularDriveFacade, AngularDrive>.ProcessDriveSpeed(Single, Boolean)]
 
@@ -272,6 +278,16 @@ The previous rotation angle of the control.
 
 ```
 protected float PreviousActualAngle { get; }
+```
+
+#### ResetRotationsOnSetup
+
+The joint being used to drive the rotation.
+
+##### Declaration
+
+```
+public bool ResetRotationsOnSetup { get; set; }
 ```
 
 ### Methods
@@ -491,6 +507,16 @@ protected abstract void ProcessAutoDrive(float driveSpeed)
 | --- | --- | --- |
 | System.Single | driveSpeed | The speed to automatically rotate the drive. |
 
+#### ResetRotations()
+
+Resets the Transform rotation data.
+
+##### Declaration
+
+```
+public virtual void ResetRotations()
+```
+
 #### SetUpInternals()
 
 Performs any required internal setup.
@@ -535,6 +561,8 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.cachedDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_cachedDriveSpeed
 [Drive<AngularDriveFacade, AngularDrive>.SetUp()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUp
 [Drive<AngularDriveFacade, AngularDrive>.Process()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Process
+[Drive<AngularDriveFacade, AngularDrive>.SetDriveLimits()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetDriveLimits
+[Drive<AngularDriveFacade, AngularDrive>.SetAxisDirection()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetAxisDirection
 [Drive<AngularDriveFacade, AngularDrive>.ProcessDriveSpeed(Single, Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ProcessDriveSpeed_System_Single_System_Boolean_
 [Drive<AngularDriveFacade, AngularDrive>.SetTargetValue(Single)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetTargetValue_System_Single_
 [Drive<AngularDriveFacade, AngularDrive>.CalculateDriveAxis(DriveAxis.Axis)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateDriveAxis_Tilia_Interactions_Controllables_Driver_DriveAxis_Axis_
@@ -577,6 +605,7 @@ IProcessable
 [ActualTargetAngle]: #ActualTargetAngle
 [CurrentActualAngle]: #CurrentActualAngle
 [PreviousActualAngle]: #PreviousActualAngle
+[ResetRotationsOnSetup]: #ResetRotationsOnSetup
 [Methods]: #Methods
 [ApplyExistingAngularVelocity(Single)]: #ApplyExistingAngularVelocitySingle
 [ApplyLimits()]: #ApplyLimits
@@ -591,5 +620,6 @@ IProcessable
 [MatchActualTargetAngle(Single)]: #MatchActualTargetAngleSingle
 [Process()]: #Process
 [ProcessAutoDrive(Single)]: #ProcessAutoDriveSingle
+[ResetRotations()]: #ResetRotations
 [SetUpInternals()]: #SetUpInternals
 [Implements]: #Implements

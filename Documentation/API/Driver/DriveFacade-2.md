@@ -36,6 +36,9 @@ The basis of the public interface that will drive a control in relation to a spe
   * [OnAfterTargetValueChange()]
   * [ProcessAutoDrive(Boolean)]
   * [ProcessDriveSpeed(Single, Boolean)]
+  * [SetDriveAxis(Int32)]
+  * [SetStepRangeMaximum(Single)]
+  * [SetStepRangeMinimum(Single)]
   * [SetTargetValue(Single)]
   * [SetTargetValueByStepValue()]
   * [SetTargetValueByStepValue(Single)]
@@ -357,6 +360,54 @@ protected virtual void ProcessDriveSpeed(float driveSpeed, bool moveToTargetValu
 | System.Single | driveSpeed | The new value. |
 | System.Boolean | moveToTargetValue | Whether the new value should be processed. |
 
+#### SetDriveAxis(Int32)
+
+Sets [DriveAxis].
+
+##### Declaration
+
+```
+public virtual void SetDriveAxis(int axisIndex)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Int32 | axisIndex | The index of the [DriveAxis.Axis]. |
+
+#### SetStepRangeMaximum(Single)
+
+Sets the [StepRange] maximum value.
+
+##### Declaration
+
+```
+public virtual void SetStepRangeMaximum(float value)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | value | The new maximum value. |
+
+#### SetStepRangeMinimum(Single)
+
+Sets the [StepRange] minimum value.
+
+##### Declaration
+
+```
+public virtual void SetStepRangeMinimum(float value)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | value | The new minimum value. |
+
 #### SetTargetValue(Single)
 
 Sets the new [TargetValue].
@@ -409,7 +460,6 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
 [InitialTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_InitialTargetValue
 [MoveToTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_MoveToTargetValue
-[DriveAxis.Axis]: DriveAxis.Axis.md
 [DriveAxis]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveAxis
 [DriveSpeed]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveSpeed
 [MoveToTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_MoveToTargetValue
@@ -417,6 +467,10 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [StepRange]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepRange
 [TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
 [DriveSpeed]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveSpeed
+[DriveAxis]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveAxis
+[DriveAxis.Axis]: DriveAxis.Axis.md
+[StepRange]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepRange
+[StepRange]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepRange
 [TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
 [TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
 [TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
@@ -452,6 +506,9 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [OnAfterTargetValueChange()]: #OnAfterTargetValueChange
 [ProcessAutoDrive(Boolean)]: #ProcessAutoDriveBoolean
 [ProcessDriveSpeed(Single, Boolean)]: #ProcessDriveSpeedSingle-Boolean
+[SetDriveAxis(Int32)]: #SetDriveAxisInt32
+[SetStepRangeMaximum(Single)]: #SetStepRangeMaximumSingle
+[SetStepRangeMinimum(Single)]: #SetStepRangeMinimumSingle
 [SetTargetValue(Single)]: #SetTargetValueSingle
 [SetTargetValueByStepValue()]: #SetTargetValueByStepValue
 [SetTargetValueByStepValue(Single)]: #SetTargetValueByStepValueSingle

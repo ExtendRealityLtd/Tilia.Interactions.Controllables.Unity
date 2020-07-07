@@ -50,6 +50,8 @@ The basis for a mechanism to drive motion on a control.
   * [Process()]
   * [ProcessDriveSpeed(Single, Boolean)]
   * [ResetToCacheAfterReachedInitialTargetValue()]
+  * [SetAxisDirection()]
+  * [SetDriveLimits()]
   * [SetDriveTargetValue(Vector3)]
   * [SetTargetValue(Single)]
   * [SetUp()]
@@ -570,6 +572,26 @@ Resets the drive parameters to the cached values after the initial target value 
 protected virtual void ResetToCacheAfterReachedInitialTargetValue()
 ```
 
+#### SetAxisDirection()
+
+Sets the [AxisDirection] based on the Facade.DriveAxis value.
+
+##### Declaration
+
+```
+public virtual void SetAxisDirection()
+```
+
+#### SetDriveLimits()
+
+Sets the [DriveLimits] based on the [Facade] drive limit settings.
+
+##### Declaration
+
+```
+public virtual void SetDriveLimits()
+```
+
 #### SetDriveTargetValue(Vector3)
 
 Sets the target value of the drive.
@@ -634,6 +656,9 @@ IProcessable
 [StepValue]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StepValue
 [Value]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Value
 [DriveAxis.Axis]: DriveAxis.Axis.md
+[AxisDirection]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_AxisDirection
+[DriveLimits]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DriveLimits
+[Facade]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Facade
 [Inheritance]: #Inheritance
 [Namespace]: #Namespace
 [Syntax]: #Syntax
@@ -680,6 +705,8 @@ IProcessable
 [Process()]: #Process
 [ProcessDriveSpeed(Single, Boolean)]: #ProcessDriveSpeedSingle-Boolean
 [ResetToCacheAfterReachedInitialTargetValue()]: #ResetToCacheAfterReachedInitialTargetValue
+[SetAxisDirection()]: #SetAxisDirection
+[SetDriveLimits()]: #SetDriveLimits
 [SetDriveTargetValue(Vector3)]: #SetDriveTargetValueVector3
 [SetTargetValue(Single)]: #SetTargetValueSingle
 [SetUp()]: #SetUp
