@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.9.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.9.0...v1.9.1) (2020-07-08)
+
+#### Bug Fixes
+
+* **Drive:** rework the drive reset functionality ([e6a7aa8](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/e6a7aa87ddd5855abf779f58f2b6958df8cd3338))
+  > The AngularDrive ResetRotations was causing the MoveToTargetValue functionality to break because it was always resetting the drive everytime the target value changed. This has been fixed by reworking the Reset concept into the core Drive class and having the ability of only calling ResetDrive the first time SetUp is called and then it won't call Reset again until a manual intervention occurs.
+
 ## [1.9.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.8.2...v1.9.0) (2020-07-07)
 
 #### Features
