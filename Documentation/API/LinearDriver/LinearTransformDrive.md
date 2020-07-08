@@ -46,6 +46,10 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.EventOutputContainer]
 
+[Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetup]
+
+[Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetupFirstTimeOnly]
+
 [Drive<LinearDriveFacade, LinearDrive>.TargetValueReachedThreshold]
 
 [Drive<LinearDriveFacade, LinearDrive>.EmitEvents]
@@ -82,6 +86,8 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.cachedDriveSpeed]
 
+[Drive<LinearDriveFacade, LinearDrive>.ConfigureAutoDrive(Boolean)]
+
 [Drive<LinearDriveFacade, LinearDrive>.SetUp()]
 
 [Drive<LinearDriveFacade, LinearDrive>.Process()]
@@ -96,7 +102,7 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.CalculateDriveAxis(DriveAxis.Axis)]
 
-[Drive<LinearDriveFacade, LinearDrive>.ConfigureAutoDrive(Boolean)]
+[Drive<LinearDriveFacade, LinearDrive>.ResetDrive()]
 
 [Drive<LinearDriveFacade, LinearDrive>.CalculateValue(DriveAxis.Axis, FloatRange)]
 
@@ -292,6 +298,8 @@ IProcessable
 [LinearDrive.ConfigureAutoDrive(Boolean)]: LinearDrive.md#Tilia_Interactions_Controllables_LinearDriver_LinearDrive_ConfigureAutoDrive_System_Boolean_
 [Drive<LinearDriveFacade, LinearDrive>.Facade]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Facade
 [Drive<LinearDriveFacade, LinearDrive>.EventOutputContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EventOutputContainer
+[Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetup]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetup
+[Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetupFirstTimeOnly]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetupFirstTimeOnly
 [Drive<LinearDriveFacade, LinearDrive>.TargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_TargetValueReachedThreshold
 [Drive<LinearDriveFacade, LinearDrive>.EmitEvents]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitEvents
 [Drive<LinearDriveFacade, LinearDrive>.Value]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Value
@@ -310,6 +318,7 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.cachedMoveToTargetValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_cachedMoveToTargetValue
 [Drive<LinearDriveFacade, LinearDrive>.cachedTargetValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_cachedTargetValue
 [Drive<LinearDriveFacade, LinearDrive>.cachedDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_cachedDriveSpeed
+[Drive<LinearDriveFacade, LinearDrive>.ConfigureAutoDrive(Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ConfigureAutoDrive_System_Boolean_
 [Drive<LinearDriveFacade, LinearDrive>.SetUp()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUp
 [Drive<LinearDriveFacade, LinearDrive>.Process()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Process
 [Drive<LinearDriveFacade, LinearDrive>.SetDriveLimits()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetDriveLimits
@@ -317,7 +326,7 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.ProcessDriveSpeed(Single, Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ProcessDriveSpeed_System_Single_System_Boolean_
 [Drive<LinearDriveFacade, LinearDrive>.SetTargetValue(Single)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetTargetValue_System_Single_
 [Drive<LinearDriveFacade, LinearDrive>.CalculateDriveAxis(DriveAxis.Axis)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateDriveAxis_Tilia_Interactions_Controllables_Driver_DriveAxis_Axis_
-[Drive<LinearDriveFacade, LinearDrive>.ConfigureAutoDrive(Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ConfigureAutoDrive_System_Boolean_
+[Drive<LinearDriveFacade, LinearDrive>.ResetDrive()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDrive
 [Drive<LinearDriveFacade, LinearDrive>.CalculateValue(DriveAxis.Axis, FloatRange)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateValue_Tilia_Interactions_Controllables_Driver_DriveAxis_Axis_FloatRange_
 [Drive<LinearDriveFacade, LinearDrive>.CalculateDriveLimits(LinearDriveFacade)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateDriveLimits__0_
 [Drive<LinearDriveFacade, LinearDrive>.GetDriveTransform()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GetDriveTransform

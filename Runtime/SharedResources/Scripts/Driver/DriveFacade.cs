@@ -231,6 +231,7 @@
         [CalledAfterChangeOf(nameof(DriveAxis))]
         protected virtual void OnAfterDriveAxisChange()
         {
+            Drive.ResetDriveOnSetup = true;
             Drive.SetUp();
         }
 

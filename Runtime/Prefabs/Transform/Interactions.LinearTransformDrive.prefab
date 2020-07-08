@@ -697,6 +697,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facade: {fileID: 7040976075344879994}
   eventOutputContainer: {fileID: 7468202290724158542}
+  resetDriveOnSetup: 1
+  resetDriveOnSetupFirstTimeOnly: 1
   targetValueReachedThreshold: 0.025
   emitEvents: 1
   interactable: {fileID: 7736847107121358400}
@@ -1119,6 +1121,11 @@ PrefabInstance:
       propertyPath: isKinematicWhenInactive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4534934962641631106, guid: 702caa48c730e92469a1c5144fd8ed46,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3860205902975461033, guid: 702caa48c730e92469a1c5144fd8ed46,
         type: 3}
       propertyPath: Modified.m_PersistentCalls.m_Calls.Array.size
@@ -1148,11 +1155,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Modified.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534934962641631106, guid: 702caa48c730e92469a1c5144fd8ed46,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4297763714491022842, guid: 702caa48c730e92469a1c5144fd8ed46,
         type: 3}

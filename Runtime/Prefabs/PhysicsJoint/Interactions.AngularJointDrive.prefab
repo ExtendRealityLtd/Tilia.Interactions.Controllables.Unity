@@ -48,9 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facade: {fileID: 7220336169150892439}
   eventOutputContainer: {fileID: 6704188405665079684}
+  resetDriveOnSetup: 1
+  resetDriveOnSetupFirstTimeOnly: 1
   targetValueReachedThreshold: 0.075
   emitEvents: 1
-  resetRotationsOnSetup: 1
   joint: {fileID: 1471341665110845562}
   jointContainer: {fileID: 5306551537282979864}
 --- !u!114 &8646993169910720069
@@ -801,16 +802,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3648960081298957348, guid: 1bb7642ebf8d0a34aa23fc586ea87e6a,
-        type: 3}
-      propertyPath: primaryAction
-      value: 
-      objectReference: {fileID: 4070728723303430929}
-    - target: {fileID: 3648960081298957348, guid: 1bb7642ebf8d0a34aa23fc586ea87e6a,
-        type: 3}
-      propertyPath: secondaryAction
-      value: 
-      objectReference: {fileID: 7610232722202251261}
     - target: {fileID: 785982709505707726, guid: 1bb7642ebf8d0a34aa23fc586ea87e6a,
         type: 3}
       propertyPath: FirstGrabbed.m_PersistentCalls.m_Calls.Array.size
@@ -891,6 +882,16 @@ PrefabInstance:
       propertyPath: consumerRigidbody
       value: 
       objectReference: {fileID: 7881770749639878687}
+    - target: {fileID: 3648960081298957348, guid: 1bb7642ebf8d0a34aa23fc586ea87e6a,
+        type: 3}
+      propertyPath: primaryAction
+      value: 
+      objectReference: {fileID: 4070728723303430929}
+    - target: {fileID: 3648960081298957348, guid: 1bb7642ebf8d0a34aa23fc586ea87e6a,
+        type: 3}
+      propertyPath: secondaryAction
+      value: 
+      objectReference: {fileID: 7610232722202251261}
     - target: {fileID: 8140612074155134679, guid: 1bb7642ebf8d0a34aa23fc586ea87e6a,
         type: 3}
       propertyPath: ActiveAndEnabled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
