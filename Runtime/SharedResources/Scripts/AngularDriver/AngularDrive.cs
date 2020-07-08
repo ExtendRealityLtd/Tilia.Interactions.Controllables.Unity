@@ -1,8 +1,6 @@
 ﻿namespace Tilia.Interactions.Controllables.AngularDriver
 {
     using Malimbe.BehaviourStateRequirementMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using Tilia.Interactions.Controllables.Driver;
     using UnityEngine;
     using Zinnia.Data.Type;
@@ -13,15 +11,6 @@
     /// </summary>
     public abstract class AngularDrive : Drive<AngularDriveFacade, AngularDrive>
     {
-        #region Rotation Settings
-        /// <summary>
-        /// The joint being used to drive the rotation.
-        /// </summary>
-        [Serialized]
-        [field: Header("Rotation Settings"), DocumentedByXml]
-        public bool ResetRotationsOnSetup { get; set; } = true;
-        #endregion
-
         /// <summary>
         /// The previous rotation angle of the control.
         /// </summary>
@@ -106,12 +95,14 @@
             MatchActualTargetAngle(autoDriveTargetVelocity);
         }
 
-        /// <summary>
-        /// Resets the <see cref="Transform"/> rotation data.
-        /// </summary>
-        public virtual void ResetRotations()
+        /// <inheritdoc />
+        public override void ResetDrive()
         {
+            base.ResetDrive();
             GetDriveTransform().localRotation = Quaternion.identity;
+            previousActualRotation = Vector3.zero;
+            currentActualRotation = GetSimpleEulerAngles();
+            rotationMultiplier = 0f;
             previousPseudoRotation = 0f;
             currentPseudoRotation = 0f;
             pseudoAngularVelocity = 0f;
@@ -126,10 +117,6 @@
         /// <inheritdoc />
         protected override void SetUpInternals()
         {
-            if (ResetRotationsOnSetup)
-            {
-                ResetRotations();
-            }
             ConfigureAutoDrive(Facade.MoveToTargetValue);
             CalculateHingeLocation(Facade.HingeLocation);
         }

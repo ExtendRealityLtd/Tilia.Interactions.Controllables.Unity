@@ -26,6 +26,8 @@ The basis for a mechanism to drive motion on a control.
   * [Facade]
   * [NormalizedStepValue]
   * [NormalizedValue]
+  * [ResetDriveOnSetup]
+  * [ResetDriveOnSetupFirstTimeOnly]
   * [StepValue]
   * [TargetValueReachedThreshold]
   * [Value]
@@ -49,6 +51,7 @@ The basis for a mechanism to drive motion on a control.
   * [OnEnable()]
   * [Process()]
   * [ProcessDriveSpeed(Single, Boolean)]
+  * [ResetDrive()]
   * [ResetToCacheAfterReachedInitialTargetValue()]
   * [SetAxisDirection()]
   * [SetDriveLimits()]
@@ -260,6 +263,26 @@ The current normalized value for the drive control between the set limits.
 
 ```
 public float NormalizedValue { get; }
+```
+
+#### ResetDriveOnSetup
+
+Whether to reset the drive data when [SetUp()] is executed.
+
+##### Declaration
+
+```
+public bool ResetDriveOnSetup { get; set; }
+```
+
+#### ResetDriveOnSetupFirstTimeOnly
+
+Whether to set the [ResetDriveOnSetup] property back to false after [SetUp()] has executed to prevent future automatic resets until the value is manually changed again.
+
+##### Declaration
+
+```
+public bool ResetDriveOnSetupFirstTimeOnly { get; set; }
 ```
 
 #### StepValue
@@ -562,6 +585,16 @@ public virtual void ProcessDriveSpeed(float driveSpeed, bool moveToTargetValue)
 | System.Single | driveSpeed | The speed to drive the control at. |
 | System.Boolean | moveToTargetValue | Whether to allow the drive to automatically move the control to the desired target value. |
 
+#### ResetDrive()
+
+Resets the drive back to any default settings.
+
+##### Declaration
+
+```
+public virtual void ResetDrive()
+```
+
 #### ResetToCacheAfterReachedInitialTargetValue()
 
 Resets the drive parameters to the cached values after the initial target value is reached.
@@ -655,6 +688,9 @@ IProcessable
 [EmitEvents]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitEvents
 [StepValue]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StepValue
 [Value]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Value
+[SetUp()]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUp
+[ResetDriveOnSetup]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetup
+[SetUp()]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUp
 [DriveAxis.Axis]: DriveAxis.Axis.md
 [AxisDirection]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_AxisDirection
 [DriveLimits]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DriveLimits
@@ -681,6 +717,8 @@ IProcessable
 [Facade]: #Facade
 [NormalizedStepValue]: #NormalizedStepValue
 [NormalizedValue]: #NormalizedValue
+[ResetDriveOnSetup]: #ResetDriveOnSetup
+[ResetDriveOnSetupFirstTimeOnly]: #ResetDriveOnSetupFirstTimeOnly
 [StepValue]: #StepValue
 [TargetValueReachedThreshold]: #TargetValueReachedThreshold
 [Value]: #Value
@@ -704,6 +742,7 @@ IProcessable
 [OnEnable()]: #OnEnable
 [Process()]: #Process
 [ProcessDriveSpeed(Single, Boolean)]: #ProcessDriveSpeedSingle-Boolean
+[ResetDrive()]: #ResetDrive
 [ResetToCacheAfterReachedInitialTargetValue()]: #ResetToCacheAfterReachedInitialTargetValue
 [SetAxisDirection()]: #SetAxisDirection
 [SetDriveLimits()]: #SetDriveLimits

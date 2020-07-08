@@ -31,6 +31,21 @@
         public GameObject EventOutputContainer { get; protected set; }
         #endregion
 
+        #region Drive Settings
+        /// <summary>
+        /// Whether to reset the drive data when <see cref="SetUp"/> is executed.
+        /// </summary>
+        [Serialized]
+        [field: Header("Drive Settings"), DocumentedByXml]
+        public bool ResetDriveOnSetup { get; set; } = true;
+        /// <summary>
+        /// Whether to set the <see cref="ResetDriveOnSetup"/> property back to <see cref="false"/> after <see cref="SetUp"/> has executed to prevent future automatic resets until the value is manually changed again.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public bool ResetDriveOnSetupFirstTimeOnly { get; set; } = true;
+        #endregion
+
         #region Target Settings
         /// <summary>
         /// The threshold that the current normalized value of the control can be within to consider the target value has been reached.
@@ -113,11 +128,22 @@
         protected float cachedDriveSpeed;
 
         /// <summary>
+        /// Configures the ability to automatically drive the control.
+        /// </summary>
+        /// <param name="autoDrive">Whether the drive can automatically drive the control.</param>
+        public virtual void ConfigureAutoDrive(bool autoDrive) { }
+
+        /// <summary>
         /// Sets up the drive mechanism.
         /// </summary>
         [RequiresBehaviourState]
         public virtual void SetUp()
         {
+            if (ResetDriveOnSetup)
+            {
+                ResetDrive();
+            }
+
             SetUpInternals();
             SetDriveLimits();
             SetAxisDirection();
@@ -215,10 +241,16 @@
         }
 
         /// <summary>
-        /// Configures the ability to automatically drive the control.
+        /// Resets the drive back to any default settings.
         /// </summary>
-        /// <param name="autoDrive">Whether the drive can automatically drive the control.</param>
-        public virtual void ConfigureAutoDrive(bool autoDrive) { }
+        [RequiresBehaviourState]
+        public virtual void ResetDrive()
+        {
+            if (ResetDriveOnSetupFirstTimeOnly)
+            {
+                ResetDriveOnSetup = false;
+            }
+        }
 
         /// <summary>
         /// Calculates the current value of the control.
