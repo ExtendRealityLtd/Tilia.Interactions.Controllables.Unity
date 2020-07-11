@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.9.4](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.9.3...v1.9.4) (2020-07-11)
+
+#### Bug Fixes
+
+* **Facade:** use extension method to set enum value ([02ad5b9](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/02ad5b92de2ebd4f0dcc8a91b6db0ea3da683571))
+  > The SetDriveAxis method now uses the Zinnia EnumExtensions helper method to set the value of the enum by the index instead of repeating the same logic.
+
 ### [1.9.3](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.9.2...v1.9.3) (2020-07-11)
 
 #### Miscellaneous Chores
