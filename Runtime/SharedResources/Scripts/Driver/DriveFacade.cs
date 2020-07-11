@@ -8,6 +8,7 @@
     using UnityEngine.Events;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Type;
+    using Zinnia.Extension;
 
     /// <summary>
     /// Defines the event with the drive <see cref="float"/> value.
@@ -134,7 +135,7 @@
         /// <param name="axisIndex">The index of the <see cref="DriveAxis.Axis"/>.</param>
         public virtual void SetDriveAxis(int axisIndex)
         {
-            DriveAxis = (DriveAxis.Axis)Mathf.Clamp(axisIndex, 0, Enum.GetValues(typeof(DriveAxis.Axis)).Length);
+            DriveAxis = EnumExtensions.GetByIndex<DriveAxis.Axis>(axisIndex);
         }
 
         /// <summary>
