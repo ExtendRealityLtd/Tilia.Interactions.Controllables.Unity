@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.9.3](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.9.2...v1.9.3) (2020-07-11)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.interactions.interactables.unity ([5955915](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/5955915e418bd639e8ff7696cfeec1d0498bee94))
+  > Bumps [io.extendreality.tilia.interactions.interactables.unity](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity) from 1.11.0 to 1.11.1. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/compare/v1.11.0...v1.11.1)
+  > 
+  > Signed-off-by: dependabot-preview[bot] <support@dependabot.com>
+
 ### [1.9.2](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.9.1...v1.9.2) (2020-07-11)
 
 #### Miscellaneous Chores
