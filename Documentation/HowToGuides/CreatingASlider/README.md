@@ -19,32 +19,27 @@ A slider is a very simple control that allows distinct values to be selected by 
 
 ### Step 1
 
-Create a new `Empty` GameObject by selecting `Main Menu -> GameObject -> Create Empty` and change the Transform properties to:
-
-* Position: `X = 0, Y = 0, Z = 0`
-* Scale: `X = 1, Y = 1, Z = 1`
-
-Rename the new empty `GameObject` to `Slider`.
+Create a new `Empty` GameObject by selecting `Main Menu -> GameObject -> Create Empty` and rename it to `Slider`.
 
 ![Create Slider Container](assets/images/CreateSliderContainer.png)
 
 ### Step 2
 
-Right click on the `Slider` GameObject, select `3D Object -> Cube` and change the Transform properties to:
+Create a new `Cube` Unity 3D Object by selecting `Main Menu -> GameObject -> 3D Object -> Cube` and make it a child of the `Slider` GameObject then change the Transform properties to:
 
 * Scale: `X = 1.11, Y = 0.01, Z = 0.02`
 
-Rename the new `Cube` to `SliderBar`.
-
-Finally, disable the automatically created `Box Collider` on the `SliderBar` GameObject.
+Rename the new `Cube` to `SliderBar` and disable the `Box Collider` component.
 
 ![Create Slider Bar](assets/images/CreateSliderBar.png)
 
-> It may be easier at this point to apply a different material to the SliderBar to make it more distinct.
+> It may be easier to apply a different material to the `SliderBar` GameObject to make it easier to distinguish.
 
 ### Step 3
 
-Create the remaining components of the slider by duplicating the `SliderBar` GameObject 5 times and for each duplicated GameObject change the Transform properties to:
+Create the remaining components of the `Slider` by duplicating the `SliderBar` GameObject five times by right clicking on the `Top` GameObject and selecting `Duplicate` from the context menu.
+
+For each duplicated GameObject change the Transform properties to:
 
 #### SliderBar (1)
 
@@ -87,9 +82,9 @@ Rename the duplicated `SliderBar (5)` to `MaxEnd`.
 
 ### Step 4
 
-Expand the `Tilia Interactions Controllables Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.LinearJointDrive` prefab into the Unity hierarchy window so it becomes a child of the `Slider` GameObject.
+Expand the `Tilia Interactions Controllables Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.LinearJointDrive` prefab into the Unity Hierarchy window as a child of the `Slider` GameObject.
 
-![Add LinearJointDrive Prefab To Scene](assets/images/AddLinearJointDrivePrefabToScene.png)
+![Add Linear Joint Drive Prefab To Scene](assets/images/AddLinearJointDrivePrefabToScene.png)
 
 > The `Interactions.LinearJointDrive` prefab uses Unity joints and therefore works within the Unity physics system, however the `Interactions.LinearTransformDrive` is a linear drive that does not utilize joints or physics and can easily be swapped in place at this step if required.
 
@@ -107,7 +102,7 @@ Select the `Slider -> Interactions.LinearJointDrive` GameObject from the Unity H
 
 * Move To Target Value: `checked`
 * Target Value: `0`
-* Step Range: `Min = 0, Max = 2`
+* Step Range: `Min = 0` / `Max = 2`
 
 ![Update Linear Drive Properties](assets/images/UpdateLinearDriveProperties.png)
 
@@ -156,7 +151,7 @@ This simple script has a single method called `SetColor` which will take a `floa
 
 Select the `Sphere` GameObject then click `Add Component` and add the `ColorChooser` component.
 
-Drag and drop the `Sphere` GameObject into the `Target` property on the `ColorChooser` component and set the `Colors -> Size` property value to `3` on the `ColorChooser` component then specify 3 distinct color choices for each color element.
+Drag and drop the `Sphere` GameObject into the `Target` property on the `ColorChooser` component and set the `Colors -> Size` property value to `3` on the `ColorChooser` component then specify three distinct color choices for each color element.
 
 ![Add ColorChooser Component And Configure Properties](assets/images/AddColorChooserComponentAndConfigureProperties.png)
 
@@ -178,21 +173,23 @@ This is because we have the `Move To Target Value` property on the `Linear Drive
 
 ### Step 11
 
-We can update the `Target Value` to match the current step value we are at by simply adding an event on the drive's internal Interactable so when it is ungrabbed we set the drive's `Target Value` to the current step value.
+We can update the `Target Value` to match the current step value we are at by simply adding an event on the drive's internal Interactable so when the slider is finally ungrabbed we can set the drive's `Target Value` to the current step value.
 
-Select the `Slider -> Interactions.LinearJointDrive -> Internal -> JointContainer -> Joint -> Interactions.Interactable` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `Ungrabbed` event parameter on the `Interactable Facade` component.
+Select the `Slider -> Interactions.LinearJointDrive -> Internal -> JointContainer -> Joint -> Interactions.Interactable` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `Last Ungrabbed` event parameter on the `Interactable Facade` component.
+
+> We use the `Last Ungrabbed` event instead of the `Ungrabbed` event because we only want this to occur when no Interactors are grabbing the `Slider` anymore.
 
 Drag and drop the `Slider -> Interactions.LinearJointDrive` GameObject into the event listener box that appears on the `Ungrabbed` event parameter on the `Interactable Facade` component that displays `None (Object)`.
 
-![Drag And Drop LinearJointDrive Into Ungrabbed Parameter](assets/images/DragAndDropLinearJointDriveIntoUngrabbedParameter.png)
+![Drag And Drop Linear Joint Drive Into Ungrabbed Parameter](assets/images/DragAndDropLinearJointDriveIntoUngrabbedParameter.png)
 
-Select a function to perform when the `Ungrabbde` event is emitted. For this example, select the `LinearDriveFacade -> SetTargetValueByStepValue` function (be sure to select `Static Parameters - SetTargetValueByStepValue` for this example).
+Select a function to perform when the `Last Ungrabbed` event is emitted. For this example, select the `LinearDriveFacade -> SetTargetValueByStepValue` function (be sure to select `Static Parameters - SetTargetValueByStepValue` for this example).
 
 ![Select Set Target Value By Step Value Function](assets/images/SelectSetTargetValueByStepValueFunction.png)
 
 ### Done
 
-Play the Unity scene and grab the slider cube again, you'll notice now that when you release the slider it will automatically snap to the nearest step notch.
+Play the Unity scene and grab the `Slider` and notice how the `Sphere` changes color when each notch is visited. You will also see that when you release the `Slider` it will automatically snap to the nearest step notch.
 
 ![Slider Snaps To Step Value](assets/images/SliderSnapsToStepValue.png)
 
