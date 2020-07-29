@@ -44,6 +44,12 @@
         [Serialized]
         [field: DocumentedByXml]
         public bool ResetDriveOnSetupFirstTimeOnly { get; set; } = true;
+        /// <summary>
+        /// The value to set the drive speed to when driving the control to the initial start value.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public float InitialValueDriveSpeed { get; set; } = 5000f;
         #endregion
 
         #region Target Settings
@@ -86,10 +92,6 @@
         /// </summary>
         public FloatRange DriveLimits { get; protected set; }
 
-        /// <summary>
-        /// The value to set the drive speed to when driving the control to the initial start value.
-        /// </summary>
-        protected const float initialValueDriveSpeed = 5000f;
         /// <summary>
         /// The previous state of <see cref="Value"/>.
         /// </summary>
@@ -424,7 +426,7 @@
             EmitEvents = false;
             Facade.MoveToTargetValue = true;
             Facade.TargetValue = Facade.InitialTargetValue;
-            Facade.DriveSpeed = initialValueDriveSpeed;
+            Facade.DriveSpeed = InitialValueDriveSpeed;
             SetUp();
         }
 
