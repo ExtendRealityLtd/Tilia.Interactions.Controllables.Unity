@@ -180,6 +180,7 @@ MonoBehaviour:
   eventOutputContainer: {fileID: 6134235524921124102}
   resetDriveOnSetup: 1
   resetDriveOnSetupFirstTimeOnly: 1
+  initialValueDriveSpeed: 3500
   targetValueReachedThreshold: 0.075
   emitEvents: 1
   interactable: {fileID: 4763570561051037854}
@@ -496,7 +497,7 @@ PrefabInstance:
       propertyPath: Modified.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 1659144888459829164, guid: 702caa48c730e92469a1c5144fd8ed46,
+    - target: {fileID: 6240288194601417652, guid: 702caa48c730e92469a1c5144fd8ed46,
         type: 3}
       propertyPath: Emitted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -541,7 +542,7 @@ PrefabInstance:
       propertyPath: Emitted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6240288194601417652, guid: 702caa48c730e92469a1c5144fd8ed46,
+    - target: {fileID: 1659144888459829164, guid: 702caa48c730e92469a1c5144fd8ed46,
         type: 3}
       propertyPath: Emitted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2

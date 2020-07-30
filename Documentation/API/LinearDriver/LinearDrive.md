@@ -38,6 +38,8 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetupFirstTimeOnly]
 
+[Drive<LinearDriveFacade, LinearDrive>.InitialValueDriveSpeed]
+
 [Drive<LinearDriveFacade, LinearDrive>.TargetValueReachedThreshold]
 
 [Drive<LinearDriveFacade, LinearDrive>.EmitEvents]
@@ -53,8 +55,6 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.AxisDirection]
 
 [Drive<LinearDriveFacade, LinearDrive>.DriveLimits]
-
-[Drive<LinearDriveFacade, LinearDrive>.initialValueDriveSpeed]
 
 [Drive<LinearDriveFacade, LinearDrive>.previousValue]
 
@@ -247,6 +247,7 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.EventOutputContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EventOutputContainer
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetup]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetup
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetupFirstTimeOnly]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetupFirstTimeOnly
+[Drive<LinearDriveFacade, LinearDrive>.InitialValueDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialValueDriveSpeed
 [Drive<LinearDriveFacade, LinearDrive>.TargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_TargetValueReachedThreshold
 [Drive<LinearDriveFacade, LinearDrive>.EmitEvents]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitEvents
 [Drive<LinearDriveFacade, LinearDrive>.Value]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Value
@@ -255,7 +256,6 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.NormalizedStepValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_NormalizedStepValue
 [Drive<LinearDriveFacade, LinearDrive>.AxisDirection]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_AxisDirection
 [Drive<LinearDriveFacade, LinearDrive>.DriveLimits]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DriveLimits
-[Drive<LinearDriveFacade, LinearDrive>.initialValueDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_initialValueDriveSpeed
 [Drive<LinearDriveFacade, LinearDrive>.previousValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_previousValue
 [Drive<LinearDriveFacade, LinearDrive>.previousStepValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_previousStepValue
 [Drive<LinearDriveFacade, LinearDrive>.previousTargetValueReached]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_previousTargetValueReached

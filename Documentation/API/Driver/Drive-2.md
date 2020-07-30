@@ -12,7 +12,6 @@ The basis for a mechanism to drive motion on a control.
   * [cachedEmitEvents]
   * [cachedMoveToTargetValue]
   * [cachedTargetValue]
-  * [initialValueDriveSpeed]
   * [isMoving]
   * [isMovingToInitialTargetValue]
   * [previousStepValue]
@@ -24,6 +23,7 @@ The basis for a mechanism to drive motion on a control.
   * [EmitEvents]
   * [EventOutputContainer]
   * [Facade]
+  * [InitialValueDriveSpeed]
   * [NormalizedStepValue]
   * [NormalizedValue]
   * [ResetDriveOnSetup]
@@ -133,16 +133,6 @@ The cached value for TargetValue.
 protected float cachedTargetValue
 ```
 
-#### initialValueDriveSpeed
-
-The value to set the drive speed to when driving the control to the initial start value.
-
-##### Declaration
-
-```
-protected const float initialValueDriveSpeed = 5000F
-```
-
 #### isMoving
 
 Whether the control is moving or not.
@@ -243,6 +233,16 @@ The public interface facade.
 
 ```
 public TFacade Facade { get; protected set; }
+```
+
+#### InitialValueDriveSpeed
+
+The value to set the drive speed to when driving the control to the initial start value.
+
+##### Declaration
+
+```
+public float InitialValueDriveSpeed { get; set; }
 ```
 
 #### NormalizedStepValue
@@ -703,7 +703,6 @@ IProcessable
 [cachedEmitEvents]: #cachedEmitEvents
 [cachedMoveToTargetValue]: #cachedMoveToTargetValue
 [cachedTargetValue]: #cachedTargetValue
-[initialValueDriveSpeed]: #initialValueDriveSpeed
 [isMoving]: #isMoving
 [isMovingToInitialTargetValue]: #isMovingToInitialTargetValue
 [previousStepValue]: #previousStepValue
@@ -715,6 +714,7 @@ IProcessable
 [EmitEvents]: #EmitEvents
 [EventOutputContainer]: #EventOutputContainer
 [Facade]: #Facade
+[InitialValueDriveSpeed]: #InitialValueDriveSpeed
 [NormalizedStepValue]: #NormalizedStepValue
 [NormalizedValue]: #NormalizedValue
 [ResetDriveOnSetup]: #ResetDriveOnSetup
