@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.9.8](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.9.7...v1.9.8) (2020-07-30)
+
+#### Bug Fixes
+
+* **Drive:** expose initial drive value speed as public property ([da2c338](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/da2c33815aecbe07bc3b4fa3396debd96776319d))
+  > The IntialDriveValueSpeed is now a public changable property rather than a protected constant field so it can be adapted to suit different requirements.
+  > 
+  > The AngularTransformDrive did not work well at such a high speed so it has now been reduced to make it work correctly using this new ability to publicly set the initial speed of the drive.
+
 ### [1.9.7](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.9.6...v1.9.7) (2020-07-28)
 
 #### Miscellaneous Chores
