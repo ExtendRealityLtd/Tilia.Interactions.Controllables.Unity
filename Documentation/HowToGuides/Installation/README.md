@@ -1,9 +1,9 @@
 # Installing the package
 
 > * Level: Beginner
->
+> 
 > * Reading Time: 2 minutes
->
+> 
 > * Checked with: Unity 2018.3.14f1
 
 ## Introduction
@@ -29,12 +29,15 @@ The package four controllable prefabs and these can be included in a [Unity] sof
 ### Step 3: Adding the package to the Unity project manifest
 
 * Navigate to the `Packages` directory of your project.
+
 * Adjust the [project manifest file][Project-Manifest] `manifest.json` in a text editor.
+  
   * Ensure `https://registry.npmjs.org/` is part of `scopedRegistries`.
     * Ensure `io.extendreality` is part of `scopes`.
   * Add `io.extendreality.tilia.interactions.controllables.unity` to `dependencies`, stating the latest version.
-
+  
   A minimal example ends up looking like this. Please note that the version `X.Y.Z` stated here is to be replaced with [the latest released version][Latest-Release] which is currently [![Release][Version-Release]][Releases].
+  
   ```json
   {
     "scopedRegistries": [
@@ -52,6 +55,7 @@ The package four controllable prefabs and these can be included in a [Unity] sof
     }
   }
   ```
+
 * Switch back to the Unity software and wait for it to finish importing the added package.
 
 ### Done
@@ -64,5 +68,5 @@ The package will now also show up in the Unity Package Manager UI. From then on 
 [Unity Package Manager]: https://docs.unity3d.com/Manual/upm-ui.html
 [Project-Manifest]: https://docs.unity3d.com/Manual/upm-manifestPrj.html
 [Version-Release]: https://img.shields.io/github/release/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity.svg
-[Releases]: ../../releases
-[Latest-Release]: ../../releases/latest
+[Releases]: ../../../../../releases
+[Latest-Release]: ../../../../../releases/latest
