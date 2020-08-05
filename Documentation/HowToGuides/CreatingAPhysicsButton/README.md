@@ -34,7 +34,7 @@ Create a new `Empty` GameObject by selecting `Main Menu -> GameObject -> Create 
 
 ### Step 3
 
-Expand the `Tilia Interactions Controllables Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `LinearJointDrive` prefab into the Unity Hierarchy window as a child of the  `ButtonContainer` GameObject.
+Expand the `Tilia Interactions Controllables Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.LinearJointDrive` prefab into the Unity Hierarchy window as a child of the  `ButtonContainer` GameObject.
 
 ![Drag And Drop Linear Joint Drive](assets/images/DragAndDropLinearJointDrive.png)
 
@@ -48,7 +48,7 @@ Select the `ButtonContainer -> Interactions.LinearJointDrive -> Internal -> Join
 
 ### Step 5
 
-Select the `Interactions.LinearJointDrive` GameObject from the Unity Hierarchy and on the `Linear Drive Facade` component set the following properties to:
+Select the `ButtonContainer -> Interactions.LinearJointDrive` GameObject from the Unity Hierarchy and on the `Linear Drive Facade` component set the following properties to:
 
 * Drive Axis: `Y Axis`
 * Start At Initial Target Value: `checked`
@@ -348,7 +348,7 @@ The `Rules Matcher` component on the `ButtonContainer -> CollisionStarted` GameO
 
 ### Done
 
-Play the scene and you will notice as you push down on the button with the either controller, the button moves down to its maximum point and releasing it moves it back to its original position.
+Play the Unity scene and you will notice as you push down on the button with the either controller, the button moves down to its maximum point and releasing it moves it back to its original position.
 
 You will also notice the correct Collider Follower is enabled depending on the touching controller.
 
