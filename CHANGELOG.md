@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.10.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.9.9...v1.10.0) (2020-08-05)
+
+#### Features
+
+* **HowToGuides:** add guide on creating artificial button ([7c55c25](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/7c55c2585a53e3c87920be26aab8d83e88082e3f))
+  > The guide shows how to create an artificial button using the Linear Transform Drive.
+
+#### Bug Fixes
+
+* **HowToGuides:** apply style guidelines to Creating A Physics Button ([0d8e5dd](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/0d8e5ddc82a8525005a695f61bfc2235bd6b4e4a))
+  > The Creating A Physics Button guide has been updated to be more inline with the style guidelines.
+
 ### [1.9.9](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.9.8...v1.9.9) (2020-08-04)
 
 #### Bug Fixes
