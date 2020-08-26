@@ -320,7 +320,7 @@
         /// <returns>The calculated step value.</returns>
         protected virtual float CalculateStepValue(TFacade facade)
         {
-            return Mathf.Round(Mathf.Lerp(facade.StepRange.minimum / facade.StepIncrement, facade.StepRange.maximum / facade.StepIncrement, NormalizedValue));
+            return Mathf.Round(Mathf.Lerp(facade.StepRange.minimum / facade.StepIncrement, facade.StepRange.maximum / facade.StepIncrement, NormalizedValue)) * facade.StepIncrement;
         }
 
         /// <summary>
