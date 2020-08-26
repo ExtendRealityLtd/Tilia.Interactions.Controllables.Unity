@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.10.6](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.10.5...v1.10.6) (2020-08-26)
+
+#### Bug Fixes
+
+* **Drive:** calculate correct step value for increments other than 1 ([cbc9d7f](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/cbc9d7f9cc664ae4c46ff10bb46ec3b91d330116))
+  > The Step Value calculation was only working if the Step Increment value was 1 because the final value should be multiplied by the Step Increment value but it wasn't. It is now being multiplied correctly.
+
 ### [1.10.5](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.10.4...v1.10.5) (2020-08-26)
 
 #### Miscellaneous Chores
