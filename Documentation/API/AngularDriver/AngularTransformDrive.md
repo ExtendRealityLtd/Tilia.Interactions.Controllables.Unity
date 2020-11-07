@@ -127,6 +127,8 @@ IProcessable
 
 [Drive<AngularDriveFacade, AngularDrive>.cachedDriveSpeed]
 
+[Drive<AngularDriveFacade, AngularDrive>.wasDisabled]
+
 [Drive<AngularDriveFacade, AngularDrive>.ConfigureAutoDrive(Boolean)]
 
 [Drive<AngularDriveFacade, AngularDrive>.SetUp()]
@@ -152,6 +154,8 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.GetDriveTransform()]
 
 [Drive<AngularDriveFacade, AngularDrive>.OnEnable()]
+
+[Drive<AngularDriveFacade, AngularDrive>.OnDisable()]
 
 [Drive<AngularDriveFacade, AngularDrive>.SetUpInternals()]
 
@@ -421,6 +425,7 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.cachedMoveToTargetValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_cachedMoveToTargetValue
 [Drive<AngularDriveFacade, AngularDrive>.cachedTargetValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_cachedTargetValue
 [Drive<AngularDriveFacade, AngularDrive>.cachedDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_cachedDriveSpeed
+[Drive<AngularDriveFacade, AngularDrive>.wasDisabled]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_wasDisabled
 [Drive<AngularDriveFacade, AngularDrive>.ConfigureAutoDrive(Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ConfigureAutoDrive_System_Boolean_
 [Drive<AngularDriveFacade, AngularDrive>.SetUp()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUp
 [Drive<AngularDriveFacade, AngularDrive>.Process()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Process
@@ -434,6 +439,7 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.CalculateDriveLimits(AngularDriveFacade)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateDriveLimits__0_
 [Drive<AngularDriveFacade, AngularDrive>.GetDriveTransform()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GetDriveTransform
 [Drive<AngularDriveFacade, AngularDrive>.OnEnable()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_OnEnable
+[Drive<AngularDriveFacade, AngularDrive>.OnDisable()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_OnDisable
 [Drive<AngularDriveFacade, AngularDrive>.SetUpInternals()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUpInternals
 [Drive<AngularDriveFacade, AngularDrive>.SetDriveTargetValue(Vector3)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetDriveTargetValue_Vector3_
 [Drive<AngularDriveFacade, AngularDrive>.EliminateDriveVelocity()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EliminateDriveVelocity

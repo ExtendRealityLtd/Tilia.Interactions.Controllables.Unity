@@ -17,6 +17,7 @@ The basis for a mechanism to drive motion on a control.
   * [previousStepValue]
   * [previousTargetValueReached]
   * [previousValue]
+  * [wasDisabled]
 * [Properties]
   * [AxisDirection]
   * [DriveLimits]
@@ -48,6 +49,7 @@ The basis for a mechanism to drive motion on a control.
   * [GetDriveTransform()]
   * [GetTargetValue()]
   * [MoveToInitialTargetValue()]
+  * [OnDisable()]
   * [OnEnable()]
   * [Process()]
   * [ProcessDriveSpeed(Single, Boolean)]
@@ -181,6 +183,16 @@ The previous state of [Value].
 
 ```
 protected float previousValue
+```
+
+#### wasDisabled
+
+Whether this component has previously been disabled before the next process.
+
+##### Declaration
+
+```
+protected bool wasDisabled
 ```
 
 ### Properties
@@ -550,6 +562,14 @@ Moves the drive to the initial target value.
 protected virtual void MoveToInitialTargetValue()
 ```
 
+#### OnDisable()
+
+##### Declaration
+
+```
+protected virtual void OnDisable()
+```
+
 #### OnEnable()
 
 ##### Declaration
@@ -708,6 +728,7 @@ IProcessable
 [previousStepValue]: #previousStepValue
 [previousTargetValueReached]: #previousTargetValueReached
 [previousValue]: #previousValue
+[wasDisabled]: #wasDisabled
 [Properties]: #Properties
 [AxisDirection]: #AxisDirection
 [DriveLimits]: #DriveLimits
@@ -739,6 +760,7 @@ IProcessable
 [GetDriveTransform()]: #GetDriveTransform
 [GetTargetValue()]: #GetTargetValue
 [MoveToInitialTargetValue()]: #MoveToInitialTargetValue
+[OnDisable()]: #OnDisable
 [OnEnable()]: #OnEnable
 [Process()]: #Process
 [ProcessDriveSpeed(Single, Boolean)]: #ProcessDriveSpeedSingle-Boolean
