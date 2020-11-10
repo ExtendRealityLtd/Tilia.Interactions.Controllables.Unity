@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.10.13](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.10.12...v1.10.13) (2020-11-10)
+
+#### Bug Fixes
+
+* **Drive:** process the drive correctly after disable and re-enable ([a7654a6](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/a7654a62c0f027eb093bf6fb08e6c8d3abf9bf32))
+  > There was an issue where the drive would not correctly run the process code after it was disabled and re-enabled because the process code relied on the fact that the drive would start in a central position and move to a different location which would allow the process mechanism to operate because the value delta has changed.
+  > 
+  > But upon disabling and re-enabling, the value of the button location would be the same causing no process to occur which would then in turn prevent the events from being emitted.
+  > 
+  > This fix just ensures that upon disable and re-enable the process at least happens once to ensure the correct set up occurs.
+
 ### [1.10.12](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.10.11...v1.10.12) (2020-11-01)
 
 #### Miscellaneous Chores
