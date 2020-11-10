@@ -128,6 +128,10 @@
         /// The cached value for <see cref="DriveSpeed"/>.
         /// </summary>
         protected float cachedDriveSpeed;
+        /// <summary>
+        /// Whether this component has previously been disabled before the next process.
+        /// </summary>
+        protected bool wasDisabled;
 
         /// <summary>
         /// Configures the ability to automatically drive the control.
@@ -159,7 +163,7 @@
         [RequiresBehaviourState]
         public virtual void Process()
         {
-            if (!Value.ApproxEquals(previousValue))
+            if (wasDisabled || !Value.ApproxEquals(previousValue))
             {
                 if (!isMoving && previousValue < float.MaxValue)
                 {
@@ -194,6 +198,8 @@
             {
                 EmitTargetValueReached();
             }
+
+            wasDisabled = false;
         }
 
         /// <summary>
@@ -277,6 +283,11 @@
         {
             SetUp();
             MoveToInitialTargetValue();
+        }
+
+        protected virtual void OnDisable()
+        {
+            wasDisabled = true;
         }
 
         /// <summary>
