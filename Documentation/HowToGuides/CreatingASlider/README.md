@@ -12,7 +12,7 @@ A slider is a very simple control that allows distinct values to be selected by 
 
 ## Prerequisites
 
-* [Add the Tilia.Interactions.Interactor.Unity] prefab to the scene Hierarchy.
+* [Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor] prefab to the scene hierarchy.
 * [Install the Tilia.Interactions.Controllables.Unity] package dependency in to your [Unity] project.
 
 ## Let's Start
@@ -82,7 +82,7 @@ Rename the duplicated `SliderBar (5)` to `MaxEnd`.
 
 ### Step 4
 
-Expand the `Tilia Interactions Controllables Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.LinearJointDrive` prefab into the Unity Hierarchy window as a child of the `Slider` GameObject.
+Expand the `Tilia Interactions Controllables Unity` package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.LinearJointDrive` prefab into the Unity Hierarchy window as a child of the `Slider` GameObject.
 
 ![Add Linear Joint Drive Prefab To Scene](assets/images/AddLinearJointDrivePrefabToScene.png)
 
@@ -90,7 +90,7 @@ Expand the `Tilia Interactions Controllables Unity` Package directory in the Uni
 
 ### Step 5
 
-Select the `Slider -> Interactions.LinearJointDrive -> Internal -> JointContainer -> Joint -> Interactions.Interactable -> MeshContainer -> Cube` GameObject from the Unity Hierarchy and change the Transform properties to:
+Select the `Slider -> Interactions.LinearJointDrive -> Internal -> JointContainer -> Joint -> Interactions.Interactable -> MeshContainer -> Cube` GameObject from the Unity Hierarchy window and change the Transform properties to:
 
 * Scale: `X = 0.1, Y = 0.1, Z = 0.1`
 
@@ -98,7 +98,7 @@ Select the `Slider -> Interactions.LinearJointDrive -> Internal -> JointContaine
 
 ### Step 6
 
-Select the `Slider -> Interactions.LinearJointDrive` GameObject from the Unity Hierarchy and on the `Linear Drive Facade` component set the following properties to:
+Select the `Slider -> Interactions.LinearJointDrive` GameObject from the Unity Hierarchy window and on the `Linear Drive Facade` component set the following properties to:
 
 * Move To Target Value: `checked`
 * Target Value: `0`
@@ -157,7 +157,7 @@ Drag and drop the `Sphere` GameObject into the `Target` property on the `ColorCh
 
 ### Step 10
 
-Select the `Slider -> Interactions.LinearJointDrive` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `Step Value Changed` event parameter on the `Linear Drive Facade` component.
+Select the `Slider -> Interactions.LinearJointDrive` GameObject from the Unity Hierarchy window and click the `+` symbol in the bottom right corner of the `Step Value Changed` event parameter on the `Linear Drive Facade` component.
 
 Drag and drop the `Sphere` GameObject into the event listener box that appears on the `Step Value Changed` event parameter on the `Linear Drive Facade` component that displays `None (Object)`.
 
@@ -175,7 +175,7 @@ This is because we have the `Move To Target Value` property on the `Linear Drive
 
 We can update the `Target Value` to match the current step value we are at by simply adding an event on the drive's internal Interactable so when the slider is finally ungrabbed we can set the drive's `Target Value` to the current step value.
 
-Select the `Slider -> Interactions.LinearJointDrive -> Internal -> JointContainer -> Joint -> Interactions.Interactable` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `Last Ungrabbed` event parameter on the `Interactable Facade` component.
+Select the `Slider -> Interactions.LinearJointDrive -> Internal -> JointContainer -> Joint -> Interactions.Interactable` GameObject from the Unity Hierarchy window and click the `+` symbol in the bottom right corner of the `Last Ungrabbed` event parameter on the `Interactable Facade` component.
 
 > We use the `Last Ungrabbed` event instead of the `Ungrabbed` event because we only want this to occur when no Interactors are grabbing the `Slider` anymore.
 
@@ -193,6 +193,6 @@ Play the Unity scene and grab the `Slider` and notice how the `Sphere` changes c
 
 ![Slider Snaps To Step Value](assets/images/SliderSnapsToStepValue.png)
 
-[Add the Tilia.Interactions.Interactor.Unity]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor/README.md
+[Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor/README.md
 [Install the Tilia.Interactions.Controllables.Unity]: ../Installation/README.md
 [Unity]: https://unity3d.com/

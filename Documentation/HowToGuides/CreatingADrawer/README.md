@@ -12,7 +12,7 @@ A drawer is a simple example of how to use a Linear Drive to create a sliding ob
 
 ## Prerequisites
 
-* [Add the Tilia.Interactions.Interactor.Unity] prefab to the scene Hierarchy.
+* [Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor] prefab to the scene hierarchy.
 * [Install the Tilia.Interactions.Controllables.Unity] package dependency in to your [Unity] project.
 
 ## Let's Start
@@ -74,7 +74,7 @@ Rename the duplicated `Top (4)` to `LeftSide`.
 
 ### Step 4
 
-Expand the `Tilia Interactions Controllables Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.LinearJointDrive` prefab into the Unity Hierarchy window as a child of the `Cabinet` GameObject.
+Expand the `Tilia Interactions Controllables Unity` package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.LinearJointDrive` prefab into the Unity Hierarchy window as a child of the `Cabinet` GameObject.
 
 ![Import Linear Joint Drive.](assets/images/ImportLinearJointDrive.png)
 
@@ -90,7 +90,7 @@ Select the `Interactions.LinearJointDrive` GameObject and change the Transform p
 
 ### Step 6
 
-Select the `Cabinet -> Interactions.LinearJointDrive -> Internal -> JointContainer -> Joint -> Interactions.Interactable -> MeshContainer -> Cube` GameObject from the Unity Hierarchy and change the Transform properties to:
+Select the `Cabinet -> Interactions.LinearJointDrive -> Internal -> JointContainer -> Joint -> Interactions.Interactable -> MeshContainer -> Cube` GameObject from the Unity Hierarchy window and change the Transform properties to:
 
 * Position: `X = 0, Y = 0, Z = -0.2`
 * Scale: `X = 0.4, Y = 0.25, Z = 0.01`
@@ -146,7 +146,7 @@ Rename the duplicated `DrawerFront (5)` to `DrawerHandle`.
 
 ### Step 8
 
-Select the `Cabinet -> Interactions.LinearJointDrive` GameObject from the Unity Hierarchy and on the `Linear Drive Facade` component set the following properties to:
+Select the `Cabinet -> Interactions.LinearJointDrive` GameObject from the Unity Hierarchy window and on the `Linear Drive Facade` component set the following properties to:
 
 * Drive Axis: `Z Axis`
 * Start At Initial Target Value: `checked`
@@ -157,10 +157,10 @@ Select the `Cabinet -> Interactions.LinearJointDrive` GameObject from the Unity 
 
 ### Done
 
-Play the Unity Scene, you will notice the drawer automatically snaps to its closed position. You will also notice pulling the drawer opens it out to until the drawer reaches the maximum limit.
+Play the Unity scene, you will notice the drawer automatically snaps to its closed position. You will also notice pulling the drawer opens it out to until the drawer reaches the maximum limit.
 
 ![Opening The Drawer In The Unity Scene](assets/images/OpeningTheDrawerInTheUnityScene.png)
 
-[Add the Tilia.Interactions.Interactor.Unity]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor
+[Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor/README.md
 [Install the Tilia.Interactions.Controllables.Unity]: ../Installation/README.md
 [Unity]: https://unity3d.com/

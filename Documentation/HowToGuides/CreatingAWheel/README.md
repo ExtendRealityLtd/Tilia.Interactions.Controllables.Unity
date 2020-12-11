@@ -12,7 +12,7 @@ A wheel control can be created by using a Angular Drive and rotating it around a
 
 ## Prerequisites
 
-* [Add the Tilia.Interactions.Interactor.Unity] prefab to the scene Hierarchy.
+* [Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor] prefab to the scene hierarchy.
 * [Install the Tilia.Interactions.Controllables.Unity] package dependency in to your [Unity] project.
 
 ## Let's Start
@@ -36,7 +36,7 @@ Rename the new `Cylinder` to `Axel` and disable the `Capsule Collider` component
 
 ### Step 3
 
-Expand the `Tilia Interactions Controllables Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.AngularJointDrive` prefab into the Unity Hierarchy window as a child of the `Wheel` GameObject.
+Expand the `Tilia Interactions Controllables Unity` package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.AngularJointDrive` prefab into the Unity Hierarchy window as a child of the `Wheel` GameObject.
 
 ![Add AngularJointDrive](assets/images/AddAngularJointDrive.png)
 
@@ -44,7 +44,7 @@ Expand the `Tilia Interactions Controllables Unity` Package directory in the Uni
 
 ### Step 4
 
-Select the `Interactions.AngularJointDrive` GameObject from the Unity Hierarchy and on the `Angular Drive Facade` component set the following properties to:
+Select the `Interactions.AngularJointDrive` GameObject from the Unity Hierarchy window and on the `Angular Drive Facade` component set the following properties to:
 
 * Drive Axis: `Z Axis`
 
@@ -72,5 +72,5 @@ Play the Unity scene and grab the wheel with a controller and rotate it around t
 ![Spinning The Wheel In The Unity Scene](assets/images/SpinningTheWheelInTheUnityScene.png)
 
 [Unity]: https://unity3d.com
-[Add the Tilia.Interactions.Interactor.Unity]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor
+[Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor/README.md
 [Install the Tilia.Interactions.Controllables.Unity]: ../Installation/README.md
