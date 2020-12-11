@@ -12,7 +12,7 @@ An artificial button is basically a fake button that doesn't use the [Unity] joi
 
 ## Prerequisites
 
-* [Add the Tilia.Interactions.Interactor.Unity] prefab to the scene Hierarchy.
+* [Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor] prefab to the scene hierarchy.
 * [Install the Tilia.Interactions.Controllables.Unity] package dependency in to your Unity project.
 
 ## Let's Start
@@ -25,7 +25,7 @@ Create a new `Empty` GameObject by selecting `Main Menu -> GameObject -> Create 
 
 ### Step 2
 
-Expand the `Tilia Interactions Controllables Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> Transform` directory then drag and drop the `Interactions.LinearTransformDrive` prefab into the Unity Hierarchy window as a child of the  `ButtonContainer` GameObject.
+Expand the `Tilia Interactions Controllables Unity` package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> Transform` directory then drag and drop the `Interactions.LinearTransformDrive` prefab into the Unity Hierarchy window as a child of the  `ButtonContainer` GameObject.
 
 ![Drag And Drop Linear Transform Drive](assets/images/DragAndDropLinearTransformDrive.png)
 
@@ -39,7 +39,7 @@ Select the `ButtonContainer -> Interactions.LinearTransformDrive -> Internal -> 
 
 ### Step 4
 
-Select the `ButtonContainer -> Interactions.LinearTransformDrive` GameObject from the Unity Hierarchy and on the `Linear Drive Facade` component set the following properties to:
+Select the `ButtonContainer -> Interactions.LinearTransformDrive` GameObject from the Unity Hierarchy window and on the `Linear Drive Facade` component set the following properties to:
 
 * Drive Axis: `Y Axis`
 * Start At Initial Target Value: `checked`
@@ -54,7 +54,7 @@ Select the `ButtonContainer -> Interactions.LinearTransformDrive` GameObject fro
 
 We want to make our button press down and pop back up when something collides with it. We can do this by simply using the `First Touched` event on the Interactable and changing the target value of the button.
 
-Select the `ButtonContainer -> Interactions.LinearTransformDrive -> Internal -> InteractableContainer -> Interactions.Interactable` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `First Touched` event parameter on the `Interactable Facade` component.
+Select the `ButtonContainer -> Interactions.LinearTransformDrive -> Internal -> InteractableContainer -> Interactions.Interactable` GameObject from the Unity Hierarchy window and click the `+` symbol in the bottom right corner of the `First Touched` event parameter on the `Interactable Facade` component.
 
 Drag and drop the `ButtonContainer -> Interactions.LinearTransformDrive` GameObject into the event listener box that appears on the `First Touched` event parameter on the `Interactable Facade` component that displays `None (Object)`.
 
@@ -74,9 +74,9 @@ Set the `LinearDriveFacade.TargetValue` property value to `0` on the `Interactab
 
 Now all we need to do is have the button pop back up once it has reached the fully pressed down position. We can achieve this simply by setting the `LinearDriveFacade.TargetValue` back to `1` when the button reaches its minimum position.
 
-Select the `ButtonContainer -> Interactions.LinearTransformDrive -> Drive.ValueEvents -> MinimumReached` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `Activated` event parameter on the `Boolean Action` component.
+Select the `ButtonContainer -> Interactions.LinearTransformDrive -> Drive.ValueEvents -> MinimumReached` GameObject from the Unity Hierarchy window and click the `+` symbol in the bottom right corner of the `Activated` event parameter on the `Boolean Action` component.
 
-Copy the process again in [Step 5](#Step-5) by dragging and dropping the `ButtonContainer -> Interactions.LinearTransformDrive` GameObject into this newly created event listener and setting the function to perform as `LinearDriveFacade -> float TargetValue` property.
+Copy the process again in [Step 5] by dragging and dropping the `ButtonContainer -> Interactions.LinearTransformDrive` GameObject into this newly created event listener and setting the function to perform as `LinearDriveFacade -> float TargetValue` property.
 
 Set the `LinearDriveFacade.TargetValue` property value to `1` on the `Boolean Action` component.
 
@@ -88,6 +88,7 @@ Play the Unity scene and you will notice that when you touch your controller on 
 
 ![Button Is Activated When Touched](assets/images/ButtonIsActivatedWhenTouched.png)
 
-[Unity]: https://unity3d.com/
-[Add the Tilia.Interactions.Interactor.Unity]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor
+[Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor/README.md
 [Install the Tilia.Interactions.Controllables.Unity]: ../Installation/README.md
+[Unity]: https://unity3d.com/
+[Step 5]: #Step-5

@@ -12,7 +12,7 @@ A lever control can be created by using a Angular Drive and rotating it around a
 
 ## Prerequisites
 
-* [Add the Tilia.Interactions.Interactor.Unity] prefab to the scene Hierarchy.
+* [Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor] prefab to the scene hierarchy.
 * [Install the Tilia.Interactions.Controllables.Unity] package dependency in to your [Unity] project.
 
 ## Let's Start
@@ -35,7 +35,7 @@ Rename the new `Sphere` to `Base` and disable the `Sphere Collider` component.
 
 ### Step 3
 
-Expand the `Tilia Interactions Controllables Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.AngularJointDrive` prefab into the Unity Hierarchy window as a child of the `Lever` GameObject.
+Expand the `Tilia Interactions Controllables Unity` package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.AngularJointDrive` prefab into the Unity Hierarchy window as a child of the `Lever` GameObject.
 
 ![Add AngularJointDrive](assets/images/AddAngularJointDrive.png)
 
@@ -51,7 +51,7 @@ Change the Transform properties of the `Lever -> Interactions.AngularJointDrive`
 
 ### Step 5
 
-Select the `Interactions.AngularJointDrive` GameObject from the Unity Hierarchy and on the `Angular Drive Facade` component set the following properties to:
+Select the `Interactions.AngularJointDrive` GameObject from the Unity Hierarchy window and on the `Angular Drive Facade` component set the following properties to:
 
 * Start At Initial Target Value: `checked`
 * Initial Target Value: `1`
@@ -74,6 +74,6 @@ Play the Unity scene you should notice the Lever go into its start position usin
 
 ![Pulling The Lever In The Unity Scene](assets/images/PullingTheLeverInTheUnityScene.png)
 
-[Unity]: https://unity3d.com
-[Add the Tilia.Interactions.Interactor.Unity]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor
+[Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor/README.md
 [Install the Tilia.Interactions.Controllables.Unity]: ../Installation/README.md 
+[Unity]: https://unity3d.com

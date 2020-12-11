@@ -12,17 +12,17 @@ A physics based button can easily be created using a Linear Joint Drive and a Co
 
 ## Prerequisites
 
-* [Add the Tilia.Interactions.Interactor.Unity] prefab to the scene Hierarchy.
-* [Add the Tilia.Trackers.ColliderFollower.Unity] prefab to the scene Hierarchy.
+* [Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor] prefab to the scene hierarchy.
+* [Add the Tilia.Trackers.ColliderFollower.Unity -> Trackers.ColliderFollower] prefab to the scene hierarchy.
 * [Install the Tilia.Interactions.Controllables.Unity] package dependency in to your [Unity] project.
 
 ## Let's Start
 
 ### Step 1
 
-We're going to be using the Collider Follower set up in the [Add the Tilia.Trackers.ColliderFollower.Unity] guide to allow us to press the button with our controller. We need to clean up some elements from the scene that we're not going to need.
+We're going to be using the Collider Follower set up in the [Adding A Collider Follower] guide to allow us to press the button with our controller. We need to clean up some elements from the scene that we're not going to need.
 
-Select `Table` GameObject, the `Interactions.Interactable` GameObject and the `Input.UnityInputManager.ButtonAction` GameObject that were created during the [Add the Tilia.Trackers.ColliderFollower.Unity] guide, then press the Delete key to delete these from our scene.
+Select `Table` GameObject, the `Interactions.Interactable` GameObject and the `Input.UnityInputManager.ButtonAction` GameObject that were created during the [Adding A Collider Follower] guide, then press the Delete key to delete these from our scene.
 
 ![Delete Unwanted GameObjects](assets/images/DeleteUnwantedGameObjects.png)
 
@@ -34,7 +34,7 @@ Create a new `Empty` GameObject by selecting `Main Menu -> GameObject -> Create 
 
 ### Step 3
 
-Expand the `Tilia Interactions Controllables Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.LinearJointDrive` prefab into the Unity Hierarchy window as a child of the  `ButtonContainer` GameObject.
+Expand the `Tilia Interactions Controllables Unity` package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.LinearJointDrive` prefab into the Unity Hierarchy window as a child of the  `ButtonContainer` GameObject.
 
 ![Drag And Drop Linear Joint Drive](assets/images/DragAndDropLinearJointDrive.png)
 
@@ -48,7 +48,7 @@ Select the `ButtonContainer -> Interactions.LinearJointDrive -> Internal -> Join
 
 ### Step 5
 
-Select the `ButtonContainer -> Interactions.LinearJointDrive` GameObject from the Unity Hierarchy and on the `Linear Drive Facade` component set the following properties to:
+Select the `ButtonContainer -> Interactions.LinearJointDrive` GameObject from the Unity Hierarchy window and on the `Linear Drive Facade` component set the following properties to:
 
 * Drive Axis: `Y Axis`
 * Start At Initial Target Value: `checked`
@@ -74,7 +74,7 @@ Add a `Box Collider` component (this will activate our Collider Follower) and se
 
 Add a `Collision Tracker` component to the `ActivationArea` GameObject, which will track collisions against the `Box Collider` component. We will use this collision tracking to turn on and off our `Trackers.ColliderFollower` GameObject.
 
-Select the `ButtonContainer -> ActivationArea` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `Collision Started` event parameter on the `Collision Tracker` component.
+Select the `ButtonContainer -> ActivationArea` GameObject from the Unity Hierarchy window and click the `+` symbol in the bottom right corner of the `Collision Started` event parameter on the `Collision Tracker` component.
 
 Drag and drop the `Trackers.ColliderFollower` GameObject into the event listener box that appears on the `Collision Started` event parameter on the `Collision Tracker` component that displays `None (Object)`.
 
@@ -88,7 +88,7 @@ Ensure the `GameObject.SetActive` checkbox is `checked`.
 
 ### Step 8
 
-Select the `ButtonContainer -> ActivationArea` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `Collision Stopped` event parameter on the `Collision Tracker` component.
+Select the `ButtonContainer -> ActivationArea` GameObject from the Unity Hierarchy window and click the `+` symbol in the bottom right corner of the `Collision Stopped` event parameter on the `Collision Tracker` component.
 
 Drag and drop the `Trackers.ColliderFollower` GameObject into the event listener box that appears on the `Collision Stopped` event parameter on the `Collision Tracker` component that displays `None (Object)`.
 
@@ -102,7 +102,7 @@ Ensure the `GameObject.SetActive` checkbox is `unchecked`.
 
 ### Step 9
 
-Select the `ButtonContainer -> ActivationArea` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `Collision Started` event parameter on the `Collision Tracker` component.
+Select the `ButtonContainer -> ActivationArea` GameObject from the Unity Hierarchy window and click the `+` symbol in the bottom right corner of the `Collision Started` event parameter on the `Collision Tracker` component.
 
 Drag and drop the `Trackers.ColliderFollower` GameObject into the event listener box that appears on the `Collision Started` event parameter on the `Collision Tracker` component that displays `None (Object)`.
 
@@ -152,7 +152,7 @@ Select the `ButtonContainer -> ActivationArea` GameObject and drag and drop the 
 
 Play the scene and you will notice as you push down with the Right Controller on the button moves it down to its maximum point and releasing it moves it back to its original position.
 
-However, our Left Controller does not seem to interact with the button at all. This is because the [Add the Tilia.Trackers.ColliderFollower.Unity] guide only sets up a `Trackers.ColliderFollower` for the Right Controller. 
+However, our Left Controller does not seem to interact with the button at all. This is because the [Adding A Collider Follower] guide only sets up a `Trackers.ColliderFollower` for the Right Controller. 
 We will need to set up one for the Left Controller and add some extra logic to know when to activate the correct one.
 
 ### Step 15
@@ -187,7 +187,7 @@ Create a new `Empty` GameObject by selecting `Main Menu -> GameObject -> Create 
 
 ### Step 19
 
-Select the `ButtonContainer -> InteractorRules -> IsLeftInteractor -> ObjectList` GameObject from the Unity Hierarchy then increase the `Elements -> Size` property value by `1` on the `Unity Object Observable List` component.
+Select the `ButtonContainer -> InteractorRules -> IsLeftInteractor -> ObjectList` GameObject from the Unity Hierarchy window then increase the `Elements -> Size` property value by `1` on the `Unity Object Observable List` component.
 
 > The size property will be `0` by default, so change it to `1`.
 
@@ -201,7 +201,7 @@ Drag and drop the `CameraRigs.TrackedAlias -> Aliases -> LeftControllerAlias -> 
 
 ### Step 21
 
-Select the `ButtonContainer -> InteractorRules -> IsLeftInteractor` GameObject from the Unity Hierarchy then drag and drop the `ButtonContainer -> InteractorRules -> IsLeftInteractor -> ObjectList` GameObject into the `Objects` property on the `List Contains Rules` component.
+Select the `ButtonContainer -> InteractorRules -> IsLeftInteractor` GameObject from the Unity Hierarchy window then drag and drop the `ButtonContainer -> InteractorRules -> IsLeftInteractor -> ObjectList` GameObject into the `Objects` property on the `List Contains Rules` component.
 
 ![Drag And Drop Object List To List Contains Rule](assets/images/DragAndDropObjectListToListContainsRule.png)
 
@@ -209,7 +209,7 @@ Select the `ButtonContainer -> InteractorRules -> IsLeftInteractor` GameObject f
 
 We now have a rule set up that can help us determine whether a given GameObject is the Left Controller Interactor. We need to do the same for the Right Controller and as most of the logic is the same we can simply duplicate our Left Controller set up and just tweak it a little bit.
 
-Select the `ButtonContainer -> InteractorRules -> IsLeftInteractor` GameObject from the Unity Hierarchy and duplicate it by right clicking on the `IsLeftInteractor` GameObject and selecing `Duplicate` from the context menu.
+Select the `ButtonContainer -> InteractorRules -> IsLeftInteractor` GameObject from the Unity Hierarchy window and duplicate it by right clicking on the `IsLeftInteractor` GameObject and selecing `Duplicate` from the context menu.
 
 Rename the duplcated `IsLeftInteractor (1)` GameObject to `IsRightInteractor`.
 
@@ -219,7 +219,7 @@ Rename the duplcated `IsLeftInteractor (1)` GameObject to `IsRightInteractor`.
 
 We just need to swap over the Interactor on the `List Contains Rule` component on the newly created `IsRightInteractor` GameObject.
 
-Select the `ButtonContainer -> InteractorRules -> IsRightInteractor` GameObject from the Unity Hierarchy then drag and drop the `CameraRigs.TrackedAlias -> Aliases -> RightControllerAlias -> Interactions.Interactor` GameObject into the `Element 0` property value within `Objects -> Elements` property on the `List Contains Rule` component.
+Select the `ButtonContainer -> InteractorRules -> IsRightInteractor` GameObject from the Unity Hierarchy window then drag and drop the `CameraRigs.TrackedAlias -> Aliases -> RightControllerAlias -> Interactions.Interactor` GameObject into the `Element 0` property value within `Objects -> Elements` property on the `List Contains Rule` component.
 
 ![Drag And Drop Right Interactor](assets/images/DragAndDropRightInteractor.png)
 
@@ -239,7 +239,7 @@ Create a new `Empty` GameObject by selecting `Main Menu -> GameObject -> Create 
 
 ### Step 26
 
-Select the `ButtonContainer -> CollisionStopped -> RuleMatcherList` GameObject from the Unity Hierarchy then increase the `Elements -> Size` property value by `2` on the `Rules Matcher Element Observable List` component.
+Select the `ButtonContainer -> CollisionStopped -> RuleMatcherList` GameObject from the Unity Hierarchy window then increase the `Elements -> Size` property value by `2` on the `Rules Matcher Element Observable List` component.
 
 > The size property will be `0` by default, so change it to `2`.
 
@@ -255,7 +255,7 @@ Then drag and drop the `ButtonContainer -> InteractorRules -> IsRightInteractor`
 
 ### Step 28
 
-Select the `ButtonContainer -> CollisionStopped` GameObject from the Unity Hierarchy then drag and drop the `ButtonContainer -> CollisionStopped-> RuleMatcherList` GameObject into the `Elements` property on the `Rule Matcher` component.
+Select the `ButtonContainer -> CollisionStopped` GameObject from the Unity Hierarchy window then drag and drop the `ButtonContainer -> CollisionStopped-> RuleMatcherList` GameObject into the `Elements` property on the `Rule Matcher` component.
 
 ![Drag And Drop Rule Matcher List To Rule Matcher](assets/images/DragAndDropRuleMatcherListToRuleMatcher.png)
 
@@ -267,13 +267,13 @@ The `Collision Tracker` event data contains this information but we need to extr
 
 Let's start by getting our `Collision Tracker` component on the `ButtonContainer -> ActivationArea` GameObject to call the `Notifier Container Extractor` component on the `ButtonContainer -> CollisionStopped` GameObject when the `Collision Stopped` event is emitted.
 
-Select the `ButtonContainer -> ActivationArea` GameObject from the Unity Hierarchy and click the `-` symbol in the bottom right corner of the `Collision Stopped` event parameter on the `Collision Tracker` component to remove the existing event.
+Select the `ButtonContainer -> ActivationArea` GameObject from the Unity Hierarchy window and click the `-` symbol in the bottom right corner of the `Collision Stopped` event parameter on the `Collision Tracker` component to remove the existing event.
 
 ![Remove Collision Stopped Event Listener](assets/images/RemoveCollisionStoppedEventListener.png)
 
 ### Step 30
 
-Select the `ButtonContainer -> ActivationArea` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `Collision Stopped` event parameter on the `Collision Tracker` component.
+Select the `ButtonContainer -> ActivationArea` GameObject from the Unity Hierarchy window and click the `+` symbol in the bottom right corner of the `Collision Stopped` event parameter on the `Collision Tracker` component.
 
 Drag and drop the `ButtonContainer -> CollisionStopped` GameObject into the event listener box that appears on the `Collision Stopped` event parameter on the `Collision Tracker` component that displays `None (Object)`.
 
@@ -287,7 +287,7 @@ Select a function to perform when the `Collision Stopped` event is emitted. For 
 
 We now simply need to tell our `Notifier Container Extractor` to pass the extracted collision GameObject to our `Rules Matcher` component.
 
-Select the `ButtonContainer -> CollisionStopped` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `Extracted` event parameter on the `Notifier Container Extractor` component.
+Select the `ButtonContainer -> CollisionStopped` GameObject from the Unity Hierarchy window and click the `+` symbol in the bottom right corner of the `Extracted` event parameter on the `Notifier Container Extractor` component.
 
 Drag and drop the `ButtonContainer -> CollisionStopped` GameObject into the event listener box that appears on the `Extracted` event parameter on the `Notifier Container Extractor` component that displays `None (Object)`.
 
@@ -301,15 +301,15 @@ Select a function to perform when the `Extracted` event is emitted. For this exa
 
 Before we set up our rules matching logic, we're going to set up the similar logic for the Collision Started process as we can simply do this by just duplicating the `ButtonContainer -> CollisionStopped` GameObject.
 
-Select the `ButtonContainer -> CollisionStopped` GameObject from the Unity Hierarchy and duplicate it by right clicking on the `CollisionStopped` GameObject and selecing `Duplicate` from the context menu.
+Select the `ButtonContainer -> CollisionStopped` GameObject from the Unity Hierarchy window and duplicate it by right clicking on the `CollisionStopped` GameObject and selecing `Duplicate` from the context menu.
 
 Rename the duplcated `CollisionStopped (1)` GameObject to `CollisionStarted`.
 
 ![Create Collision Started GameObject](assets/images/CreateCollisionStartedGameObject.png)
 
-Now we just need to remove the existing `Collision Started` event listeners on the `Collision Tracker` component on the `ButtonContainer -> ActivationArea` GameObject. Just follow [Step 29](#Step-29) but delete the event listeners on the `Collision Started` event.
+Now we just need to remove the existing `Collision Started` event listeners on the `Collision Tracker` component on the `ButtonContainer -> ActivationArea` GameObject. Just follow [Step 29] but delete the event listeners on the `Collision Started` event.
 
-Then follow [Step 30](#Step-30) again but this time drag the `ButtonContainer -> CollisionStarted` GameObject into the `Collision Started` event parameter on the `Collision Tracker` component.
+Then follow [Step 30] again but this time drag the `ButtonContainer -> CollisionStarted` GameObject into the `Collision Started` event parameter on the `Collision Tracker` component.
 
 The `CollisionTracker` component on the `ButtonContainer -> ActivationArea` GameObject should now be set up like this:
 
@@ -319,11 +319,11 @@ The `CollisionTracker` component on the `ButtonContainer -> ActivationArea` Game
 
 Now we just need to set up our `Rules Matcher` components on the `ButtonContainer -> CollisionStarted` GameObject and `ButtonContainer -> CollisionStopped` GameObject.
 
-Select the `ButtonContainer -> CollisionStarted` GameObject from the Unity Hierarchy and click the `+` symbol in the bottom right corner of the `Elements -> Element 0 -> Matched` event parameter on the `Rules Matcher` component.
+Select the `ButtonContainer -> CollisionStarted` GameObject from the Unity Hierarchy window and click the `+` symbol in the bottom right corner of the `Elements -> Element 0 -> Matched` event parameter on the `Rules Matcher` component.
 
 The `Element 0` property is set up for our Left Controller Interactor so we want to drag and drop the `Left.ColliderFollower` GameObject into the event listener box that appears on the `Matched` event parameter on the `Rules Matcher` component that displays `None (Object)`.
 
-We can just follow the same logical set up as seen in [Step 7](#Step-7) to enable the `Left.ColliderFollower` GameObject.
+We can just follow the same logical set up as seen in [Step 7] to enable the `Left.ColliderFollower` GameObject.
 
 Do the same steps but in the `Elements -> Element 1 -> Matched` event parameter but for the `Right.ColliderFollower` GameObject.
 
@@ -332,7 +332,7 @@ The `Rules Matcher` component on the `ButtonContainer -> CollisionStarted` GameO
 ![Collision Started Rules Matcher Setup](assets/images/CollisionStartedRulesMatcherSetup.png)
 
 ### Step 34
-Now let's set up the `Rules Matcher` component for the `ButtonContainer -> CollisionStopped` GameObject and again it's a similar set up to what we've already done in [Step 8](#Step-8) but for each of the `Matched` events as outlined in [Step 33](#Step-33).
+Now let's set up the `Rules Matcher` component for the `ButtonContainer -> CollisionStopped` GameObject and again it's a similar set up to what we've already done in [Step 8] but for each of the `Matched` events as outlined in [Step 33].
 
 Once you've done that, the `Rules Matcher` component on the `ButtonContainer -> CollisionStopped` GameObject should now be set up like this:
 
@@ -340,7 +340,7 @@ Once you've done that, the `Rules Matcher` component on the `ButtonContainer -> 
 
 ### Step 35
 
-Finally, we just need to set up the `Snap To Source` on each of the `Collider Follower` components as outlined in [Step 9](#Step-9) but again for eached of the `Matched` events for the `Rules Matcher` component on the `ButtonContainer -> CollisionStarted` GameObject as in [Step 33](#Step-33).
+Finally, we just need to set up the `Snap To Source` on each of the `Collider Follower` components as outlined in [Step 9] but again for each of the `Matched` events for the `Rules Matcher` component on the `ButtonContainer -> CollisionStarted` GameObject as in [Step 33].
 
 The `Rules Matcher` component on the `ButtonContainer -> CollisionStarted` GameObject finally be set up and look like this:
 
@@ -354,7 +354,14 @@ You will also notice the correct Collider Follower is enabled depending on the t
 
 ![Both Controllers Can Press Button](assets/images/BothControllersCanPressButton.png)
 
-[Unity]: https://unity3d.com/
-[Add the Tilia.Interactions.Interactor.Unity]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor
-[Add the Tilia.Trackers.ColliderFollower.Unity]: https://github.com/ExtendRealityLtd/Tilia.Trackers.ColliderFollower.Unity/tree/master/Documentation/HowToGuides/AddingAColliderFollower
+[Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor/README.md
+[Add the Tilia.Trackers.ColliderFollower.Unity -> Trackers.ColliderFollower]: https://github.com/ExtendRealityLtd/Tilia.Trackers.ColliderFollower.Unity/tree/master/Documentation/HowToGuides/AddingAColliderFollower/README.md
 [Install the Tilia.Interactions.Controllables.Unity]: ../Installation/README.md
+[Adding A Collider Follower]: https://github.com/ExtendRealityLtd/Tilia.Trackers.ColliderFollower.Unity/tree/master/Documentation/HowToGuides/AddingAColliderFollower/README.md
+[Unity]: https://unity3d.com/
+[Step 7]: #Step-7
+[Step 8]: #Step-8
+[Step 9]: #Step-7
+[Step 29]: #Step-29
+[Step 30]: #Step-30
+[Step 33]: #Step-33

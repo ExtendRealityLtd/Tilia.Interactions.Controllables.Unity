@@ -12,7 +12,7 @@ A door is a simple control that allows an Interactable to rotate around a given 
 
 ## Prerequisites
 
-* [Add the Tilia.Interactions.Interactor.Unity] prefab to the scene Hierarchy.
+* [Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor] prefab to the scene hierarchy.
 * [Install the Tilia.Mutators.CollisionIgnorer.Unity] package dependency in to your [Unity] project.
 * [Install the Tilia.Interactions.Controllables.Unity] package dependency in to your Unity project.
 
@@ -61,7 +61,7 @@ Rename the duplicated `TopFrame (2)` to `RightFrame`.
 
 ### Step 4
 
-Expand the `Tilia Interactions Controllables Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.AngularJointDrive` prefab into the Unity Hierarchy window as a child of the `DoorFrame` GameObject.
+Expand the `Tilia Interactions Controllables Unity` package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.AngularJointDrive` prefab into the Unity Hierarchy window as a child of the `DoorFrame` GameObject.
 
 ![Import Angular Joint Drive](assets/images/ImportAngularJointDrive.png)
 
@@ -69,7 +69,7 @@ Expand the `Tilia Interactions Controllables Unity` Package directory in the Uni
 
 ### Step 5
 
-Select the `DoorFrame -> Interactions.AngularJointDrive -> Internal -> JointContainer -> Joint -> Interactions.Interactable -> MeshContainer -> Cube` GameObject from the Unity Hierarchy and change the Transform properties to:
+Select the `DoorFrame -> Interactions.AngularJointDrive -> Internal -> JointContainer -> Joint -> Interactions.Interactable -> MeshContainer -> Cube` GameObject from the Unity Hierarchy window and change the Transform properties to:
 
 * Position: `X = 0, Y = -0.025, Z = 0`
 * Scale: `X = 0.9, Y = 1.95, Z = 0.05`
@@ -78,7 +78,7 @@ Select the `DoorFrame -> Interactions.AngularJointDrive -> Internal -> JointCont
 
 ### Step 6
 
-Select the `DoorFrame -> Interactions.AngularJointDrive` GameObject from the Unity Hierarchy and on the `Angular Drive Facade` component set the following properties to:
+Select the `DoorFrame -> Interactions.AngularJointDrive` GameObject from the Unity Hierarchy window and on the `Angular Drive Facade` component set the following properties to:
 
 * Drive Axis: `Y Axis`
 * Drive Limit: `Min: -120` / `Max: 120`
@@ -94,13 +94,13 @@ We could be really particular with our door and door frame design so the collide
 
 We can do this using the `Mutators.CollisionIgnorer` prefab which will tell all of the colliders in the door frame to ignore all of the colliders in the door.
 
-Expand the `Tilia Mutators CollisionIgnorer Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Mutators CollisionIgnorer Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Mutators.CollisionIgnorer` prefab into the Unity Hierarchy window as a child of the `DoorFrame` GameObject.
+Expand the `Tilia Mutators CollisionIgnorer Unity` package directory in the Unity Project window and select the `Packages -> Tilia Mutators CollisionIgnorer Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Mutators.CollisionIgnorer` prefab into the Unity Hierarchy window as a child of the `DoorFrame` GameObject.
 
 ![Import Collision Ignorer](assets/images/ImportCollisionIgnorer.png)
 
 ### Step 8
 
-Select the `DoorFrame -> Mutators.CollisionIgnorer` GameObject from the Unity Hierarchy then increase the `Sources -> Elements -> Size` property value by `3` on the `Collision Ignorer` component.
+Select the `DoorFrame -> Mutators.CollisionIgnorer` GameObject from the Unity Hierarchy window then increase the `Sources -> Elements -> Size` property value by `3` on the `Collision Ignorer` component.
 
 > The size property will be `0` by default, so change it to `3`.
 
@@ -114,7 +114,7 @@ Then drag the `LeftFrame` GameObject into `Element 1` and the `RightFrame` GameO
 
 ### Step 9
 
-Select the `DoorFrame -> Mutators.CollisionIgnorer` GameObject from the Unity Hierarchy then increase the `Targets -> Elements -> Size` property value by `1` on the `Collision Ignorer` component.
+Select the `DoorFrame -> Mutators.CollisionIgnorer` GameObject from the Unity Hierarchy window then increase the `Targets -> Elements -> Size` property value by `1` on the `Collision Ignorer` component.
 
 > The size property will be `0` by default, so change it to `1`.
 
@@ -130,7 +130,7 @@ Play the Unity scene, you will see that pulling the door opens it but it wont pu
 
 ![Opening The Door In The Unity Scene](assets/images/OpeningTheDoorInTheUnityScene.png)
 
-[Add the Tilia.Interactions.Interactor.Unity]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor
-[Install the Tilia.Mutators.CollisionIgnorer.Unity]: https://github.com/ExtendRealityLtd/Tilia.Mutators.CollisionIgnorer.Unity/tree/master/Documentation/HowToGuides/Installation
+[Add the Tilia.Interactions.Interactor.Unity -> Interactions.Interactor]: https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/tree/master/Documentation/HowToGuides/AddingAnInteractor/README.md
+[Install the Tilia.Mutators.CollisionIgnorer.Unity]: https://github.com/ExtendRealityLtd/Tilia.Mutators.CollisionIgnorer.Unity/tree/master/Documentation/HowToGuides/Installation/README.md
 [Install the Tilia.Interactions.Controllables.Unity]: ../Installation/README.md 
 [Unity]: https://unity3d.com/
