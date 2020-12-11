@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.10.15](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.10.14...v1.10.15) (2020-12-11)
+
+#### Bug Fixes
+
+* **HowToGuides:** apply document styling guidelines ([be7249c](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/be7249c3b5b3a7ca44d0ea8f9d3c9ed3418b3b30))
+  > The document style guidelines have been updated and now have been applied to the guides in this repo.
+
 ### [1.10.14](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.10.13...v1.10.14) (2020-11-21)
 
 #### Miscellaneous Chores
