@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.10.18...v1.11.0) (2020-12-13)
+
+#### Features
+
+* **DriveFacade:** add object reference links to common nested objects ([7eea534](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/7eea53429d1c786b0a503f0047a2cb836fad197b))
+  > The new ObjectReference property type has been added to the DriveFacade to highlight some common nested object references on the facade inspector, making it easier to find some of the nested required prefabs for easier customisation.
+
 ### [1.10.18](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.10.17...v1.10.18) (2020-12-12)
 
 #### Miscellaneous Chores
