@@ -34,6 +34,14 @@ The public interface into any RotationalDrive prefab.
 
 [DriveFacade<AngularDrive, AngularDriveFacade>.Drive]
 
+[DriveFacade<AngularDrive, AngularDriveFacade>.LinkedInteractableFacade]
+
+[DriveFacade<AngularDrive, AngularDriveFacade>.LinkedMinReached]
+
+[DriveFacade<AngularDrive, AngularDriveFacade>.LinkedMidReached]
+
+[DriveFacade<AngularDrive, AngularDriveFacade>.LinkedMaxReached]
+
 [DriveFacade<AngularDrive, AngularDriveFacade>.ValueChanged]
 
 [DriveFacade<AngularDrive, AngularDriveFacade>.StepValueChanged]
@@ -262,6 +270,10 @@ public virtual void SetHingeLocationZ(float value)
 [AngularDrive]: AngularDrive.md
 [AngularDriveFacade]: AngularDriveFacade.md
 [DriveFacade<AngularDrive, AngularDriveFacade>.Drive]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_Drive
+[DriveFacade<AngularDrive, AngularDriveFacade>.LinkedInteractableFacade]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_LinkedInteractableFacade
+[DriveFacade<AngularDrive, AngularDriveFacade>.LinkedMinReached]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_LinkedMinReached
+[DriveFacade<AngularDrive, AngularDriveFacade>.LinkedMidReached]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_LinkedMidReached
+[DriveFacade<AngularDrive, AngularDriveFacade>.LinkedMaxReached]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_LinkedMaxReached
 [DriveFacade<AngularDrive, AngularDriveFacade>.ValueChanged]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_ValueChanged
 [DriveFacade<AngularDrive, AngularDriveFacade>.StepValueChanged]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepValueChanged
 [DriveFacade<AngularDrive, AngularDriveFacade>.NormalizedValueChanged]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_NormalizedValueChanged

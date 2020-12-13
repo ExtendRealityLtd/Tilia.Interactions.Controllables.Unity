@@ -32,6 +32,30 @@
         [Serialized]
         [field: Header("Reference Settings"), DocumentedByXml, Restricted]
         public TDrive Drive { get; protected set; }
+        /// <summary>
+        /// The <see cref="GameObject"/> reference for the nested Interactable/>.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public ObjectReference LinkedInteractableFacade { get; protected set; }
+        /// <summary>
+        /// The <see cref="GameObject"/> reference for the nested minimum value reached event/>.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public ObjectReference LinkedMinReached { get; protected set; }
+        /// <summary>
+        /// The <see cref="GameObject"/> reference for the nested mid point value reached event/>.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public ObjectReference LinkedMidReached { get; protected set; }
+        /// <summary>
+        /// The <see cref="GameObject"/> reference for the nested max value reached event/>.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public ObjectReference LinkedMaxReached { get; protected set; }
         #endregion
 
         #region Events

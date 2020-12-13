@@ -26,6 +26,14 @@ The public interface into any Linear Drive prefab.
 
 [DriveFacade<LinearDrive, LinearDriveFacade>.Drive]
 
+[DriveFacade<LinearDrive, LinearDriveFacade>.LinkedInteractableFacade]
+
+[DriveFacade<LinearDrive, LinearDriveFacade>.LinkedMinReached]
+
+[DriveFacade<LinearDrive, LinearDriveFacade>.LinkedMidReached]
+
+[DriveFacade<LinearDrive, LinearDriveFacade>.LinkedMaxReached]
+
 [DriveFacade<LinearDrive, LinearDriveFacade>.ValueChanged]
 
 [DriveFacade<LinearDrive, LinearDriveFacade>.StepValueChanged]
@@ -144,6 +152,10 @@ protected virtual void OnDrawGizmosSelected()
 [LinearDrive]: LinearDrive.md
 [LinearDriveFacade]: LinearDriveFacade.md
 [DriveFacade<LinearDrive, LinearDriveFacade>.Drive]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_Drive
+[DriveFacade<LinearDrive, LinearDriveFacade>.LinkedInteractableFacade]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_LinkedInteractableFacade
+[DriveFacade<LinearDrive, LinearDriveFacade>.LinkedMinReached]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_LinkedMinReached
+[DriveFacade<LinearDrive, LinearDriveFacade>.LinkedMidReached]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_LinkedMidReached
+[DriveFacade<LinearDrive, LinearDriveFacade>.LinkedMaxReached]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_LinkedMaxReached
 [DriveFacade<LinearDrive, LinearDriveFacade>.ValueChanged]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_ValueChanged
 [DriveFacade<LinearDrive, LinearDriveFacade>.StepValueChanged]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepValueChanged
 [DriveFacade<LinearDrive, LinearDriveFacade>.NormalizedValueChanged]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_NormalizedValueChanged

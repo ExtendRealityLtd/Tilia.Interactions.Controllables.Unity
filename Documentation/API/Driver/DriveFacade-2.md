@@ -20,6 +20,10 @@ The basis of the public interface that will drive a control in relation to a spe
   * [DriveAxis]
   * [DriveSpeed]
   * [InitialTargetValue]
+  * [LinkedInteractableFacade]
+  * [LinkedMaxReached]
+  * [LinkedMidReached]
+  * [LinkedMinReached]
   * [MoveToTargetValue]
   * [StartAtInitialTargetValue]
   * [StepIncrement]
@@ -181,6 +185,46 @@ The normalized value to attempt to drive the control to when it is first enabled
 
 ```
 public float InitialTargetValue { get; set; }
+```
+
+#### LinkedInteractableFacade
+
+The GameObject reference for the nested Interactable/>.
+
+##### Declaration
+
+```
+public ObjectReference LinkedInteractableFacade { get; protected set; }
+```
+
+#### LinkedMaxReached
+
+The GameObject reference for the nested max value reached event/>.
+
+##### Declaration
+
+```
+public ObjectReference LinkedMaxReached { get; protected set; }
+```
+
+#### LinkedMidReached
+
+The GameObject reference for the nested mid point value reached event/>.
+
+##### Declaration
+
+```
+public ObjectReference LinkedMidReached { get; protected set; }
+```
+
+#### LinkedMinReached
+
+The GameObject reference for the nested minimum value reached event/>.
+
+##### Declaration
+
+```
+public ObjectReference LinkedMinReached { get; protected set; }
 ```
 
 #### MoveToTargetValue
@@ -490,6 +534,10 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [DriveAxis]: #DriveAxis
 [DriveSpeed]: #DriveSpeed
 [InitialTargetValue]: #InitialTargetValue
+[LinkedInteractableFacade]: #LinkedInteractableFacade
+[LinkedMaxReached]: #LinkedMaxReached
+[LinkedMidReached]: #LinkedMidReached
+[LinkedMinReached]: #LinkedMinReached
 [MoveToTargetValue]: #MoveToTargetValue
 [StartAtInitialTargetValue]: #StartAtInitialTargetValue
 [StepIncrement]: #StepIncrement
