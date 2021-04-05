@@ -34,9 +34,7 @@ Create a new `Empty` GameObject by selecting `Main Menu -> GameObject -> Create 
 
 ### Step 3
 
-Expand the `Tilia Interactions Controllables Unity` package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.LinearJointDrive` prefab into the Unity Hierarchy window as a child of the  `ButtonContainer` GameObject.
-
-![Drag And Drop Linear Joint Drive](assets/images/DragAndDropLinearJointDrive.png)
+Add a `Interactions.LinearJointDrive` prefab to the Unity project hierarchy by selecting `GameObject -> Tilia -> Prefabs -> Interactions -> Controllables -> PhysicsJoint -> Interactions.LinearJointDrive` from the Unity main top menu and drag it into being a child of the `ButtonContainer` GameObject.
 
 ### Step 4
 

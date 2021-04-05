@@ -36,9 +36,7 @@ Rename the new `Cylinder` to `Axel` and disable the `Capsule Collider` component
 
 ### Step 3
 
-Expand the `Tilia Interactions Controllables Unity` package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.AngularJointDrive` prefab into the Unity Hierarchy window as a child of the `Wheel` GameObject.
-
-![Add AngularJointDrive](assets/images/AddAngularJointDrive.png)
+Add a `Interactions.AngularJointDrive` prefab to the Unity project hierarchy by selecting `GameObject -> Tilia -> Prefabs -> Interactions -> Controllables -> PhysicsJoint -> Interactions.AngularJointDrive` from the Unity main top menu and drag it into being a child of the `Wheel` GameObject.
 
 > The `Interactions.AngularJointDrive` prefab uses Unity joints and therefore works within the Unity physics system, however the `Interactions.AngularTransformDrive` is an angular drive that does not utilize joints or physics and can easily be swapped in place at this step if required.
 
