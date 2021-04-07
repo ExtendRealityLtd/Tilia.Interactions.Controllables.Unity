@@ -61,9 +61,7 @@ Rename the duplicated `TopFrame (2)` to `RightFrame`.
 
 ### Step 4
 
-Expand the `Tilia Interactions Controllables Unity` package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.AngularJointDrive` prefab into the Unity Hierarchy window as a child of the `DoorFrame` GameObject.
-
-![Import Angular Joint Drive](assets/images/ImportAngularJointDrive.png)
+Add a `Interactions.AngularJointDrive` prefab to the Unity project hierarchy by selecting `GameObject -> Tilia -> Prefabs -> Interactions -> Controllables -> PhysicsJoint -> Interactions.AngularJointDrive` from the Unity main top menu and drag it into being a child of the `DoorFrame` GameObject.
 
 > The `Interactions.AngularJointDrive` prefab uses Unity joints and therefore works within the Unity physics system, however the `Interactions.AngularTransformDrive` is an angular drive that does not utilize joints or physics and can easily be swapped in place at this step if required.
 
@@ -94,9 +92,7 @@ We could be really particular with our door and door frame design so the collide
 
 We can do this using the `Mutators.CollisionIgnorer` prefab which will tell all of the colliders in the door frame to ignore all of the colliders in the door.
 
-Expand the `Tilia Mutators CollisionIgnorer Unity` package directory in the Unity Project window and select the `Packages -> Tilia Mutators CollisionIgnorer Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Mutators.CollisionIgnorer` prefab into the Unity Hierarchy window as a child of the `DoorFrame` GameObject.
-
-![Import Collision Ignorer](assets/images/ImportCollisionIgnorer.png)
+Add a `Mutators.CollisionIgnorer` prefab to the Unity project hierarchy by selecting `GameObject -> Tilia -> Prefabs -> Mutators -> Mutators.CollisionIgnorer` from the Unity main top menu and drag it into being a child of the `DoorFrame` GameObject.
 
 ### Step 8
 

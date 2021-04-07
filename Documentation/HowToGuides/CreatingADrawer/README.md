@@ -74,9 +74,7 @@ Rename the duplicated `Top (4)` to `LeftSide`.
 
 ### Step 4
 
-Expand the `Tilia Interactions Controllables Unity` package directory in the Unity Project window and select the `Packages -> Tilia Interactions Controllables Unity -> Runtime -> Prefabs -> PhysicsJoint` directory then drag and drop the `Interactions.LinearJointDrive` prefab into the Unity Hierarchy window as a child of the `Cabinet` GameObject.
-
-![Import Linear Joint Drive.](assets/images/ImportLinearJointDrive.png)
+Add a `Interactions.LinearJointDrive` prefab to the Unity project hierarchy by selecting `GameObject -> Tilia -> Prefabs -> Interactions -> Controllables -> PhysicsJoint -> Interactions.LinearJointDrive` from the Unity main top menu and drag it into being a child of the `Cabinet` GameObject.
 
 > The `Interactions.LinearJointDrive` prefab uses Unity joints and therefore works within the Unity physics system, however the `Interactions.LinearTransformDrive` is a linear drive that does not utilize joints or physics and can easily be swapped in place at this step if required.
 
