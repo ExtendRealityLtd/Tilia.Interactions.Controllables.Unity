@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.12.7](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.12.6...v1.12.7) (2021-05-14)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.interactions.interactables.unity ([8f4bfce](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/8f4bfce6923df45667a17a8ee733b2d3c3d55078))
+  > Bumps [io.extendreality.tilia.interactions.interactables.unity](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity) from 1.18.0 to 1.19.0. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/compare/v1.18.0...v1.19.0)
+  > 
+  > Signed-off-by: dependabot[bot] <support@github.com>
+* **README.md:** update title logo to related-media repo ([5188409](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/51884096730441a7ae7d192408f02e1ad76141fd))
+  > The title logo is now located on the related-media repo.
+
 ### [1.12.6](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.12.5...v1.12.6) (2021-05-10)
 
 #### Miscellaneous Chores
