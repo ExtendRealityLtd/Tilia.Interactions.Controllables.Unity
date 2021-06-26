@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.13.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.12.16...v1.13.0) (2021-06-26)
+
+#### Features
+
+* **prefab:** add tag and string identifiers to drive elements ([24c99fb](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/24c99fb46f3beb59e4362fcf2be31a5d5a1df6e7))
+  > The drive elements have had a couple of tags and string identifiers added to the parts of the drive that are reported upon collisions such as the joint drives will report the joint GameObject and maybe the Interactable GameObject, whereas the transform drives will only report the Interactable GameObject.
+  > 
+  > These additional elements make it easy to identify the drive and type based on the tag and string of the found colliding object.
+
 ### [1.12.16](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.12.15...v1.12.16) (2021-06-24)
 
 #### Miscellaneous Chores
