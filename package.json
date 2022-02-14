@@ -2,7 +2,7 @@
     "name": "io.extendreality.tilia.interactions.controllables.unity",
     "displayName": "Tilia Interactions Controllables Unity",
     "description": "Mechanisms that provide physics based and non-physics based linear and angular interactable controls for the Unity software.",
-    "version": "1.13.21",
+    "version": "1.13.22",
     "unity": "2018.3",
     "unityRelease": "10f1",
     "keywords": [
