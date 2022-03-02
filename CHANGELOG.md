@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.13.23...v1.14.0) (2022-03-02)
+
+#### Features
+
+* **package.json:** add information urls to package ([f03f594](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/f03f594665950554a2912425364d2f2bc4d4e0f4))
+  > The changelog, documentation and license url has been added to the package.json as these are used within the Unity package manager.
+
 ### [1.13.23](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.13.22...v1.13.23) (2022-02-14)
 
 #### Miscellaneous Chores
