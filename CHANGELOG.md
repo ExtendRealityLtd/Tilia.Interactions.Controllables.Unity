@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.14.2...v1.15.0) (2022-03-03)
+
+#### Features
+
+* **Editor:** add controllable creator window ([90b78aa](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/90b78aab5e4c2c37cd318bd279f2f1f269157d03))
+  > The new Controllable Creator window makes it easier to turn an existing scene mesh into a controllable by automatically adding the selected prefab and nesting the mesh in the appropriate location.
+
 ### [1.14.2](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.14.1...v1.14.2) (2022-03-03)
 
 #### Miscellaneous Chores
