@@ -10,6 +10,8 @@ The basis to drive a control in a rotational angle.
 
 The public interface into any RotationalDrive prefab.
 
+#### [AngularDriveTag]
+
 #### [AngularJointDrive]
 
 A rotational drive that utilizes a physics joint to control the rotational angle.
@@ -20,5 +22,6 @@ A rotational drive that directly manipulates a Transform.rotation to control the
 
 [AngularDrive]: AngularDrive.md
 [AngularDriveFacade]: AngularDriveFacade.md
+[AngularDriveTag]: AngularDriveTag.md
 [AngularJointDrive]: AngularJointDrive.md
 [AngularTransformDrive]: AngularTransformDrive.md

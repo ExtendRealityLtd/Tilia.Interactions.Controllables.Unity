@@ -10,6 +10,8 @@ The basis to drive a control in a linear direction.
 
 The public interface into any Linear Drive prefab.
 
+#### [LinearDriveTag]
+
 #### [LinearJointDrive]
 
 A directional drive that utilizes a physics joint to control the linear translation movement.
@@ -20,5 +22,6 @@ A directional drive that manipulates a Transform.position to control the linear 
 
 [LinearDrive]: LinearDrive.md
 [LinearDriveFacade]: LinearDriveFacade.md
+[LinearDriveTag]: LinearDriveTag.md
 [LinearJointDrive]: LinearJointDrive.md
 [LinearTransformDrive]: LinearTransformDrive.md
