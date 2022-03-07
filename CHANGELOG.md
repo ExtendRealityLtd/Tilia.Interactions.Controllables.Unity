@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.15.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.15.0...v1.15.1) (2022-03-07)
+
+#### Bug Fixes
+
+* **Editor:** only apply position when auto creating controllable ([3a1ec30](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/3a1ec309a9d3c7e43e395a763aaf3882f3c61022))
+  > The Controllable Creator now only applies the original mesh position to the new controllable prefab and the rotation, scale of the mesh stay on the original mesh. This is because controllables that have external rotations and scales will warp the object inside so the mesh is the thing that needs rotating and scaling.
+
 ## [1.15.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.14.2...v1.15.0) (2022-03-03)
 
 #### Features
