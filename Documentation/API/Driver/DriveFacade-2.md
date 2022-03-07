@@ -25,6 +25,7 @@ The basis of the public interface that will drive a control in relation to a spe
   * [LinkedMidReached]
   * [LinkedMinReached]
   * [MoveToTargetValue]
+  * [SnapToStepOnRelease]
   * [StartAtInitialTargetValue]
   * [StepIncrement]
   * [StepRange]
@@ -35,6 +36,7 @@ The basis of the public interface that will drive a control in relation to a spe
   * [OnAfterDriveAxisChange()]
   * [OnAfterDriveSpeedChange()]
   * [OnAfterMoveToTargetValueChange()]
+  * [OnAfterSnapToStepOnRelease()]
   * [OnAfterStepIncrementChange()]
   * [OnAfterStepRangeChange()]
   * [OnAfterTargetValueChange()]
@@ -237,6 +239,16 @@ Determines if the drive should move the element to the set [TargetValue].
 public bool MoveToTargetValue { get; set; }
 ```
 
+#### SnapToStepOnRelease
+
+Attempt to snap to the step value upon releasing the control.
+
+##### Declaration
+
+```
+public bool SnapToStepOnRelease { get; set; }
+```
+
 #### StartAtInitialTargetValue
 
 Determines if the drive should start the control at the [InitialTargetValue] when it is first enabled (no events will be emitted).
@@ -339,6 +351,16 @@ Called after [MoveToTargetValue] has been changed.
 
 ```
 protected virtual void OnAfterMoveToTargetValueChange()
+```
+
+#### OnAfterSnapToStepOnRelease()
+
+Called after [SnapToStepOnRelease] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterSnapToStepOnRelease()
 ```
 
 #### OnAfterStepIncrementChange()
@@ -507,6 +529,7 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [DriveAxis]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveAxis
 [DriveSpeed]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveSpeed
 [MoveToTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_MoveToTargetValue
+[SnapToStepOnRelease]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SnapToStepOnRelease
 [StepIncrement]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepIncrement
 [StepRange]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepRange
 [TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
@@ -539,6 +562,7 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [LinkedMidReached]: #LinkedMidReached
 [LinkedMinReached]: #LinkedMinReached
 [MoveToTargetValue]: #MoveToTargetValue
+[SnapToStepOnRelease]: #SnapToStepOnRelease
 [StartAtInitialTargetValue]: #StartAtInitialTargetValue
 [StepIncrement]: #StepIncrement
 [StepRange]: #StepRange
@@ -549,6 +573,7 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [OnAfterDriveAxisChange()]: #OnAfterDriveAxisChange
 [OnAfterDriveSpeedChange()]: #OnAfterDriveSpeedChange
 [OnAfterMoveToTargetValueChange()]: #OnAfterMoveToTargetValueChange
+[OnAfterSnapToStepOnRelease()]: #OnAfterSnapToStepOnRelease
 [OnAfterStepIncrementChange()]: #OnAfterStepIncrementChange
 [OnAfterStepRangeChange()]: #OnAfterStepRangeChange
 [OnAfterTargetValueChange()]: #OnAfterTargetValueChange
