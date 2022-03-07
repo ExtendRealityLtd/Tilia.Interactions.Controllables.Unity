@@ -107,8 +107,6 @@
 
             newInteractable.transform.SetParent(objectToWrap.transform.parent);
             newInteractable.transform.localPosition = objectToWrap.transform.localPosition;
-            newInteractable.transform.localRotation = objectToWrap.transform.localRotation;
-            newInteractable.transform.localScale = objectToWrap.transform.localScale;
 
             foreach (MeshRenderer defaultMeshes in facade.Configuration.MeshContainer.GetComponentsInChildren<MeshRenderer>())
             {
@@ -117,8 +115,6 @@
 
             objectToWrap.transform.SetParent(facade.Configuration.MeshContainer.transform);
             objectToWrap.transform.localPosition = Vector3.zero;
-            objectToWrap.transform.localRotation = Quaternion.identity;
-            objectToWrap.transform.localScale = Vector3.one;
 
             newInteractable.transform.SetSiblingIndex(siblingIndex);
         }
