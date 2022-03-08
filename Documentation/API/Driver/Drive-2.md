@@ -29,6 +29,7 @@ The basis for a mechanism to drive motion on a control.
   * [NormalizedValue]
   * [ResetDriveOnSetup]
   * [ResetDriveOnSetupFirstTimeOnly]
+  * [SnapToStepContainer]
   * [StepValue]
   * [TargetValueReachedThreshold]
   * [Value]
@@ -61,6 +62,7 @@ The basis for a mechanism to drive motion on a control.
   * [SetTargetValue(Single)]
   * [SetUp()]
   * [SetUpInternals()]
+  * [ToggleSnapToStepLogic(Boolean)]
 * [Implements]
 
 ## Details
@@ -295,6 +297,16 @@ Whether to set the [ResetDriveOnSetup] property back to false after [SetUp()] ha
 
 ```
 public bool ResetDriveOnSetupFirstTimeOnly { get; set; }
+```
+
+#### SnapToStepContainer
+
+The GameObject containing the snap to step logic.
+
+##### Declaration
+
+```
+public GameObject SnapToStepContainer { get; protected set; }
 ```
 
 #### StepValue
@@ -697,6 +709,22 @@ Performs any required internal setup.
 protected virtual void SetUpInternals()
 ```
 
+#### ToggleSnapToStepLogic(Boolean)
+
+Toggles the state of the [SnapToStepContainer].
+
+##### Declaration
+
+```
+public virtual void ToggleSnapToStepLogic(bool state)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Boolean | state | n/a |
+
 ### Implements
 
 IProcessable
@@ -715,6 +743,7 @@ IProcessable
 [AxisDirection]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_AxisDirection
 [DriveLimits]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DriveLimits
 [Facade]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Facade
+[SnapToStepContainer]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SnapToStepContainer
 [Inheritance]: #Inheritance
 [Namespace]: #Namespace
 [Syntax]: #Syntax
@@ -740,6 +769,7 @@ IProcessable
 [NormalizedValue]: #NormalizedValue
 [ResetDriveOnSetup]: #ResetDriveOnSetup
 [ResetDriveOnSetupFirstTimeOnly]: #ResetDriveOnSetupFirstTimeOnly
+[SnapToStepContainer]: #SnapToStepContainer
 [StepValue]: #StepValue
 [TargetValueReachedThreshold]: #TargetValueReachedThreshold
 [Value]: #Value
@@ -772,4 +802,5 @@ IProcessable
 [SetTargetValue(Single)]: #SetTargetValueSingle
 [SetUp()]: #SetUp
 [SetUpInternals()]: #SetUpInternals
+[ToggleSnapToStepLogic(Boolean)]: #ToggleSnapToStepLogicBoolean
 [Implements]: #Implements

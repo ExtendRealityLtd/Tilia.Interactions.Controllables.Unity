@@ -151,6 +151,12 @@
         [Serialized]
         [field: DocumentedByXml]
         public float StepIncrement { get; set; } = 1f;
+        /// <summary>
+        /// Attempt to snap to the step value upon releasing the control.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml]
+        public bool SnapToStepOnRelease { get; set; }
         #endregion
 
         /// <summary>
@@ -303,6 +309,15 @@
         protected virtual void OnAfterStepIncrementChange()
         {
             Drive.SetUp();
+        }
+
+        /// <summary>
+        /// Called after <see cref="SnapToStepOnRelease"/> has been changed.
+        /// </summary>
+        [CalledAfterChangeOf(nameof(SnapToStepOnRelease))]
+        protected virtual void OnAfterSnapToStepOnRelease()
+        {
+            Drive.ToggleSnapToStepLogic(SnapToStepOnRelease);
         }
     }
 }

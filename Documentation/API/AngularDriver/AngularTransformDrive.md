@@ -87,6 +87,8 @@ IProcessable
 
 [Drive<AngularDriveFacade, AngularDrive>.EventOutputContainer]
 
+[Drive<AngularDriveFacade, AngularDrive>.SnapToStepContainer]
+
 [Drive<AngularDriveFacade, AngularDrive>.ResetDriveOnSetup]
 
 [Drive<AngularDriveFacade, AngularDrive>.ResetDriveOnSetupFirstTimeOnly]
@@ -134,6 +136,8 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.SetUp()]
 
 [Drive<AngularDriveFacade, AngularDrive>.Process()]
+
+[Drive<AngularDriveFacade, AngularDrive>.ToggleSnapToStepLogic(Boolean)]
 
 [Drive<AngularDriveFacade, AngularDrive>.SetDriveLimits()]
 
@@ -405,6 +409,7 @@ IProcessable
 [AngularDrive.MatchActualTargetAngle(Single)]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_MatchActualTargetAngle_System_Single_
 [Drive<AngularDriveFacade, AngularDrive>.Facade]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Facade
 [Drive<AngularDriveFacade, AngularDrive>.EventOutputContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EventOutputContainer
+[Drive<AngularDriveFacade, AngularDrive>.SnapToStepContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SnapToStepContainer
 [Drive<AngularDriveFacade, AngularDrive>.ResetDriveOnSetup]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetup
 [Drive<AngularDriveFacade, AngularDrive>.ResetDriveOnSetupFirstTimeOnly]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetupFirstTimeOnly
 [Drive<AngularDriveFacade, AngularDrive>.InitialValueDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialValueDriveSpeed
@@ -429,6 +434,7 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.ConfigureAutoDrive(Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ConfigureAutoDrive_System_Boolean_
 [Drive<AngularDriveFacade, AngularDrive>.SetUp()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUp
 [Drive<AngularDriveFacade, AngularDrive>.Process()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Process
+[Drive<AngularDriveFacade, AngularDrive>.ToggleSnapToStepLogic(Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ToggleSnapToStepLogic_System_Boolean_
 [Drive<AngularDriveFacade, AngularDrive>.SetDriveLimits()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetDriveLimits
 [Drive<AngularDriveFacade, AngularDrive>.SetAxisDirection()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetAxisDirection
 [Drive<AngularDriveFacade, AngularDrive>.ProcessDriveSpeed(Single, Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ProcessDriveSpeed_System_Single_System_Boolean_

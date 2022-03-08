@@ -29,6 +29,12 @@
         [Serialized]
         [field: DocumentedByXml, Restricted]
         public GameObject EventOutputContainer { get; protected set; }
+        /// <summary>
+        /// The <see cref="GameObject"/> containing the snap to step logic.
+        /// </summary>
+        [Serialized]
+        [field: DocumentedByXml, Restricted]
+        public GameObject SnapToStepContainer { get; protected set; }
         #endregion
 
         #region Drive Settings
@@ -155,6 +161,7 @@
             SetAxisDirection();
             ProcessDriveSpeed(Facade.DriveSpeed, Facade.MoveToTargetValue);
             SetTargetValue(Facade.TargetValue);
+            ToggleSnapToStepLogic(Facade.SnapToStepOnRelease);
         }
 
         /// <summary>
@@ -200,6 +207,20 @@
             }
 
             wasDisabled = false;
+        }
+
+        /// <summary>
+        /// Toggles the state of the <see cref="SnapToStepContainer"/>.
+        /// </summary>
+        [RequiresBehaviourState]
+        public virtual void ToggleSnapToStepLogic(bool state)
+        {
+            if(SnapToStepContainer == null)
+            {
+                return;
+            }
+
+            SnapToStepContainer.SetActive(state);
         }
 
         /// <summary>

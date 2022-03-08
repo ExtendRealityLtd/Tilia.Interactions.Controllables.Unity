@@ -34,6 +34,8 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.EventOutputContainer]
 
+[Drive<LinearDriveFacade, LinearDrive>.SnapToStepContainer]
+
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetup]
 
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetupFirstTimeOnly]
@@ -81,6 +83,8 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.SetUp()]
 
 [Drive<LinearDriveFacade, LinearDrive>.Process()]
+
+[Drive<LinearDriveFacade, LinearDrive>.ToggleSnapToStepLogic(Boolean)]
 
 [Drive<LinearDriveFacade, LinearDrive>.SetDriveLimits()]
 
@@ -249,6 +253,7 @@ IProcessable
 [LinearTransformDrive]: LinearTransformDrive.md
 [Drive<LinearDriveFacade, LinearDrive>.Facade]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Facade
 [Drive<LinearDriveFacade, LinearDrive>.EventOutputContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EventOutputContainer
+[Drive<LinearDriveFacade, LinearDrive>.SnapToStepContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SnapToStepContainer
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetup]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetup
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetupFirstTimeOnly]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetupFirstTimeOnly
 [Drive<LinearDriveFacade, LinearDrive>.InitialValueDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialValueDriveSpeed
@@ -273,6 +278,7 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.ConfigureAutoDrive(Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ConfigureAutoDrive_System_Boolean_
 [Drive<LinearDriveFacade, LinearDrive>.SetUp()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUp
 [Drive<LinearDriveFacade, LinearDrive>.Process()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Process
+[Drive<LinearDriveFacade, LinearDrive>.ToggleSnapToStepLogic(Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ToggleSnapToStepLogic_System_Boolean_
 [Drive<LinearDriveFacade, LinearDrive>.SetDriveLimits()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetDriveLimits
 [Drive<LinearDriveFacade, LinearDrive>.SetAxisDirection()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetAxisDirection
 [Drive<LinearDriveFacade, LinearDrive>.ProcessDriveSpeed(Single, Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ProcessDriveSpeed_System_Single_System_Boolean_

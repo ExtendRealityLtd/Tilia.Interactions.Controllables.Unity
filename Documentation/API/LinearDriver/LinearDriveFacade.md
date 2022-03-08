@@ -64,6 +64,8 @@ The public interface into any Linear Drive prefab.
 
 [DriveFacade<LinearDrive, LinearDriveFacade>.StepIncrement]
 
+[DriveFacade<LinearDrive, LinearDriveFacade>.SnapToStepOnRelease]
+
 [DriveFacade<LinearDrive, LinearDriveFacade>.SetDriveAxis(Int32)]
 
 [DriveFacade<LinearDrive, LinearDriveFacade>.SetStepRangeMinimum(Single)]
@@ -95,6 +97,8 @@ The public interface into any Linear Drive prefab.
 [DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterStepRangeChange()]
 
 [DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterStepIncrementChange()]
+
+[DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterSnapToStepOnRelease()]
 
 ##### Namespace
 
@@ -171,6 +175,7 @@ protected virtual void OnDrawGizmosSelected()
 [DriveFacade<LinearDrive, LinearDriveFacade>.TargetValue]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
 [DriveFacade<LinearDrive, LinearDriveFacade>.StepRange]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepRange
 [DriveFacade<LinearDrive, LinearDriveFacade>.StepIncrement]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepIncrement
+[DriveFacade<LinearDrive, LinearDriveFacade>.SnapToStepOnRelease]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SnapToStepOnRelease
 [DriveFacade<LinearDrive, LinearDriveFacade>.SetDriveAxis(Int32)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetDriveAxis_System_Int32_
 [DriveFacade<LinearDrive, LinearDriveFacade>.SetStepRangeMinimum(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetStepRangeMinimum_System_Single_
 [DriveFacade<LinearDrive, LinearDriveFacade>.SetStepRangeMaximum(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetStepRangeMaximum_System_Single_
@@ -187,6 +192,7 @@ protected virtual void OnDrawGizmosSelected()
 [DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterDriveSpeedChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterDriveSpeedChange
 [DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterStepRangeChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterStepRangeChange
 [DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterStepIncrementChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterStepIncrementChange
+[DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterSnapToStepOnRelease()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterSnapToStepOnRelease
 [Tilia.Interactions.Controllables.LinearDriver]: README.md
 [DriveLimit]: LinearDriveFacade.md#DriveLimit
 [Inheritance]: #Inheritance
