@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.15.1...v1.16.0) (2022-03-08)
+
+#### Features
+
+* **Driver:** provide snap to step on release option ([b02837a](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/b02837a4dde720c8ef428db52a28782d17647866))
+  > A new option on the DriveFacade now makes it easier to have the controllable snap to the step value upon the interactable's release by implementing simple logic that can be toggled on and off by the new boolean option.
+
 ### [1.15.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.15.0...v1.15.1) (2022-03-07)
 
 #### Bug Fixes
