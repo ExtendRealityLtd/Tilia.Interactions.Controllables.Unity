@@ -155,7 +155,8 @@
         protected virtual float CalculateDirectionMultiplier()
         {
             float actualAngle = ActualTargetAngle;
-            if (actualAngle.ApproxEquals(currentPseudoRotation, TargetValueReachedThreshold))
+            float thresholdRotation = (DriveLimits.maximum - DriveLimits.minimum) * TargetValueReachedThreshold;
+            if (actualAngle.ApproxEquals(currentPseudoRotation, thresholdRotation))
             {
                 return 0f;
             }
@@ -177,12 +178,13 @@
         /// <returns>Whether the limits have been applied.</returns>
         protected virtual bool ApplyLimits()
         {
-            if (currentPseudoRotation < DriveLimits.minimum - TargetValueReachedThreshold)
+            float thresholdRotation = (DriveLimits.maximum - DriveLimits.minimum) * TargetValueReachedThreshold;
+            if (currentPseudoRotation < DriveLimits.minimum - thresholdRotation)
             {
                 GetDriveTransform().localRotation = Quaternion.Euler(-AxisDirection * DriveLimits.minimum);
                 return true;
             }
-            else if (currentPseudoRotation > DriveLimits.maximum + TargetValueReachedThreshold)
+            else if (currentPseudoRotation > DriveLimits.maximum + thresholdRotation)
             {
                 GetDriveTransform().localRotation = Quaternion.Euler(-AxisDirection * DriveLimits.maximum);
                 return true;
@@ -197,7 +199,8 @@
         /// <returns>The velocity to drive the control automatically with.</returns>
         protected virtual float CalculateAutoDriveVelocity()
         {
-            return (Facade.MoveToTargetValue && !currentPseudoRotation.ApproxEquals(ActualTargetAngle, TargetValueReachedThreshold) ? Facade.DriveSpeed : 0f) * CalculateDirectionMultiplier();
+            float thresholdRotation = (DriveLimits.maximum - DriveLimits.minimum) * TargetValueReachedThreshold;
+            return (Facade.MoveToTargetValue && !currentPseudoRotation.ApproxEquals(ActualTargetAngle, thresholdRotation) ? Facade.DriveSpeed : 0f) * CalculateDirectionMultiplier();
         }
 
         /// <summary>
