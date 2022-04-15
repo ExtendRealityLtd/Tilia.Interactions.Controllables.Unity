@@ -2,7 +2,5 @@
 {
     using UnityEngine;
 
-    public class LinearDriveTag : MonoBehaviour
-    {
-    }
+    public class LinearDriveTag : MonoBehaviour { }
 }

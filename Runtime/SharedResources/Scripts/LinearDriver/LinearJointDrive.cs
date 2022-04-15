@@ -1,12 +1,10 @@
 ﻿namespace Tilia.Interactions.Controllables.LinearDriver
 {
-    using Malimbe.BehaviourStateRequirementMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using Tilia.Interactions.Controllables.Driver;
     using UnityEngine;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Type;
+    using Zinnia.Extension;
 
     /// <summary>
     /// A directional drive that utilizes a physics joint to control the linear translation movement.
@@ -14,12 +12,25 @@
     public class LinearJointDrive : LinearDrive
     {
         #region Joint Settings
+        [Header("Joint Settings")]
+        [Tooltip("The joint being used to drive the movement.")]
+        [SerializeField]
+        [Restricted]
+        private ConfigurableJoint joint;
         /// <summary>
         /// The joint being used to drive the movement.
         /// </summary>
-        [Serialized]
-        [field: Header("Joint Settings"), DocumentedByXml, Restricted]
-        public ConfigurableJoint Joint { get; protected set; }
+        public ConfigurableJoint Joint
+        {
+            get
+            {
+                return joint;
+            }
+            protected set
+            {
+                joint = value;
+            }
+        }
         #endregion
 
         /// <summary>
@@ -28,9 +39,13 @@
         protected Rigidbody jointRigidbody;
 
         /// <inheritdoc />
-        [RequiresBehaviourState]
         public override Vector3 CalculateDriveAxis(DriveAxis.Axis driveAxis)
         {
+            if (!this.IsValidState())
+            {
+                return default;
+            }
+
             Joint.xMotion = driveAxis == DriveAxis.Axis.XAxis ? ConfigurableJointMotion.Limited : ConfigurableJointMotion.Locked;
             Joint.yMotion = driveAxis == DriveAxis.Axis.YAxis ? ConfigurableJointMotion.Limited : ConfigurableJointMotion.Locked;
             Joint.zMotion = driveAxis == DriveAxis.Axis.ZAxis ? ConfigurableJointMotion.Limited : ConfigurableJointMotion.Locked;
@@ -56,9 +71,13 @@
         }
 
         /// <inheritdoc />
-        [RequiresBehaviourState]
         public override void ProcessDriveSpeed(float driveSpeed, bool moveToTargetValue)
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             JointDrive snapDriver = new JointDrive();
             snapDriver.positionSpring = driveSpeed;
             snapDriver.positionDamper = 1f;

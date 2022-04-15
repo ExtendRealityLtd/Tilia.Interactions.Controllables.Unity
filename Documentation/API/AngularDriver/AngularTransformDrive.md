@@ -167,6 +167,14 @@ IProcessable
 
 [Drive<AngularDriveFacade, AngularDrive>.EliminateDriveVelocity()]
 
+[Drive<AngularDriveFacade, AngularDrive>.StartMoving()]
+
+[Drive<AngularDriveFacade, AngularDrive>.StopMoving()]
+
+[Drive<AngularDriveFacade, AngularDrive>.CheckStepValueChange()]
+
+[Drive<AngularDriveFacade, AngularDrive>.CheckTargetValueReached()]
+
 [Drive<AngularDriveFacade, AngularDrive>.GetTargetValue()]
 
 [Drive<AngularDriveFacade, AngularDrive>.CanMoveToTargetValue()]
@@ -449,6 +457,10 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.SetUpInternals()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUpInternals
 [Drive<AngularDriveFacade, AngularDrive>.SetDriveTargetValue(Vector3)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetDriveTargetValue_Vector3_
 [Drive<AngularDriveFacade, AngularDrive>.EliminateDriveVelocity()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EliminateDriveVelocity
+[Drive<AngularDriveFacade, AngularDrive>.StartMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StartMoving
+[Drive<AngularDriveFacade, AngularDrive>.StopMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StopMoving
+[Drive<AngularDriveFacade, AngularDrive>.CheckStepValueChange()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckStepValueChange
+[Drive<AngularDriveFacade, AngularDrive>.CheckTargetValueReached()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckTargetValueReached
 [Drive<AngularDriveFacade, AngularDrive>.GetTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GetTargetValue
 [Drive<AngularDriveFacade, AngularDrive>.CanMoveToTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CanMoveToTargetValue
 [Drive<AngularDriveFacade, AngularDrive>.CalculateStepValue(AngularDriveFacade)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateStepValue__0_

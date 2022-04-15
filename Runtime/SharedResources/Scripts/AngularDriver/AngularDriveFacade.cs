@@ -1,12 +1,10 @@
 ﻿namespace Tilia.Interactions.Controllables.AngularDriver
 {
-    using Malimbe.MemberChangeMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using Tilia.Interactions.Controllables.Driver;
     using UnityEngine;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Type;
+    using Zinnia.Extension;
 
     /// <summary>
     /// The public interface into any RotationalDrive prefab.
@@ -14,36 +12,93 @@
     public class AngularDriveFacade : DriveFacade<AngularDrive, AngularDriveFacade>
     {
         #region Limit Settings
+        [Header("Limit Settings")]
+        [Tooltip("The rotational angle limits for the drive.")]
+        [SerializeField]
+        private FloatRange driveLimit = new FloatRange(-180f, 180f);
         /// <summary>
         /// The rotational angle limits for the drive.
         /// </summary>
-        [Serialized]
-        [field: Header("Limit Settings"), DocumentedByXml]
-        public FloatRange DriveLimit { get; set; } = new FloatRange(-180f, 180f);
+        public FloatRange DriveLimit
+        {
+            get
+            {
+                return driveLimit;
+            }
+            set
+            {
+                driveLimit = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterDriveLimitChange();
+                }
+            }
+        }
         #endregion
 
         #region Hinge Settings
+        [Header("Hinge Settings")]
+        [Tooltip("The location of the hinge within the local position of the drive.")]
+        [SerializeField]
+        private Vector3 hingeLocation;
         /// <summary>
         /// The location of the hinge within the local position of the drive.
         /// </summary>
-        [Serialized]
-        [field: Header("Hinge Settings"), DocumentedByXml]
-        public Vector3 HingeLocation { get; set; }
+        public Vector3 HingeLocation
+        {
+            get
+            {
+                return hingeLocation;
+            }
+            set
+            {
+                hingeLocation = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterHingeLocationChange();
+                }
+            }
+        }
         #endregion
 
         #region Gizmo Settings
+        [Header("Gizmo Settings")]
+        [Tooltip("The distance of the gizmo hinge location line.")]
+        [SerializeField]
+        [Restricted(RestrictedAttribute.Restrictions.Muted)]
+        private float gizmoLineDistance = 0.2f;
         /// <summary>
         /// The distance of the gizmo hinge location line.
         /// </summary>
-        [Serialized]
-        [field: Header("Gizmo Settings"), DocumentedByXml, Restricted(RestrictedAttribute.Restrictions.Muted)]
-        public float GizmoLineDistance { get; set; } = 0.2f;
+        public float GizmoLineDistance
+        {
+            get
+            {
+                return gizmoLineDistance;
+            }
+            set
+            {
+                gizmoLineDistance = value;
+            }
+        }
+        [Tooltip("The radius of the gizmo hinge location end sphere.")]
+        [SerializeField]
+        [Restricted(RestrictedAttribute.Restrictions.Muted)]
+        private float gizmoSphereRadius = 0.015f;
         /// <summary>
         /// The radius of the gizmo hinge location end sphere.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted(RestrictedAttribute.Restrictions.Muted)]
-        public float GizmoSphereRadius { get; set; } = 0.015f;
+        public float GizmoSphereRadius
+        {
+            get
+            {
+                return gizmoSphereRadius;
+            }
+            set
+            {
+                gizmoSphereRadius = value;
+            }
+        }
         #endregion
 
         /// <summary>
@@ -111,7 +166,6 @@
         /// <summary>
         /// Called after <see cref="DriveLimit"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(DriveLimit))]
         protected virtual void OnAfterDriveLimitChange()
         {
             Drive.SetDriveLimits();
@@ -120,7 +174,6 @@
         /// <summary>
         /// Called after <see cref="HingeLocation"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(HingeLocation))]
         protected virtual void OnAfterHingeLocationChange()
         {
             Drive.SetUp();

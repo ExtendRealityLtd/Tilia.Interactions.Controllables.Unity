@@ -1,11 +1,9 @@
 ﻿namespace Tilia.Interactions.Controllables.LinearDriver
 {
-    using Malimbe.MemberChangeMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using Tilia.Interactions.Controllables.Driver;
     using UnityEngine;
     using Zinnia.Data.Attribute;
+    using Zinnia.Extension;
 
     /// <summary>
     /// The public interface into any Linear Drive prefab.
@@ -13,21 +11,50 @@
     public class LinearDriveFacade : DriveFacade<LinearDrive, LinearDriveFacade>
     {
         #region Limit Settings
+        [Header("Limit Settings")]
+        [Tooltip("The world space limit of the drive direction along the specified axis.")]
+        [SerializeField]
+        private float driveLimit = 1f;
         /// <summary>
         /// The world space limit of the drive direction along the specified axis.
         /// </summary>
-        [Serialized]
-        [field: Header("Limit Settings"), DocumentedByXml]
-        public float DriveLimit { get; set; } = 1f;
+        public float DriveLimit
+        {
+            get
+            {
+                return driveLimit;
+            }
+            set
+            {
+                driveLimit = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterDriveLimitChange();
+                }
+            }
+        }
         #endregion
 
         #region Gizmo Settings
+        [Header("Gizmo Settings")]
+        [Tooltip("The size of the gizmo cube to draw at the limits of the drive.")]
+        [SerializeField]
+        [Restricted(RestrictedAttribute.Restrictions.Muted)]
+        private Vector3 gizmoCubeSize = Vector3.one * 0.015f;
         /// <summary>
         /// The size of the gizmo cube to draw at the limits of the drive.
         /// </summary>
-        [Serialized]
-        [field: Header("Gizmo Settings"), DocumentedByXml, Restricted(RestrictedAttribute.Restrictions.Muted)]
-        public Vector3 GizmoCubeSize { get; set; } = Vector3.one * 0.015f;
+        public Vector3 GizmoCubeSize
+        {
+            get
+            {
+                return gizmoCubeSize;
+            }
+            set
+            {
+                gizmoCubeSize = value;
+            }
+        }
         #endregion
 
         protected virtual void OnDrawGizmosSelected()
@@ -46,7 +73,6 @@
         /// <summary>
         /// Called after <see cref="DriveLimit"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(DriveLimit))]
         protected virtual void OnAfterDriveLimitChange()
         {
             Drive.SetUp();

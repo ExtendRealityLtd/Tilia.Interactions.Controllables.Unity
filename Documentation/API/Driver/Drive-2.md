@@ -39,6 +39,8 @@ The basis for a mechanism to drive motion on a control.
   * [CalculateStepValue(TFacade)]
   * [CalculateValue(DriveAxis.Axis, FloatRange)]
   * [CanMoveToTargetValue()]
+  * [CheckStepValueChange()]
+  * [CheckTargetValueReached()]
   * [ConfigureAutoDrive(Boolean)]
   * [EliminateDriveVelocity()]
   * [EmitNormalizedValueChanged()]
@@ -62,6 +64,8 @@ The basis for a mechanism to drive motion on a control.
   * [SetTargetValue(Single)]
   * [SetUp()]
   * [SetUpInternals()]
+  * [StartMoving()]
+  * [StopMoving()]
   * [ToggleSnapToStepLogic(Boolean)]
 * [Implements]
 
@@ -206,7 +210,7 @@ The calculated direction for the drive axis.
 ##### Declaration
 
 ```
-public Vector3 AxisDirection { get; protected set; }
+public virtual Vector3 AxisDirection { get; protected set; }
 ```
 
 #### DriveLimits
@@ -216,7 +220,7 @@ The calculated limits for the drive.
 ##### Declaration
 
 ```
-public FloatRange DriveLimits { get; protected set; }
+public virtual FloatRange DriveLimits { get; protected set; }
 ```
 
 #### EmitEvents
@@ -266,7 +270,7 @@ The current normalized step value for the drive control between the set step ran
 ##### Declaration
 
 ```
-public float NormalizedStepValue { get; }
+public virtual float NormalizedStepValue { get; }
 ```
 
 #### NormalizedValue
@@ -276,12 +280,12 @@ The current normalized value for the drive control between the set limits.
 ##### Declaration
 
 ```
-public float NormalizedValue { get; }
+public virtual float NormalizedValue { get; }
 ```
 
 #### ResetDriveOnSetup
 
-Whether to reset the drive data when [SetUp()] is executed.
+Whether to reset the drive data when the [SetUp()] method is executed.
 
 ##### Declaration
 
@@ -291,7 +295,7 @@ public bool ResetDriveOnSetup { get; set; }
 
 #### ResetDriveOnSetupFirstTimeOnly
 
-Whether to set the [ResetDriveOnSetup] property back to false after [SetUp()] has executed to prevent future automatic resets until the value is manually changed again.
+Whether to set the [ResetDriveOnSetup] property back to false after the [SetUp()] method has executed to prevent future automatic resets until the value is manually changed again.
 
 ##### Declaration
 
@@ -316,7 +320,7 @@ The current step value for the drive control.
 ##### Declaration
 
 ```
-public float StepValue { get; }
+public virtual float StepValue { get; }
 ```
 
 #### TargetValueReachedThreshold
@@ -336,7 +340,7 @@ The current raw value for the drive control.
 ##### Declaration
 
 ```
-public float Value { get; }
+public virtual float Value { get; }
 ```
 
 ### Methods
@@ -445,6 +449,26 @@ protected virtual bool CanMoveToTargetValue()
 | Type | Description |
 | --- | --- |
 | System.Boolean | Whether the drive can automatically move to the target value specified in the facade. |
+
+#### CheckStepValueChange()
+
+Checks if the [StepValue] has changed.
+
+##### Declaration
+
+```
+protected virtual void CheckStepValueChange()
+```
+
+#### CheckTargetValueReached()
+
+Checks if the target value has been reached.
+
+##### Declaration
+
+```
+protected virtual void CheckTargetValueReached()
+```
 
 #### ConfigureAutoDrive(Boolean)
 
@@ -709,6 +733,26 @@ Performs any required internal setup.
 protected virtual void SetUpInternals()
 ```
 
+#### StartMoving()
+
+Starts the drive moving process.
+
+##### Declaration
+
+```
+protected virtual void StartMoving()
+```
+
+#### StopMoving()
+
+Stops the drive moving process.
+
+##### Declaration
+
+```
+protected virtual void StopMoving()
+```
+
 #### ToggleSnapToStepLogic(Boolean)
 
 Toggles the state of the [SnapToStepContainer].
@@ -740,6 +784,7 @@ IProcessable
 [ResetDriveOnSetup]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetup
 [SetUp()]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUp
 [DriveAxis.Axis]: DriveAxis.Axis.md
+[StepValue]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StepValue
 [AxisDirection]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_AxisDirection
 [DriveLimits]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DriveLimits
 [Facade]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Facade
@@ -779,6 +824,8 @@ IProcessable
 [CalculateStepValue(TFacade)]: #CalculateStepValueTFacade
 [CalculateValue(DriveAxis.Axis, FloatRange)]: #CalculateValueDriveAxis.Axis-FloatRange
 [CanMoveToTargetValue()]: #CanMoveToTargetValue
+[CheckStepValueChange()]: #CheckStepValueChange
+[CheckTargetValueReached()]: #CheckTargetValueReached
 [ConfigureAutoDrive(Boolean)]: #ConfigureAutoDriveBoolean
 [EliminateDriveVelocity()]: #EliminateDriveVelocity
 [EmitNormalizedValueChanged()]: #EmitNormalizedValueChanged
@@ -802,5 +849,7 @@ IProcessable
 [SetTargetValue(Single)]: #SetTargetValueSingle
 [SetUp()]: #SetUp
 [SetUpInternals()]: #SetUpInternals
+[StartMoving()]: #StartMoving
+[StopMoving()]: #StopMoving
 [ToggleSnapToStepLogic(Boolean)]: #ToggleSnapToStepLogicBoolean
 [Implements]: #Implements
