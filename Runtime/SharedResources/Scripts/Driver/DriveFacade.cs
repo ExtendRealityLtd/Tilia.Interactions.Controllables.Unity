@@ -44,7 +44,6 @@
         }
         [Tooltip("The GameObject reference for the nested Interactable.")]
         [SerializeField]
-        [Restricted]
         private ObjectReference linkedInteractableFacade;
         /// <summary>
         /// The <see cref="GameObject"/> reference for the nested Interactable.
@@ -62,7 +61,6 @@
         }
         [Tooltip("The GameObject reference for the nested minimum value reached event.")]
         [SerializeField]
-        [Restricted]
         private ObjectReference linkedMinReached;
         /// <summary>
         /// The <see cref="GameObject"/> reference for the nested minimum value reached event.
@@ -80,7 +78,6 @@
         }
         [Tooltip("The GameObject reference for the nested mid point value reached event.")]
         [SerializeField]
-        [Restricted]
         private ObjectReference linkedMidReached;
         /// <summary>
         /// The <see cref="GameObject"/> reference for the nested mid point value reached event.
@@ -98,7 +95,6 @@
         }
         [Tooltip("The GameObject reference for the nested max value reached event.")]
         [SerializeField]
-        [Restricted]
         private ObjectReference linkedMaxReached;
         /// <summary>
         /// The <see cref="GameObject"/> reference for the nested max value reached event.
