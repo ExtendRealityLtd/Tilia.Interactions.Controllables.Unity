@@ -1,8 +1,5 @@
 ﻿namespace Tilia.Interactions.Controllables.Driver
 {
-    using Malimbe.BehaviourStateRequirementMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using UnityEngine;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Type;
@@ -17,86 +14,180 @@
     public abstract class Drive<TFacade, TSelf> : MonoBehaviour, IProcessable where TFacade : DriveFacade<TSelf, TFacade> where TSelf : Drive<TFacade, TSelf>
     {
         #region Reference Settings
+        [Header("Reference Settings")]
+        [Tooltip("The public interface facade.")]
+        [SerializeField]
+        [Restricted]
+        private TFacade facade;
         /// <summary>
         /// The public interface facade.
         /// </summary>
-        [Serialized]
-        [field: Header("Reference Settings"), DocumentedByXml, Restricted]
-        public TFacade Facade { get; protected set; }
+        public TFacade Facade
+        {
+            get
+            {
+                return facade;
+            }
+            protected set
+            {
+                facade = value;
+            }
+        }
+        [Tooltip("The GameObject containing the output event actions.")]
+        [SerializeField]
+        [Restricted]
+        private GameObject eventOutputContainer;
         /// <summary>
         /// The <see cref="GameObject"/> containing the output event actions.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public GameObject EventOutputContainer { get; protected set; }
+        public GameObject EventOutputContainer
+        {
+            get
+            {
+                return eventOutputContainer;
+            }
+            protected set
+            {
+                eventOutputContainer = value;
+            }
+        }
+        [Tooltip("The GameObject containing the snap to step logic.")]
+        [SerializeField]
+        [Restricted]
+        private GameObject snapToStepContainer;
         /// <summary>
         /// The <see cref="GameObject"/> containing the snap to step logic.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public GameObject SnapToStepContainer { get; protected set; }
+        public GameObject SnapToStepContainer
+        {
+            get
+            {
+                return snapToStepContainer;
+            }
+            protected set
+            {
+                snapToStepContainer = value;
+            }
+        }
         #endregion
 
         #region Drive Settings
+        [Header("Drive Settings")]
+        [Tooltip("Whether to reset the drive data when the SetUp method is executed.")]
+        [SerializeField]
+        private bool resetDriveOnSetup = true;
         /// <summary>
-        /// Whether to reset the drive data when <see cref="SetUp"/> is executed.
+        /// Whether to reset the drive data when the <see cref="SetUp"/> method is executed.
         /// </summary>
-        [Serialized]
-        [field: Header("Drive Settings"), DocumentedByXml]
-        public bool ResetDriveOnSetup { get; set; } = true;
+        public bool ResetDriveOnSetup
+        {
+            get
+            {
+                return resetDriveOnSetup;
+            }
+            set
+            {
+                resetDriveOnSetup = value;
+            }
+        }
+        [Tooltip("Whether to set the ResetDriveOnSetup property back to false after the SetUp method has executed to prevent future automatic resets until the value is manually changed again.")]
+        [SerializeField]
+        private bool resetDriveOnSetupFirstTimeOnly = true;
         /// <summary>
-        /// Whether to set the <see cref="ResetDriveOnSetup"/> property back to <see cref="false"/> after <see cref="SetUp"/> has executed to prevent future automatic resets until the value is manually changed again.
+        /// Whether to set the <see cref="ResetDriveOnSetup"/> property back to <see cref="false"/> after the <see cref="SetUp"/> method has executed to prevent future automatic resets until the value is manually changed again.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public bool ResetDriveOnSetupFirstTimeOnly { get; set; } = true;
+        public bool ResetDriveOnSetupFirstTimeOnly
+        {
+            get
+            {
+                return resetDriveOnSetupFirstTimeOnly;
+            }
+            set
+            {
+                resetDriveOnSetupFirstTimeOnly = value;
+            }
+        }
+        [Tooltip("The value to set the drive speed to when driving the control to the initial start value.")]
+        [SerializeField]
+        private float initialValueDriveSpeed = 5000f;
         /// <summary>
         /// The value to set the drive speed to when driving the control to the initial start value.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public float InitialValueDriveSpeed { get; set; } = 5000f;
+        public float InitialValueDriveSpeed
+        {
+            get
+            {
+                return initialValueDriveSpeed;
+            }
+            set
+            {
+                initialValueDriveSpeed = value;
+            }
+        }
         #endregion
 
         #region Target Settings
+        [Header("Target Settings")]
+        [Tooltip("The threshold that the current normalized value of the control can be within to consider the target value has been reached.")]
+        [SerializeField]
+        private float targetValueReachedThreshold = 0.025f;
         /// <summary>
         /// The threshold that the current normalized value of the control can be within to consider the target value has been reached.
         /// </summary>
-        [Serialized]
-        [field: Header("Target Settings"), DocumentedByXml]
-        public float TargetValueReachedThreshold { get; set; } = 0.025f;
+        public float TargetValueReachedThreshold
+        {
+            get
+            {
+                return targetValueReachedThreshold;
+            }
+            set
+            {
+                targetValueReachedThreshold = value;
+            }
+        }
+        [Tooltip("Determines whether to emit the drive events.")]
+        [SerializeField]
+        private bool emitEvents = true;
         /// <summary>
         /// Determines whether to emit the drive events.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public bool EmitEvents { get; set; } = true;
+        public bool EmitEvents
+        {
+            get
+            {
+                return emitEvents;
+            }
+            set
+            {
+                emitEvents = value;
+            }
+        }
         #endregion
 
         /// <summary>
         /// The current raw value for the drive control.
         /// </summary>
-        public float Value => CalculateValue(Facade.DriveAxis, DriveLimits);
+        public virtual float Value => CalculateValue(Facade.DriveAxis, DriveLimits);
         /// <summary>
         /// The current normalized value for the drive control between the set limits.
         /// </summary>
-        public float NormalizedValue => Mathf.InverseLerp(DriveLimits.minimum, DriveLimits.maximum, Value);
+        public virtual float NormalizedValue => Mathf.InverseLerp(DriveLimits.minimum, DriveLimits.maximum, Value);
         /// <summary>
         /// The current step value for the drive control.
         /// </summary>
-        public float StepValue => CalculateStepValue(Facade);
+        public virtual float StepValue => CalculateStepValue(Facade);
         /// <summary>
         /// The current normalized step value for the drive control between the set step range.
         /// </summary>
-        public float NormalizedStepValue => Mathf.InverseLerp(Facade.StepRange.minimum, Facade.StepRange.maximum, StepValue);
+        public virtual float NormalizedStepValue => Mathf.InverseLerp(Facade.StepRange.minimum, Facade.StepRange.maximum, StepValue);
         /// <summary>
         /// The calculated direction for the drive axis.
         /// </summary>
-        public Vector3 AxisDirection { get; protected set; }
+        public virtual Vector3 AxisDirection { get; protected set; }
         /// <summary>
         /// The calculated limits for the drive.
         /// </summary>
-        public FloatRange DriveLimits { get; protected set; }
+        public virtual FloatRange DriveLimits { get; protected set; }
 
         /// <summary>
         /// The previous state of <see cref="Value"/>.
@@ -148,9 +239,13 @@
         /// <summary>
         /// Sets up the drive mechanism.
         /// </summary>
-        [RequiresBehaviourState]
         public virtual void SetUp()
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             if (ResetDriveOnSetup)
             {
                 ResetDrive();
@@ -167,44 +262,24 @@
         /// <summary>
         /// Processes the value changes and emits the appropriate events.
         /// </summary>
-        [RequiresBehaviourState]
         public virtual void Process()
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             if (wasDisabled || !Value.ApproxEquals(previousValue))
             {
-                if (!isMoving && previousValue < float.MaxValue)
-                {
-                    EmitStartedMoving();
-                    isMoving = true;
-                }
-                previousValue = Value;
-                EmitValueChanged();
-                EmitNormalizedValueChanged();
+                StartMoving();
             }
             else
             {
-                if (isMoving)
-                {
-                    EmitStoppedMoving();
-                    isMoving = false;
-                }
+                StopMoving();
             }
 
-            if (!StepValue.ApproxEquals(previousStepValue))
-            {
-                previousStepValue = StepValue;
-                EmitStepValueChanged();
-            }
-
-            float targetValue = GetTargetValue();
-            bool targetValueReached = NormalizedValue.ApproxEquals(targetValue, TargetValueReachedThreshold);
-            bool shouldEmitEvent = !previousTargetValueReached && targetValueReached;
-            previousTargetValueReached = targetValueReached;
-
-            if (CanMoveToTargetValue() && shouldEmitEvent)
-            {
-                EmitTargetValueReached();
-            }
+            CheckStepValueChange();
+            CheckTargetValueReached();
 
             wasDisabled = false;
         }
@@ -212,10 +287,9 @@
         /// <summary>
         /// Toggles the state of the <see cref="SnapToStepContainer"/>.
         /// </summary>
-        [RequiresBehaviourState]
         public virtual void ToggleSnapToStepLogic(bool state)
         {
-            if(SnapToStepContainer == null)
+            if (!this.IsValidState() || SnapToStepContainer == null)
             {
                 return;
             }
@@ -226,18 +300,26 @@
         /// <summary>
         /// Sets the <see cref="DriveLimits"/> based on the <see cref="Facade"/> drive limit settings.
         /// </summary>
-        [RequiresBehaviourState]
         public virtual void SetDriveLimits()
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             DriveLimits = CalculateDriveLimits(Facade);
         }
 
         /// <summary>
         /// Sets the <see cref="AxisDirection"/> based on the <see cref="Facade.DriveAxis"/> value.
         /// </summary>
-        [RequiresBehaviourState]
         public virtual void SetAxisDirection()
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             AxisDirection = CalculateDriveAxis(Facade.DriveAxis);
         }
 
@@ -246,16 +328,25 @@
         /// </summary>
         /// <param name="driveSpeed">The speed to drive the control at.</param>
         /// <param name="moveToTargetValue">Whether to allow the drive to automatically move the control to the desired target value.</param>
-        [RequiresBehaviourState]
-        public virtual void ProcessDriveSpeed(float driveSpeed, bool moveToTargetValue) { }
+        public virtual void ProcessDriveSpeed(float driveSpeed, bool moveToTargetValue)
+        {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+        }
 
         /// <summary>
         /// Sets the target value of the drive to the given normalized value.
         /// </summary>
         /// <param name="normalizedValue">The normalized value to set the Target Value to.</param>
-        [RequiresBehaviourState]
         public virtual void SetTargetValue(float normalizedValue)
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             SetDriveTargetValue(AxisDirection * Mathf.Lerp(DriveLimits.minimum, DriveLimits.maximum, Mathf.Clamp01(normalizedValue)));
         }
 
@@ -272,9 +363,13 @@
         /// <summary>
         /// Resets the drive back to any default settings.
         /// </summary>
-        [RequiresBehaviourState]
         public virtual void ResetDrive()
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             if (ResetDriveOnSetupFirstTimeOnly)
             {
                 ResetDriveOnSetup = false;
@@ -326,6 +421,61 @@
         /// Removes any velocity being applied to the drive.
         /// </summary>
         protected virtual void EliminateDriveVelocity() { }
+
+        /// <summary>
+        /// Starts the drive moving process.
+        /// </summary>
+        protected virtual void StartMoving()
+        {
+            if (!isMoving && previousValue < float.MaxValue)
+            {
+                EmitStartedMoving();
+                isMoving = true;
+            }
+            previousValue = Value;
+            EmitValueChanged();
+            EmitNormalizedValueChanged();
+        }
+
+        /// <summary>
+        /// Stops the drive moving process.
+        /// </summary>
+        protected virtual void StopMoving()
+        {
+            if (isMoving)
+            {
+                EmitStoppedMoving();
+                isMoving = false;
+            }
+        }
+
+        /// <summary>
+        /// Checks if the <see cref="StepValue"/> has changed.
+        /// </summary>
+        protected virtual void CheckStepValueChange()
+        {
+            if (!StepValue.ApproxEquals(previousStepValue))
+            {
+                previousStepValue = StepValue;
+                EmitStepValueChanged();
+            }
+        }
+
+        /// <summary>
+        /// Checks if the target value has been reached.
+        /// </summary>
+        protected virtual void CheckTargetValueReached()
+        {
+            float targetValue = GetTargetValue();
+            bool targetValueReached = NormalizedValue.ApproxEquals(targetValue, TargetValueReachedThreshold);
+            bool shouldEmitEvent = !previousTargetValueReached && targetValueReached;
+            previousTargetValueReached = targetValueReached;
+
+            if (CanMoveToTargetValue() && shouldEmitEvent)
+            {
+                EmitTargetValueReached();
+            }
+        }
 
         /// <summary>
         /// Gets the drive control target value.

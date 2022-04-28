@@ -1,9 +1,9 @@
 ﻿namespace Tilia.Interactions.Controllables.LinearDriver
 {
-    using Malimbe.BehaviourStateRequirementMethod;
     using Tilia.Interactions.Controllables.Driver;
     using UnityEngine;
     using Zinnia.Data.Type;
+    using Zinnia.Extension;
 
     /// <summary>
     /// The basis to drive a control in a linear direction.
@@ -33,9 +33,13 @@
         }
 
         /// <inheritdoc />
-        [RequiresBehaviourState]
         protected override float CalculateValue(DriveAxis.Axis axis, FloatRange limits)
         {
+            if (!this.IsValidState())
+            {
+                return default;
+            }
+
             float result = 0f;
             switch (axis)
             {
@@ -53,9 +57,13 @@
         }
 
         /// <inheritdoc />
-        [RequiresBehaviourState]
         public override void ConfigureAutoDrive(bool autoDrive)
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             ProcessDriveSpeed(Facade.DriveSpeed, Facade.MoveToTargetValue);
         }
     }

@@ -126,6 +126,14 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.EliminateDriveVelocity()]
 
+[Drive<LinearDriveFacade, LinearDrive>.StartMoving()]
+
+[Drive<LinearDriveFacade, LinearDrive>.StopMoving()]
+
+[Drive<LinearDriveFacade, LinearDrive>.CheckStepValueChange()]
+
+[Drive<LinearDriveFacade, LinearDrive>.CheckTargetValueReached()]
+
 [Drive<LinearDriveFacade, LinearDrive>.GetTargetValue()]
 
 [Drive<LinearDriveFacade, LinearDrive>.CanMoveToTargetValue()]
@@ -346,6 +354,10 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.SetUpInternals()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUpInternals
 [Drive<LinearDriveFacade, LinearDrive>.SetDriveTargetValue(Vector3)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetDriveTargetValue_Vector3_
 [Drive<LinearDriveFacade, LinearDrive>.EliminateDriveVelocity()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EliminateDriveVelocity
+[Drive<LinearDriveFacade, LinearDrive>.StartMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StartMoving
+[Drive<LinearDriveFacade, LinearDrive>.StopMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StopMoving
+[Drive<LinearDriveFacade, LinearDrive>.CheckStepValueChange()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckStepValueChange
+[Drive<LinearDriveFacade, LinearDrive>.CheckTargetValueReached()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckTargetValueReached
 [Drive<LinearDriveFacade, LinearDrive>.GetTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GetTargetValue
 [Drive<LinearDriveFacade, LinearDrive>.CanMoveToTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CanMoveToTargetValue
 [Drive<LinearDriveFacade, LinearDrive>.CalculateStepValue(LinearDriveFacade)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateStepValue__0_

@@ -1,12 +1,10 @@
 ﻿namespace Tilia.Interactions.Controllables.AngularDriver
 {
-    using Malimbe.BehaviourStateRequirementMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using System.Collections.Generic;
     using Tilia.Interactions.Controllables.Driver;
     using UnityEngine;
     using Zinnia.Data.Attribute;
+    using Zinnia.Extension;
 
     /// <summary>
     /// A rotational drive that utilizes a physics joint to control the rotational angle.
@@ -14,18 +12,43 @@
     public class AngularJointDrive : AngularDrive
     {
         #region Joint Settings
+        [Header("Joint Settings")]
+        [Tooltip("The joint being used to drive the rotation.")]
+        [SerializeField]
+        [Restricted]
+        private HingeJoint joint;
         /// <summary>
         /// The joint being used to drive the rotation.
         /// </summary>
-        [Serialized]
-        [field: Header("Joint Settings"), DocumentedByXml, Restricted]
-        public HingeJoint Joint { get; protected set; }
+        public HingeJoint Joint
+        {
+            get
+            {
+                return joint;
+            }
+            protected set
+            {
+                joint = value;
+            }
+        }
+        [Tooltip("The parent GameObject of the joint.")]
+        [SerializeField]
+        [Restricted]
+        private GameObject jointContainer;
         /// <summary>
         /// The parent <see cref="GameObject"/> of the joint.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public GameObject JointContainer { get; protected set; }
+        public GameObject JointContainer
+        {
+            get
+            {
+                return jointContainer;
+            }
+            protected set
+            {
+                jointContainer = value;
+            }
+        }
         #endregion
 
         /// <summary>
@@ -42,26 +65,38 @@
         protected readonly List<bool> rigidbodyChildrenActiveStates = new List<bool>();
 
         /// <inheritdoc />
-        [RequiresBehaviourState]
         public override Vector3 CalculateDriveAxis(DriveAxis.Axis driveAxis)
         {
+            if (!this.IsValidState())
+            {
+                return default;
+            }
+
             Vector3 axisDirection = base.CalculateDriveAxis(driveAxis);
             Joint.axis = axisDirection * -1f;
             return axisDirection;
         }
 
         /// <inheritdoc />
-        [RequiresBehaviourState]
         public override void CalculateHingeLocation(Vector3 newHingeLocation)
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             Joint.anchor = newHingeLocation;
             SetJointContainerPosition();
         }
 
         /// <inheritdoc />
-        [RequiresBehaviourState]
         public override void ConfigureAutoDrive(bool autoDrive)
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             Joint.useMotor = autoDrive;
         }
 

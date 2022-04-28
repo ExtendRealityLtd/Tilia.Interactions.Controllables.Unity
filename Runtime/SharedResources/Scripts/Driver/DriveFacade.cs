@@ -1,8 +1,5 @@
 ﻿namespace Tilia.Interactions.Controllables.Driver
 {
-    using Malimbe.MemberChangeMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using System;
     using UnityEngine;
     using UnityEngine.Events;
@@ -26,137 +23,324 @@
     public abstract class DriveFacade<TDrive, TSelf> : MonoBehaviour where TDrive : Drive<TSelf, TDrive> where TSelf : DriveFacade<TDrive, TSelf>
     {
         #region Reference Settings
+        [Header("Reference Settings")]
+        [Tooltip("The linked TDrive")]
+        [SerializeField]
+        [Restricted]
+        private TDrive drive;
         /// <summary>
         /// The linked <see cref="TDrive"/>
         /// </summary>
-        [Serialized]
-        [field: Header("Reference Settings"), DocumentedByXml, Restricted]
-        public TDrive Drive { get; protected set; }
+        public TDrive Drive
+        {
+            get
+            {
+                return drive;
+            }
+            protected set
+            {
+                drive = value;
+            }
+        }
+        [Tooltip("The GameObject reference for the nested Interactable.")]
+        [SerializeField]
+        [Restricted]
+        private ObjectReference linkedInteractableFacade;
         /// <summary>
-        /// The <see cref="GameObject"/> reference for the nested Interactable/>.
+        /// The <see cref="GameObject"/> reference for the nested Interactable.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public ObjectReference LinkedInteractableFacade { get; protected set; }
+        public ObjectReference LinkedInteractableFacade
+        {
+            get
+            {
+                return linkedInteractableFacade;
+            }
+            protected set
+            {
+                linkedInteractableFacade = value;
+            }
+        }
+        [Tooltip("The GameObject reference for the nested minimum value reached event.")]
+        [SerializeField]
+        [Restricted]
+        private ObjectReference linkedMinReached;
         /// <summary>
-        /// The <see cref="GameObject"/> reference for the nested minimum value reached event/>.
+        /// The <see cref="GameObject"/> reference for the nested minimum value reached event.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public ObjectReference LinkedMinReached { get; protected set; }
+        public ObjectReference LinkedMinReached
+        {
+            get
+            {
+                return linkedMinReached;
+            }
+            protected set
+            {
+                linkedMinReached = value;
+            }
+        }
+        [Tooltip("The GameObject reference for the nested mid point value reached event.")]
+        [SerializeField]
+        [Restricted]
+        private ObjectReference linkedMidReached;
         /// <summary>
-        /// The <see cref="GameObject"/> reference for the nested mid point value reached event/>.
+        /// The <see cref="GameObject"/> reference for the nested mid point value reached event.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public ObjectReference LinkedMidReached { get; protected set; }
+        public ObjectReference LinkedMidReached
+        {
+            get
+            {
+                return linkedMidReached;
+            }
+            protected set
+            {
+                linkedMidReached = value;
+            }
+        }
+        [Tooltip("The GameObject reference for the nested max value reached event.")]
+        [SerializeField]
+        [Restricted]
+        private ObjectReference linkedMaxReached;
         /// <summary>
-        /// The <see cref="GameObject"/> reference for the nested max value reached event/>.
+        /// The <see cref="GameObject"/> reference for the nested max value reached event.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public ObjectReference LinkedMaxReached { get; protected set; }
+        public ObjectReference LinkedMaxReached
+        {
+            get
+            {
+                return linkedMaxReached;
+            }
+            protected set
+            {
+                linkedMaxReached = value;
+            }
+        }
         #endregion
 
         #region Events
         /// <summary>
         /// Emitted when the raw value changes with the raw value data.
         /// </summary>
-        [Header("Events"), DocumentedByXml]
+        [Header("Events")]
         public DriveUnityEvent ValueChanged = new DriveUnityEvent();
         /// <summary>
         /// Emitted when the step value changes with the step value data.
         /// </summary>
-        [DocumentedByXml]
         public DriveUnityEvent StepValueChanged = new DriveUnityEvent();
         /// <summary>
         /// Emitted when the normalized value changes with the normalized value data.
         /// </summary>
-        [DocumentedByXml]
         public DriveUnityEvent NormalizedValueChanged = new DriveUnityEvent();
         /// <summary>
         /// Emitted when <see cref="InitialTargetValue"/> has been reached by the control.
         /// </summary>
-        [DocumentedByXml]
         public DriveUnityEvent InitialTargetValueReached = new DriveUnityEvent();
         /// <summary>
         /// Emitted when <see cref="TargetValue"/> has been reached by the control.
         /// </summary>
-        [DocumentedByXml]
         public DriveUnityEvent TargetValueReached = new DriveUnityEvent();
         /// <summary>
         /// Emitted when the drive starts moving the control.
         /// </summary>
-        [DocumentedByXml]
         public DriveUnityEvent StartedMoving = new DriveUnityEvent();
         /// <summary>
         /// Emitted when the drive is no longer moving the control and it is stationary.
         /// </summary>
-        [DocumentedByXml]
         public DriveUnityEvent StoppedMoving = new DriveUnityEvent();
         #endregion
 
         #region Drive Settings
+        [Header("Drive Settings")]
+        [Tooltip("The axis to operate the drive motion on.")]
+        [SerializeField]
+        private DriveAxis.Axis driveAxis = Driver.DriveAxis.Axis.XAxis;
         /// <summary>
         /// The axis to operate the drive motion on.
         /// </summary>
-        [Serialized]
-        [field: Header("Drive Settings"), DocumentedByXml]
-        public DriveAxis.Axis DriveAxis { get; set; } = Driver.DriveAxis.Axis.XAxis;
+        public DriveAxis.Axis DriveAxis
+        {
+            get
+            {
+                return driveAxis;
+            }
+            set
+            {
+                driveAxis = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterDriveAxisChange();
+                }
+            }
+        }
+        [Tooltip("The speed in which the drive will attempt to move the control to the desired value.")]
+        [SerializeField]
+        private float driveSpeed = 10f;
         /// <summary>
         /// The speed in which the drive will attempt to move the control to the desired value.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public float DriveSpeed { get; set; } = 10f;
+        public float DriveSpeed
+        {
+            get
+            {
+                return driveSpeed;
+            }
+            set
+            {
+                driveSpeed = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterDriveSpeedChange();
+                }
+            }
+        }
         #endregion
 
         #region Target Value Settings
+        [Header("Target Value Settings")]
+        [Tooltip("Determines if the drive should start the control at the InitialTargetValue when it is first enabled (no events will be emitted).")]
+        [SerializeField]
+        private bool startAtInitialTargetValue;
         /// <summary>
         /// Determines if the drive should start the control at the <see cref="InitialTargetValue"/> when it is first enabled (no events will be emitted).
         /// </summary>
-        [Serialized]
-        [field: Header("Target Value Settings"), DocumentedByXml]
-        public bool StartAtInitialTargetValue { get; set; }
+        public bool StartAtInitialTargetValue
+        {
+            get
+            {
+                return startAtInitialTargetValue;
+            }
+            set
+            {
+                startAtInitialTargetValue = value;
+            }
+        }
+        [Tooltip("The normalized value to attempt to drive the control to when it is first enabled.")]
+        [SerializeField]
+        [Range(0f, 1f)]
+        private float initialTargetValue = 0.5f;
         /// <summary>
         /// The normalized value to attempt to drive the control to when it is first enabled.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Range(0f, 1f)]
-        public float InitialTargetValue { get; set; } = 0.5f;
+        public float InitialTargetValue
+        {
+            get
+            {
+                return initialTargetValue;
+            }
+            set
+            {
+                initialTargetValue = value;
+            }
+        }
+        [Tooltip("Determines if the drive should move the element to the set TargetValue.")]
+        [SerializeField]
+        private bool moveToTargetValue;
         /// <summary>
         /// Determines if the drive should move the element to the set <see cref="TargetValue"/>.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public bool MoveToTargetValue { get; set; }
+        public bool MoveToTargetValue
+        {
+            get
+            {
+                return moveToTargetValue;
+            }
+            set
+            {
+                moveToTargetValue = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterMoveToTargetValueChange();
+                }
+            }
+        }
+        [Tooltip("The normalized value to attempt to drive the control to if the MoveToTargetValue is set to true.")]
+        [SerializeField]
+        [Range(0f, 1f)]
+        private float targetValue = 0.5f;
         /// <summary>
         /// The normalized value to attempt to drive the control to if the <see cref="MoveToTargetValue"/> is set to <see langword="true"/>.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Range(0f, 1f)]
-        public float TargetValue { get; set; } = 0.5f;
+        public float TargetValue
+        {
+            get
+            {
+                return targetValue;
+            }
+            set
+            {
+                targetValue = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterTargetValueChange();
+                }
+            }
+        }
         #endregion
 
         #region Step Settings
+        [Header("Step Settings")]
+        [Tooltip("The range of step values to use.")]
+        [SerializeField]
+        private FloatRange stepRange = new FloatRange(0f, 10f);
         /// <summary>
         /// The range of step values to use.
         /// </summary>
-        [Serialized]
-        [field: Header("Step Settings"), DocumentedByXml]
-        public FloatRange StepRange { get; set; } = new FloatRange(0f, 10f);
+        public FloatRange StepRange
+        {
+            get
+            {
+                return stepRange;
+            }
+            set
+            {
+                stepRange = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterStepRangeChange();
+                }
+            }
+        }
+        [Tooltip("The increment to increase the steps in value by.")]
+        [SerializeField]
+        private float stepIncrement = 1f;
         /// <summary>
         /// The increment to increase the steps in value by.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public float StepIncrement { get; set; } = 1f;
+        public float StepIncrement
+        {
+            get
+            {
+                return stepIncrement;
+            }
+            set
+            {
+                stepIncrement = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterStepIncrementChange();
+                }
+            }
+        }
+        [Tooltip("The increment to increase the steps in value by.")]
+        [SerializeField]
+        private bool snapToStepOnRelease;
         /// <summary>
         /// Attempt to snap to the step value upon releasing the control.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public bool SnapToStepOnRelease { get; set; }
+        public bool SnapToStepOnRelease
+        {
+            get
+            {
+                return snapToStepOnRelease;
+            }
+            set
+            {
+                snapToStepOnRelease = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterSnapToStepOnRelease();
+                }
+            }
+        }
         #endregion
 
         /// <summary>
@@ -259,7 +443,6 @@
         /// <summary>
         /// Called after <see cref="DriveAxis"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(DriveAxis))]
         protected virtual void OnAfterDriveAxisChange()
         {
             Drive.ResetDriveOnSetup = true;
@@ -269,7 +452,6 @@
         /// <summary>
         /// Called after <see cref="MoveToTargetValue"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(MoveToTargetValue))]
         protected virtual void OnAfterMoveToTargetValueChange()
         {
             Drive.SetUp();
@@ -278,7 +460,6 @@
         /// <summary>
         /// Called after <see cref="TargetValue"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(TargetValue))]
         protected virtual void OnAfterTargetValueChange()
         {
             Drive.SetUp();
@@ -287,7 +468,6 @@
         /// <summary>
         /// Called after <see cref="DriveSpeed"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(DriveSpeed))]
         protected virtual void OnAfterDriveSpeedChange()
         {
             Drive.SetUp();
@@ -296,7 +476,6 @@
         /// <summary>
         /// Called after <see cref="StepRange"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(StepRange))]
         protected virtual void OnAfterStepRangeChange()
         {
             Drive.SetUp();
@@ -305,7 +484,6 @@
         /// <summary>
         /// Called after <see cref="StepIncrement"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(StepIncrement))]
         protected virtual void OnAfterStepIncrementChange()
         {
             Drive.SetUp();
@@ -314,7 +492,6 @@
         /// <summary>
         /// Called after <see cref="SnapToStepOnRelease"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(SnapToStepOnRelease))]
         protected virtual void OnAfterSnapToStepOnRelease()
         {
             Drive.ToggleSnapToStepLogic(SnapToStepOnRelease);

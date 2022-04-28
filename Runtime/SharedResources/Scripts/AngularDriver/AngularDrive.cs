@@ -1,6 +1,5 @@
 ﻿namespace Tilia.Interactions.Controllables.AngularDriver
 {
-    using Malimbe.BehaviourStateRequirementMethod;
     using Tilia.Interactions.Controllables.Driver;
     using UnityEngine;
     using Zinnia.Data.Type;
@@ -14,15 +13,15 @@
         /// <summary>
         /// The previous rotation angle of the control.
         /// </summary>
-        protected float PreviousActualAngle => previousActualRotation[(int)Facade.DriveAxis];
+        protected virtual float PreviousActualAngle => previousActualRotation[(int)Facade.DriveAxis];
         /// <summary>
         /// The current rotation angle of the control.
         /// </summary>
-        protected float CurrentActualAngle => currentActualRotation[(int)Facade.DriveAxis];
+        protected virtual float CurrentActualAngle => currentActualRotation[(int)Facade.DriveAxis];
         /// <summary>
         /// The target angle for the control to reach.
         /// </summary>
-        protected float ActualTargetAngle => Mathf.Lerp(DriveLimits.minimum, DriveLimits.maximum, Facade.TargetValue);
+        protected virtual float ActualTargetAngle => Mathf.Lerp(DriveLimits.minimum, DriveLimits.maximum, Facade.TargetValue);
 
         /// <summary>
         /// The total number of degrees in a circle.
@@ -75,9 +74,13 @@
         public abstract void ApplyExistingAngularVelocity(float multiplier = 1f);
 
         /// <inheritdoc />
-        [RequiresBehaviourState]
         public override void Process()
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             base.Process();
 
             previousActualRotation = currentActualRotation;
@@ -98,6 +101,11 @@
         /// <inheritdoc />
         public override void ResetDrive()
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             base.ResetDrive();
             GetDriveTransform().localRotation = Quaternion.identity;
             previousActualRotation = Vector3.zero;
@@ -128,9 +136,13 @@
         }
 
         /// <inheritdoc />
-        [RequiresBehaviourState]
         protected override float CalculateValue(DriveAxis.Axis driveAxis, FloatRange limits)
         {
+            if (!this.IsValidState())
+            {
+                return default;
+            }
+
             return Mathf.Clamp(currentPseudoRotation, limits.minimum, limits.maximum);
         }
 

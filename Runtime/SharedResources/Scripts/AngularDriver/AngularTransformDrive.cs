@@ -1,8 +1,5 @@
 ﻿namespace Tilia.Interactions.Controllables.AngularDriver
 {
-    using Malimbe.BehaviourStateRequirementMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using Tilia.Interactions.Controllables.Driver;
     using Tilia.Interactions.Interactables.Interactables;
     using UnityEngine;
@@ -18,36 +15,89 @@
     public class AngularTransformDrive : AngularDrive
     {
         #region Reference Settings
+        [Header("Reference Settings")]
+        [Tooltip("The InteractableFacade that controls the movement of the drive.")]
+        [SerializeField]
+        [Restricted]
+        private InteractableFacade interactable;
         /// <summary>
         /// The <see cref="InteractableFacade"/> that controls the movement of the drive.
         /// </summary>
-        [Serialized]
-        [field: Header("Reference Settings"), DocumentedByXml, Restricted]
-        public InteractableFacade Interactable { get; protected set; }
+        public InteractableFacade Interactable
+        {
+            get
+            {
+                return interactable;
+            }
+            protected set
+            {
+                interactable = value;
+            }
+        }
+        [Tooltip("The GameObject that contains the meshes for the control.")]
+        [SerializeField]
+        [Restricted]
+        private GameObject interactableMesh;
         /// <summary>
         /// The <see cref="GameObject"/> that contains the meshes for the control.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public GameObject InteractableMesh { get; protected set; }
+        public GameObject InteractableMesh
+        {
+            get
+            {
+                return interactableMesh;
+            }
+            protected set
+            {
+                interactableMesh = value;
+            }
+        }
+        [Tooltip("The TransformPositionDifferenceRotation to drive the rotation of the control.")]
+        [SerializeField]
+        [Restricted]
+        private TransformPositionDifferenceRotation rotationModifier;
         /// <summary>
         /// The <see cref="TransformPositionDifferenceRotation"/> to drive the rotation of the control.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public TransformPositionDifferenceRotation RotationModifier { get; protected set; }
+        public TransformPositionDifferenceRotation RotationModifier
+        {
+            get
+            {
+                return rotationModifier;
+            }
+            protected set
+            {
+                rotationModifier = value;
+            }
+        }
+        [Tooltip("The ArtificialVelocityApplier that applies artificial angular velocity to the control after releasing.")]
+        [SerializeField]
+        [Restricted]
+        private ArtificialVelocityApplier velocityApplier;
         /// <summary>
         /// The <see cref="ArtificialVelocityApplier"/> that applies artificial angular velocity to the control after releasing.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public ArtificialVelocityApplier VelocityApplier { get; protected set; }
+        public ArtificialVelocityApplier VelocityApplier
+        {
+            get
+            {
+                return velocityApplier;
+            }
+            protected set
+            {
+                velocityApplier = value;
+            }
+        }
         #endregion
 
         /// <inheritdoc />
-        [RequiresBehaviourState]
         public override Vector3 CalculateDriveAxis(DriveAxis.Axis driveAxis)
         {
+            if (!this.IsValidState())
+            {
+                return default;
+            }
+
             Vector3 axisDirection = base.CalculateDriveAxis(driveAxis);
             switch (driveAxis)
             {
@@ -66,9 +116,13 @@
         }
 
         /// <inheritdoc />
-        [RequiresBehaviourState]
         public override void CalculateHingeLocation(Vector3 newHingeLocation)
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             transform.localPosition = newHingeLocation;
             InteractableMesh.transform.localPosition = newHingeLocation * -1f;
         }

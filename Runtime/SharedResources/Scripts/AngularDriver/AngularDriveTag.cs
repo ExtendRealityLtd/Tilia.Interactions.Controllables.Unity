@@ -2,7 +2,5 @@
 {
     using UnityEngine;
 
-    public class AngularDriveTag : MonoBehaviour
-    {
-    }
+    public class AngularDriveTag : MonoBehaviour { }
 }
