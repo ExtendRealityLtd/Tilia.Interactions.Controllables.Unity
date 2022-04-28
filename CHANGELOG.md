@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.4](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.0.3...v2.0.4) (2022-04-28)
+
+#### Bug Fixes
+
+* **DriveFacade:** ensure ObjectReference fields render correctly ([38d711b](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/38d711bb8d23994b842f3bcf70e3ae73c7074e82))
+  > The ObjectReference fields cannot be marked as Restricted otherwise they won't render using the correct custom property drawer as they will attempt to just render using the Restricted attribute instead.
+
 ### [2.0.3](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.0.2...v2.0.3) (2022-04-28)
 
 #### Miscellaneous Chores
