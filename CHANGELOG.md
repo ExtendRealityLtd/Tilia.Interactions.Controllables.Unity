@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.16.4...v2.0.0) (2022-04-28)
+
+#### :warning: BREAKING CHANGES :warning:
+
+* **Malimbe:** This removes the last remaining elements of Malimbe and whilst it does not cause any breaking changes within this package, it removes Malimbe as a dependency which other projects that rely on this package may piggy back off this Malimbe dependency so it will break any project like that.
+
+All of the previous functionality from Malimbe has been replicated in standard code without the need for it to be weaved by the Malimbe helper tags. ([b2ffd78](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/b2ffd7894b8528d92ab327bb815c81c713c5e924))
+
+#### Features
+
+* **Malimbe:** remove malimbe dependency ([b2ffd78](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/b2ffd7894b8528d92ab327bb815c81c713c5e924))
+
 ### [1.16.4](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v1.16.3...v1.16.4) (2022-03-15)
 
 #### Miscellaneous Chores
