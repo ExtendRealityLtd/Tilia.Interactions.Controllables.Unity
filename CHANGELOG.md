@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.1.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.0.4...v2.1.0) (2022-04-29)
+
+#### Features
+
+* **LinearDriveFacade:** editor button to align to initial target value ([6efd2c8](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/6efd2c8a00e65bf907916a81b0c768235f78ef05))
+  > A new custom editor for the LinearDriveFacade has been added that just adds a button to the bottom of the component inspector that when clicked will align the linear drive component in the editor scene to the position that the initial target value is set to.
+  > 
+  > This makes it easier to line up the drive object in the editor as it can be shown at the various stages of its travel.
+
 ### [2.0.4](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.0.3...v2.0.4) (2022-04-28)
 
 #### Bug Fixes
