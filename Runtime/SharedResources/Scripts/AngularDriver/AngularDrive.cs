@@ -23,6 +23,10 @@
         /// The target angle for the control to reach.
         /// </summary>
         protected float ActualTargetAngle => Mathf.Lerp(DriveLimits.minimum, DriveLimits.maximum, Facade.TargetValue);
+        /// <summary>
+        /// The threshold angle within which the target value is reached.
+        /// </summary>
+        protected float ThresholdAngle => (DriveLimits.maximum - DriveLimits.minimum) * TargetValueReachedThreshold;
 
         /// <summary>
         /// The total number of degrees in a circle.
@@ -155,8 +159,7 @@
         protected virtual float CalculateDirectionMultiplier()
         {
             float actualAngle = ActualTargetAngle;
-            float thresholdRotation = (DriveLimits.maximum - DriveLimits.minimum) * TargetValueReachedThreshold;
-            if (actualAngle.ApproxEquals(currentPseudoRotation, thresholdRotation))
+            if (actualAngle.ApproxEquals(currentPseudoRotation, ThresholdAngle))
             {
                 return 0f;
             }
@@ -178,13 +181,13 @@
         /// <returns>Whether the limits have been applied.</returns>
         protected virtual bool ApplyLimits()
         {
-            float thresholdRotation = (DriveLimits.maximum - DriveLimits.minimum) * TargetValueReachedThreshold;
-            if (currentPseudoRotation < DriveLimits.minimum - thresholdRotation)
+            float thresholdAngle = ThresholdAngle;
+            if (currentPseudoRotation < DriveLimits.minimum - thresholdAngle)
             {
                 GetDriveTransform().localRotation = Quaternion.Euler(-AxisDirection * DriveLimits.minimum);
                 return true;
             }
-            else if (currentPseudoRotation > DriveLimits.maximum + thresholdRotation)
+            else if (currentPseudoRotation > DriveLimits.maximum + thresholdAngle)
             {
                 GetDriveTransform().localRotation = Quaternion.Euler(-AxisDirection * DriveLimits.maximum);
                 return true;
@@ -199,8 +202,7 @@
         /// <returns>The velocity to drive the control automatically with.</returns>
         protected virtual float CalculateAutoDriveVelocity()
         {
-            float thresholdRotation = (DriveLimits.maximum - DriveLimits.minimum) * TargetValueReachedThreshold;
-            return (Facade.MoveToTargetValue && !currentPseudoRotation.ApproxEquals(ActualTargetAngle, thresholdRotation) ? Facade.DriveSpeed : 0f) * CalculateDirectionMultiplier();
+            return (Facade.MoveToTargetValue && !currentPseudoRotation.ApproxEquals(ActualTargetAngle, ThresholdAngle) ? Facade.DriveSpeed : 0f) * CalculateDirectionMultiplier();
         }
 
         /// <summary>
