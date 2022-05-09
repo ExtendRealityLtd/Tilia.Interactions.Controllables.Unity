@@ -64,6 +64,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7040976075344879993}
   - component: {fileID: 7040976075344879994}
+  - component: {fileID: 2864686000277413890}
   m_Layer: 0
   m_Name: Interactions.LinearTransformDrive
   m_TagString: Untagged
@@ -183,6 +184,18 @@ MonoBehaviour:
   snapToStepOnRelease: 0
   driveLimit: 1
   gizmoCubeSize: {x: 0.015, y: 0.015, z: 0.015}
+--- !u!114 &2864686000277413890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7040976075344879995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d6cb68905534b4d8baf13b96b36cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7040976075741244411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1696,8 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1358879325688394349, guid: 1bb7642ebf8d0a34aa23fc586ea87e6a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1bb7642ebf8d0a34aa23fc586ea87e6a, type: 3}
 --- !u!114 &7736847107121358400 stripped
 MonoBehaviour:
