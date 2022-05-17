@@ -190,6 +190,52 @@
         }
         #endregion
 
+        #region Drag Settings
+        [Header("Drag Settings")]
+        [Tooltip("The drag to apply when the control is ungrabbed.")]
+        [SerializeField]
+        private float ungrabbedDrag = 0f;
+        /// <summary>
+        /// The drag to apply when the control is ungrabbed.
+        /// </summary>
+        public float UngrabbedDrag
+        {
+            get
+            {
+                return ungrabbedDrag;
+            }
+            set
+            {
+                ungrabbedDrag = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterUngrabbedDragChange();
+                }
+            }
+        }
+        [Tooltip("The drag to apply when the control is grabbed.")]
+        [SerializeField]
+        private float grabbedDrag = 0f;
+        /// <summary>
+        /// The drag to apply when the control is grabbed.
+        /// </summary>
+        public float GrabbedDrag
+        {
+            get
+            {
+                return grabbedDrag;
+            }
+            set
+            {
+                grabbedDrag = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterGrabbedDragChange();
+                }
+            }
+        }
+        #endregion
+
         #region Target Value Settings
         [Header("Target Value Settings")]
         [Tooltip("Determines if the drive should start the control at the InitialTargetValue when it is first enabled (no events will be emitted).")]
@@ -491,6 +537,22 @@
         protected virtual void OnAfterSnapToStepOnRelease()
         {
             Drive.ToggleSnapToStepLogic(SnapToStepOnRelease);
+        }
+
+        /// <summary>
+        /// Called after <see cref="UngrabbedDrag"/> has been changed.
+        /// </summary>
+        protected virtual void OnAfterUngrabbedDragChange()
+        {
+            drive.SetUngrabbedDrag(UngrabbedDrag);
+        }
+
+        /// <summary>
+        /// Called after <see cref="GrabbedDrag"/> has been changed.
+        /// </summary>
+        protected virtual void OnAfterGrabbedDragChange()
+        {
+            drive.SetGrabbedDrag(GrabbedDrag);
         }
     }
 }

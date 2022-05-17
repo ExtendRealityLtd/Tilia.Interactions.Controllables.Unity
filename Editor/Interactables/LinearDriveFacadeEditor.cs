@@ -1,5 +1,6 @@
 ﻿namespace Tilia.Interactions.Controllables.LinearDriver
 {
+    using System;
     using UnityEditor;
     using UnityEngine;
     using Zinnia.Utility;
@@ -14,14 +15,24 @@
         {
             base.OnInspectorGUI();
 
-            EditorGUILayout.BeginHorizontal("GroupBox");
-            GUILayout.FlexibleSpace();
-            if (GUILayout.Button(buttonText))
+            try
             {
-                ChooseButtonLogic();
+                EditorGUILayout.BeginHorizontal("GroupBox");
+                GUILayout.FlexibleSpace();
+                if (GUILayout.Button(buttonText))
+                {
+                    ChooseButtonLogic();
+                }
+                GUILayout.FlexibleSpace();
+                EditorGUILayout.EndHorizontal();
             }
-            GUILayout.FlexibleSpace();
-            EditorGUILayout.EndHorizontal();
+            catch (Exception exception)
+            {
+                if (exception.GetType() != typeof(ExitGUIException) && exception.GetType() != typeof(ArgumentException))
+                {
+                    Debug.LogError(exception);
+                }
+            }
         }
 
         protected virtual void OnEnable()
