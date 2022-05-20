@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.3.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.3.0...v2.3.1) (2022-05-20)
+
+#### Bug Fixes
+
+* **Documentation:** add missing API docs ([c4aa830](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/c4aa83075c653be5420d7286c9084aefaccd8e49))
+  > The new grabbed/ungrabbed drag values were missing from the docs. They have now been auto generated to include them.
+
 ## [2.3.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.2.4...v2.3.0) (2022-05-20)
 
 #### Features
