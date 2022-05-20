@@ -48,6 +48,10 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.SnapToStepContainer]
 
+[Drive<LinearDriveFacade, LinearDrive>.GrabbedDragEmitter]
+
+[Drive<LinearDriveFacade, LinearDrive>.UngrabbedDragEmitter]
+
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetup]
 
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetupFirstTimeOnly]
@@ -101,6 +105,10 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.SetDriveLimits()]
 
 [Drive<LinearDriveFacade, LinearDrive>.SetAxisDirection()]
+
+[Drive<LinearDriveFacade, LinearDrive>.SetGrabbedDrag(Single)]
+
+[Drive<LinearDriveFacade, LinearDrive>.SetUngrabbedDrag(Single)]
 
 [Drive<LinearDriveFacade, LinearDrive>.ProcessDriveSpeed(Single, Boolean)]
 
@@ -346,6 +354,8 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.Facade]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Facade
 [Drive<LinearDriveFacade, LinearDrive>.EventOutputContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EventOutputContainer
 [Drive<LinearDriveFacade, LinearDrive>.SnapToStepContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SnapToStepContainer
+[Drive<LinearDriveFacade, LinearDrive>.GrabbedDragEmitter]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GrabbedDragEmitter
+[Drive<LinearDriveFacade, LinearDrive>.UngrabbedDragEmitter]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_UngrabbedDragEmitter
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetup]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetup
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetupFirstTimeOnly]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetupFirstTimeOnly
 [Drive<LinearDriveFacade, LinearDrive>.InitialValueDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialValueDriveSpeed
@@ -373,6 +383,8 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.ToggleSnapToStepLogic(Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ToggleSnapToStepLogic_System_Boolean_
 [Drive<LinearDriveFacade, LinearDrive>.SetDriveLimits()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetDriveLimits
 [Drive<LinearDriveFacade, LinearDrive>.SetAxisDirection()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetAxisDirection
+[Drive<LinearDriveFacade, LinearDrive>.SetGrabbedDrag(Single)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetGrabbedDrag_System_Single_
+[Drive<LinearDriveFacade, LinearDrive>.SetUngrabbedDrag(Single)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUngrabbedDrag_System_Single_
 [Drive<LinearDriveFacade, LinearDrive>.ProcessDriveSpeed(Single, Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ProcessDriveSpeed_System_Single_System_Boolean_
 [Drive<LinearDriveFacade, LinearDrive>.SetTargetValue(Single)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetTargetValue_System_Single_
 [Drive<LinearDriveFacade, LinearDrive>.CalculateDriveAxis(DriveAxis.Axis)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateDriveAxis_Tilia_Interactions_Controllables_Driver_DriveAxis_Axis_

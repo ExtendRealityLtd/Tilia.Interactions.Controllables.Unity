@@ -60,6 +60,10 @@ The public interface into any RotationalDrive prefab.
 
 [DriveFacade<AngularDrive, AngularDriveFacade>.DriveSpeed]
 
+[DriveFacade<AngularDrive, AngularDriveFacade>.UngrabbedDrag]
+
+[DriveFacade<AngularDrive, AngularDriveFacade>.GrabbedDrag]
+
 [DriveFacade<AngularDrive, AngularDriveFacade>.StartAtInitialTargetValue]
 
 [DriveFacade<AngularDrive, AngularDriveFacade>.InitialTargetValue]
@@ -107,6 +111,10 @@ The public interface into any RotationalDrive prefab.
 [DriveFacade<AngularDrive, AngularDriveFacade>.OnAfterStepIncrementChange()]
 
 [DriveFacade<AngularDrive, AngularDriveFacade>.OnAfterSnapToStepOnRelease()]
+
+[DriveFacade<AngularDrive, AngularDriveFacade>.OnAfterUngrabbedDragChange()]
+
+[DriveFacade<AngularDrive, AngularDriveFacade>.OnAfterGrabbedDragChange()]
 
 ##### Namespace
 
@@ -287,6 +295,8 @@ public virtual void SetHingeLocationZ(float value)
 [DriveFacade<AngularDrive, AngularDriveFacade>.StoppedMoving]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StoppedMoving
 [DriveFacade<AngularDrive, AngularDriveFacade>.DriveAxis]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveAxis
 [DriveFacade<AngularDrive, AngularDriveFacade>.DriveSpeed]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveSpeed
+[DriveFacade<AngularDrive, AngularDriveFacade>.UngrabbedDrag]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_UngrabbedDrag
+[DriveFacade<AngularDrive, AngularDriveFacade>.GrabbedDrag]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_GrabbedDrag
 [DriveFacade<AngularDrive, AngularDriveFacade>.StartAtInitialTargetValue]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StartAtInitialTargetValue
 [DriveFacade<AngularDrive, AngularDriveFacade>.InitialTargetValue]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_InitialTargetValue
 [DriveFacade<AngularDrive, AngularDriveFacade>.MoveToTargetValue]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_MoveToTargetValue
@@ -311,6 +321,8 @@ public virtual void SetHingeLocationZ(float value)
 [DriveFacade<AngularDrive, AngularDriveFacade>.OnAfterStepRangeChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterStepRangeChange
 [DriveFacade<AngularDrive, AngularDriveFacade>.OnAfterStepIncrementChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterStepIncrementChange
 [DriveFacade<AngularDrive, AngularDriveFacade>.OnAfterSnapToStepOnRelease()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterSnapToStepOnRelease
+[DriveFacade<AngularDrive, AngularDriveFacade>.OnAfterUngrabbedDragChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterUngrabbedDragChange
+[DriveFacade<AngularDrive, AngularDriveFacade>.OnAfterGrabbedDragChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterGrabbedDragChange
 [Tilia.Interactions.Controllables.AngularDriver]: README.md
 [DriveLimit]: AngularDriveFacade.md#DriveLimit
 [HingeLocation]: AngularDriveFacade.md#HingeLocation

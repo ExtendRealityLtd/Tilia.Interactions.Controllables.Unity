@@ -19,6 +19,7 @@ The basis of the public interface that will drive a control in relation to a spe
   * [Drive]
   * [DriveAxis]
   * [DriveSpeed]
+  * [GrabbedDrag]
   * [InitialTargetValue]
   * [LinkedInteractableFacade]
   * [LinkedMaxReached]
@@ -30,16 +31,19 @@ The basis of the public interface that will drive a control in relation to a spe
   * [StepIncrement]
   * [StepRange]
   * [TargetValue]
+  * [UngrabbedDrag]
 * [Methods]
   * [CalculateDriveAxis(DriveAxis.Axis)]
   * [ForceSnapToStepValue(Single)]
   * [OnAfterDriveAxisChange()]
   * [OnAfterDriveSpeedChange()]
+  * [OnAfterGrabbedDragChange()]
   * [OnAfterMoveToTargetValueChange()]
   * [OnAfterSnapToStepOnRelease()]
   * [OnAfterStepIncrementChange()]
   * [OnAfterStepRangeChange()]
   * [OnAfterTargetValueChange()]
+  * [OnAfterUngrabbedDragChange()]
   * [ProcessAutoDrive(Boolean)]
   * [ProcessDriveSpeed(Single, Boolean)]
   * [SetDriveAxis(Int32)]
@@ -179,6 +183,16 @@ The speed in which the drive will attempt to move the control to the desired val
 public float DriveSpeed { get; set; }
 ```
 
+#### GrabbedDrag
+
+The drag to apply when the control is grabbed.
+
+##### Declaration
+
+```
+public float GrabbedDrag { get; set; }
+```
+
 #### InitialTargetValue
 
 The normalized value to attempt to drive the control to when it is first enabled.
@@ -289,6 +303,16 @@ The normalized value to attempt to drive the control to if the [MoveToTargetValu
 public float TargetValue { get; set; }
 ```
 
+#### UngrabbedDrag
+
+The drag to apply when the control is ungrabbed.
+
+##### Declaration
+
+```
+public float UngrabbedDrag { get; set; }
+```
+
 ### Methods
 
 #### CalculateDriveAxis(DriveAxis.Axis)
@@ -343,6 +367,16 @@ Called after [DriveSpeed] has been changed.
 protected virtual void OnAfterDriveSpeedChange()
 ```
 
+#### OnAfterGrabbedDragChange()
+
+Called after [GrabbedDrag] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterGrabbedDragChange()
+```
+
 #### OnAfterMoveToTargetValueChange()
 
 Called after [MoveToTargetValue] has been changed.
@@ -391,6 +425,16 @@ Called after [TargetValue] has been changed.
 
 ```
 protected virtual void OnAfterTargetValueChange()
+```
+
+#### OnAfterUngrabbedDragChange()
+
+Called after [UngrabbedDrag] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterUngrabbedDragChange()
 ```
 
 #### ProcessAutoDrive(Boolean)
@@ -528,11 +572,13 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [MoveToTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_MoveToTargetValue
 [DriveAxis]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveAxis
 [DriveSpeed]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveSpeed
+[GrabbedDrag]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_GrabbedDrag
 [MoveToTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_MoveToTargetValue
 [SnapToStepOnRelease]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SnapToStepOnRelease
 [StepIncrement]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepIncrement
 [StepRange]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepRange
 [TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
+[UngrabbedDrag]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_UngrabbedDrag
 [DriveSpeed]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveSpeed
 [DriveAxis]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveAxis
 [DriveAxis.Axis]: DriveAxis.Axis.md
@@ -556,6 +602,7 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [Drive]: #Drive
 [DriveAxis]: #DriveAxis
 [DriveSpeed]: #DriveSpeed
+[GrabbedDrag]: #GrabbedDrag
 [InitialTargetValue]: #InitialTargetValue
 [LinkedInteractableFacade]: #LinkedInteractableFacade
 [LinkedMaxReached]: #LinkedMaxReached
@@ -567,16 +614,19 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [StepIncrement]: #StepIncrement
 [StepRange]: #StepRange
 [TargetValue]: #TargetValue
+[UngrabbedDrag]: #UngrabbedDrag
 [Methods]: #Methods
 [CalculateDriveAxis(DriveAxis.Axis)]: #CalculateDriveAxisDriveAxis.Axis
 [ForceSnapToStepValue(Single)]: #ForceSnapToStepValueSingle
 [OnAfterDriveAxisChange()]: #OnAfterDriveAxisChange
 [OnAfterDriveSpeedChange()]: #OnAfterDriveSpeedChange
+[OnAfterGrabbedDragChange()]: #OnAfterGrabbedDragChange
 [OnAfterMoveToTargetValueChange()]: #OnAfterMoveToTargetValueChange
 [OnAfterSnapToStepOnRelease()]: #OnAfterSnapToStepOnRelease
 [OnAfterStepIncrementChange()]: #OnAfterStepIncrementChange
 [OnAfterStepRangeChange()]: #OnAfterStepRangeChange
 [OnAfterTargetValueChange()]: #OnAfterTargetValueChange
+[OnAfterUngrabbedDragChange()]: #OnAfterUngrabbedDragChange
 [ProcessAutoDrive(Boolean)]: #ProcessAutoDriveBoolean
 [ProcessDriveSpeed(Single, Boolean)]: #ProcessDriveSpeedSingle-Boolean
 [SetDriveAxis(Int32)]: #SetDriveAxisInt32

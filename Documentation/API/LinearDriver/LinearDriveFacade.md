@@ -52,6 +52,10 @@ The public interface into any Linear Drive prefab.
 
 [DriveFacade<LinearDrive, LinearDriveFacade>.DriveSpeed]
 
+[DriveFacade<LinearDrive, LinearDriveFacade>.UngrabbedDrag]
+
+[DriveFacade<LinearDrive, LinearDriveFacade>.GrabbedDrag]
+
 [DriveFacade<LinearDrive, LinearDriveFacade>.StartAtInitialTargetValue]
 
 [DriveFacade<LinearDrive, LinearDriveFacade>.InitialTargetValue]
@@ -99,6 +103,10 @@ The public interface into any Linear Drive prefab.
 [DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterStepIncrementChange()]
 
 [DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterSnapToStepOnRelease()]
+
+[DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterUngrabbedDragChange()]
+
+[DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterGrabbedDragChange()]
 
 ##### Namespace
 
@@ -169,6 +177,8 @@ protected virtual void OnDrawGizmosSelected()
 [DriveFacade<LinearDrive, LinearDriveFacade>.StoppedMoving]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StoppedMoving
 [DriveFacade<LinearDrive, LinearDriveFacade>.DriveAxis]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveAxis
 [DriveFacade<LinearDrive, LinearDriveFacade>.DriveSpeed]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_DriveSpeed
+[DriveFacade<LinearDrive, LinearDriveFacade>.UngrabbedDrag]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_UngrabbedDrag
+[DriveFacade<LinearDrive, LinearDriveFacade>.GrabbedDrag]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_GrabbedDrag
 [DriveFacade<LinearDrive, LinearDriveFacade>.StartAtInitialTargetValue]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StartAtInitialTargetValue
 [DriveFacade<LinearDrive, LinearDriveFacade>.InitialTargetValue]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_InitialTargetValue
 [DriveFacade<LinearDrive, LinearDriveFacade>.MoveToTargetValue]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_MoveToTargetValue
@@ -193,6 +203,8 @@ protected virtual void OnDrawGizmosSelected()
 [DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterStepRangeChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterStepRangeChange
 [DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterStepIncrementChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterStepIncrementChange
 [DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterSnapToStepOnRelease()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterSnapToStepOnRelease
+[DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterUngrabbedDragChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterUngrabbedDragChange
+[DriveFacade<LinearDrive, LinearDriveFacade>.OnAfterGrabbedDragChange()]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_OnAfterGrabbedDragChange
 [Tilia.Interactions.Controllables.LinearDriver]: README.md
 [DriveLimit]: LinearDriveFacade.md#DriveLimit
 [Inheritance]: #Inheritance
