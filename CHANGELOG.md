@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.2.4...v2.3.0) (2022-05-20)
+
+#### Features
+
+* **Facade:** add grabbed/ungrabbed drag options ([70c7045](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/70c70459046063d8e40a439469d38a3b262c18fb))
+  > The Facade now has the option to provide a grabbed and ungrabbed drag value on the control. This sets the amount of drag/friction applied to the control when it is grabbed and moved or released and moving under its own inertia.
+
 ### [2.2.4](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.2.3...v2.2.4) (2022-05-20)
 
 #### Miscellaneous Chores
