@@ -24,6 +24,7 @@ The basis for a mechanism to drive motion on a control.
   * [EmitEvents]
   * [EventOutputContainer]
   * [Facade]
+  * [GrabbedDragEmitter]
   * [InitialValueDriveSpeed]
   * [NormalizedStepValue]
   * [NormalizedValue]
@@ -32,6 +33,7 @@ The basis for a mechanism to drive motion on a control.
   * [SnapToStepContainer]
   * [StepValue]
   * [TargetValueReachedThreshold]
+  * [UngrabbedDragEmitter]
   * [Value]
 * [Methods]
   * [CalculateDriveAxis(DriveAxis.Axis)]
@@ -61,7 +63,9 @@ The basis for a mechanism to drive motion on a control.
   * [SetAxisDirection()]
   * [SetDriveLimits()]
   * [SetDriveTargetValue(Vector3)]
+  * [SetGrabbedDrag(Single)]
   * [SetTargetValue(Single)]
+  * [SetUngrabbedDrag(Single)]
   * [SetUp()]
   * [SetUpInternals()]
   * [StartMoving()]
@@ -253,6 +257,16 @@ The public interface facade.
 public TFacade Facade { get; protected set; }
 ```
 
+#### GrabbedDragEmitter
+
+The Float Emitter for handling grabbed drag.
+
+##### Declaration
+
+```
+public FloatEventProxyEmitter GrabbedDragEmitter { get; protected set; }
+```
+
 #### InitialValueDriveSpeed
 
 The value to set the drive speed to when driving the control to the initial start value.
@@ -331,6 +345,16 @@ The threshold that the current normalized value of the control can be within to 
 
 ```
 public float TargetValueReachedThreshold { get; set; }
+```
+
+#### UngrabbedDragEmitter
+
+The Float Emitter for handling ungrabbed drag.
+
+##### Declaration
+
+```
+public FloatEventProxyEmitter UngrabbedDragEmitter { get; protected set; }
 ```
 
 #### Value
@@ -697,6 +721,22 @@ protected virtual void SetDriveTargetValue(Vector3 targetValue)
 | --- | --- | --- |
 | Vector3 | targetValue | The value to set the drive target to. |
 
+#### SetGrabbedDrag(Single)
+
+Sets the grabbed drag value.
+
+##### Declaration
+
+```
+public virtual void SetGrabbedDrag(float value)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | value | The drag value. |
+
 #### SetTargetValue(Single)
 
 Sets the target value of the drive to the given normalized value.
@@ -712,6 +752,22 @@ public virtual void SetTargetValue(float normalizedValue)
 | Type | Name | Description |
 | --- | --- | --- |
 | System.Single | normalizedValue | The normalized value to set the Target Value to. |
+
+#### SetUngrabbedDrag(Single)
+
+Sets the ungrabbed drag value.
+
+##### Declaration
+
+```
+public virtual void SetUngrabbedDrag(float value)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Single | value | The drag value. |
 
 #### SetUp()
 
@@ -809,6 +865,7 @@ IProcessable
 [EmitEvents]: #EmitEvents
 [EventOutputContainer]: #EventOutputContainer
 [Facade]: #Facade
+[GrabbedDragEmitter]: #GrabbedDragEmitter
 [InitialValueDriveSpeed]: #InitialValueDriveSpeed
 [NormalizedStepValue]: #NormalizedStepValue
 [NormalizedValue]: #NormalizedValue
@@ -817,6 +874,7 @@ IProcessable
 [SnapToStepContainer]: #SnapToStepContainer
 [StepValue]: #StepValue
 [TargetValueReachedThreshold]: #TargetValueReachedThreshold
+[UngrabbedDragEmitter]: #UngrabbedDragEmitter
 [Value]: #Value
 [Methods]: #Methods
 [CalculateDriveAxis(DriveAxis.Axis)]: #CalculateDriveAxisDriveAxis.Axis
@@ -846,7 +904,9 @@ IProcessable
 [SetAxisDirection()]: #SetAxisDirection
 [SetDriveLimits()]: #SetDriveLimits
 [SetDriveTargetValue(Vector3)]: #SetDriveTargetValueVector3
+[SetGrabbedDrag(Single)]: #SetGrabbedDragSingle
 [SetTargetValue(Single)]: #SetTargetValueSingle
+[SetUngrabbedDrag(Single)]: #SetUngrabbedDragSingle
 [SetUp()]: #SetUp
 [SetUpInternals()]: #SetUpInternals
 [StartMoving()]: #StartMoving
