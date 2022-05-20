@@ -3,6 +3,7 @@
     using UnityEngine;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Type;
+    using Zinnia.Event.Proxy;
     using Zinnia.Extension;
     using Zinnia.Process;
 
@@ -67,6 +68,42 @@
             protected set
             {
                 snapToStepContainer = value;
+            }
+        }
+        [Tooltip("The Float Emitter for handling grabbed drag.")]
+        [SerializeField]
+        [Restricted]
+        private FloatEventProxyEmitter grabbedDragEmitter;
+        /// <summary>
+        /// The Float Emitter for handling grabbed drag.
+        /// </summary>
+        public FloatEventProxyEmitter GrabbedDragEmitter
+        {
+            get
+            {
+                return grabbedDragEmitter;
+            }
+            protected set
+            {
+                grabbedDragEmitter = value;
+            }
+        }
+        [Tooltip("The Float Emitter for handling ungrabbed drag.")]
+        [SerializeField]
+        [Restricted]
+        private FloatEventProxyEmitter ungrabbedDragEmitter;
+        /// <summary>
+        /// The Float Emitter for handling ungrabbed drag.
+        /// </summary>
+        public FloatEventProxyEmitter UngrabbedDragEmitter
+        {
+            get
+            {
+                return ungrabbedDragEmitter;
+            }
+            protected set
+            {
+                ungrabbedDragEmitter = value;
             }
         }
         #endregion
@@ -321,6 +358,34 @@
             }
 
             AxisDirection = CalculateDriveAxis(Facade.DriveAxis);
+        }
+
+        /// <summary>
+        /// Sets the grabbed drag value.
+        /// </summary>
+        /// <param name="value">The drag value.</param>
+        public virtual void SetGrabbedDrag(float value)
+        {
+            if (!this.IsValidState() || GrabbedDragEmitter == null)
+            {
+                return;
+            }
+
+            GrabbedDragEmitter.Payload = value;
+        }
+
+        /// <summary>
+        /// Sets the ungrabbed drag value.
+        /// </summary>
+        /// <param name="value">The drag value.</param>
+        public virtual void SetUngrabbedDrag(float value)
+        {
+            if (!this.IsValidState() || UngrabbedDragEmitter == null)
+            {
+                return;
+            }
+
+            UngrabbedDragEmitter.Payload = value;
         }
 
         /// <summary>
