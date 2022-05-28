@@ -99,24 +99,6 @@
                 gizmoSphereRadius = value;
             }
         }
-        [Tooltip("The color of the gizmo hinge location line.")]
-        [SerializeField]
-        [Restricted(RestrictedAttribute.Restrictions.Muted)]
-        private Color gizmoColor = Color.yellow;
-        /// <summary>
-        /// The color of the gizmo hinge location line.
-        /// </summary>
-        public Color GizmoColor
-        {
-            get
-            {
-                return gizmoColor;
-            }
-            set
-            {
-                gizmoColor = value;
-            }
-        }
         #endregion
 
         /// <summary>
@@ -186,7 +168,7 @@
 
         protected virtual void OnDrawGizmosSelected()
         {
-            Gizmos.color = GizmoColor;
+            Gizmos.color = Drive.GizmoColor;
             Gizmos.matrix = transform.localToWorldMatrix;
 
             Vector3 origin = HingeLocation;

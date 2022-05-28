@@ -119,6 +119,7 @@ MonoBehaviour:
       m_Calls: []
   driveAxis: 0
   driveSpeed: 10
+  isGrabbable: 1
   ungrabbedDrag: 0.5
   grabbedDrag: 1
   startAtInitialTargetValue: 0
@@ -136,6 +137,7 @@ MonoBehaviour:
   hingeLocation: {x: 0, y: 0, z: 0}
   gizmoLineDistance: 0.2
   gizmoSphereRadius: 0.015
+  gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &2486652715639931893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,13 +202,13 @@ MonoBehaviour:
   snapToStepContainer: {fileID: 496144475861545701}
   grabbedDragEmitter: {fileID: 8941806016197960607}
   ungrabbedDragEmitter: {fileID: 8728729766178434654}
+  interactable: {fileID: 4763570561051037854}
+  interactableMesh: {fileID: 6582222421973241952}
   resetDriveOnSetup: 1
   resetDriveOnSetupFirstTimeOnly: 1
   initialValueDriveSpeed: 3500
   targetValueReachedThreshold: 0.075
   emitEvents: 1
-  interactable: {fileID: 4763570561051037854}
-  interactableMesh: {fileID: 6582222421973241952}
   rotationModifier: {fileID: 9194919288075826165}
   velocityApplier: {fileID: 3844486406285245351}
 --- !u!114 &6178881267174152553

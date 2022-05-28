@@ -1,7 +1,6 @@
 ﻿namespace Tilia.Interactions.Controllables.AngularDriver
 {
     using Tilia.Interactions.Controllables.Driver;
-    using Tilia.Interactions.Interactables.Interactables;
     using UnityEngine;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Type;
@@ -16,42 +15,6 @@
     {
         #region Reference Settings
         [Header("Reference Settings")]
-        [Tooltip("The InteractableFacade that controls the movement of the drive.")]
-        [SerializeField]
-        [Restricted]
-        private InteractableFacade interactable;
-        /// <summary>
-        /// The <see cref="InteractableFacade"/> that controls the movement of the drive.
-        /// </summary>
-        public InteractableFacade Interactable
-        {
-            get
-            {
-                return interactable;
-            }
-            protected set
-            {
-                interactable = value;
-            }
-        }
-        [Tooltip("The GameObject that contains the meshes for the control.")]
-        [SerializeField]
-        [Restricted]
-        private GameObject interactableMesh;
-        /// <summary>
-        /// The <see cref="GameObject"/> that contains the meshes for the control.
-        /// </summary>
-        public GameObject InteractableMesh
-        {
-            get
-            {
-                return interactableMesh;
-            }
-            protected set
-            {
-                interactableMesh = value;
-            }
-        }
         [Tooltip("The TransformPositionDifferenceRotation to drive the rotation of the control.")]
         [SerializeField]
         [Restricted]

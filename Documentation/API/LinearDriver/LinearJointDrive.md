@@ -52,11 +52,19 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.UngrabbedDragEmitter]
 
+[Drive<LinearDriveFacade, LinearDrive>.Interactable]
+
+[Drive<LinearDriveFacade, LinearDrive>.InteractableMesh]
+
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetup]
 
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetupFirstTimeOnly]
 
+[Drive<LinearDriveFacade, LinearDrive>.IsGrabbable]
+
 [Drive<LinearDriveFacade, LinearDrive>.InitialValueDriveSpeed]
+
+[Drive<LinearDriveFacade, LinearDrive>.GizmoColor]
 
 [Drive<LinearDriveFacade, LinearDrive>.TargetValueReachedThreshold]
 
@@ -118,6 +126,12 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.ResetDrive()]
 
+[Drive<LinearDriveFacade, LinearDrive>.ToggleGrabbaleState(Boolean)]
+
+[Drive<LinearDriveFacade, LinearDrive>.PreventGrab()]
+
+[Drive<LinearDriveFacade, LinearDrive>.AllowGrab()]
+
 [Drive<LinearDriveFacade, LinearDrive>.CalculateValue(DriveAxis.Axis, FloatRange)]
 
 [Drive<LinearDriveFacade, LinearDrive>.CalculateDriveLimits(LinearDriveFacade)]
@@ -134,9 +148,9 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.EliminateDriveVelocity()]
 
-[Drive<LinearDriveFacade, LinearDrive>.StartMoving()]
+[Drive<LinearDriveFacade, LinearDrive>.EmitStartMoving()]
 
-[Drive<LinearDriveFacade, LinearDrive>.StopMoving()]
+[Drive<LinearDriveFacade, LinearDrive>.EmitStopMoving()]
 
 [Drive<LinearDriveFacade, LinearDrive>.CheckStepValueChange()]
 
@@ -164,6 +178,8 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.ResetToCacheAfterReachedInitialTargetValue()]
 
+[Drive<LinearDriveFacade, LinearDrive>.OnAfterIsGrabbableChange()]
+
 ##### Namespace
 
 * [Tilia.Interactions.Controllables.LinearDriver]
@@ -171,7 +187,7 @@ IProcessable
 ##### Syntax
 
 ```
-public class LinearJointDrive : LinearDrive, IProcessable
+public class LinearJointDrive : LinearDrive
 ```
 
 ### Fields
@@ -356,9 +372,13 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.SnapToStepContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SnapToStepContainer
 [Drive<LinearDriveFacade, LinearDrive>.GrabbedDragEmitter]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GrabbedDragEmitter
 [Drive<LinearDriveFacade, LinearDrive>.UngrabbedDragEmitter]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_UngrabbedDragEmitter
+[Drive<LinearDriveFacade, LinearDrive>.Interactable]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Interactable
+[Drive<LinearDriveFacade, LinearDrive>.InteractableMesh]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InteractableMesh
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetup]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetup
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetupFirstTimeOnly]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetupFirstTimeOnly
+[Drive<LinearDriveFacade, LinearDrive>.IsGrabbable]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_IsGrabbable
 [Drive<LinearDriveFacade, LinearDrive>.InitialValueDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialValueDriveSpeed
+[Drive<LinearDriveFacade, LinearDrive>.GizmoColor]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GizmoColor
 [Drive<LinearDriveFacade, LinearDrive>.TargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_TargetValueReachedThreshold
 [Drive<LinearDriveFacade, LinearDrive>.EmitEvents]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitEvents
 [Drive<LinearDriveFacade, LinearDrive>.Value]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Value
@@ -389,6 +409,9 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.SetTargetValue(Single)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetTargetValue_System_Single_
 [Drive<LinearDriveFacade, LinearDrive>.CalculateDriveAxis(DriveAxis.Axis)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateDriveAxis_Tilia_Interactions_Controllables_Driver_DriveAxis_Axis_
 [Drive<LinearDriveFacade, LinearDrive>.ResetDrive()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDrive
+[Drive<LinearDriveFacade, LinearDrive>.ToggleGrabbaleState(Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ToggleGrabbaleState_System_Boolean_
+[Drive<LinearDriveFacade, LinearDrive>.PreventGrab()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_PreventGrab
+[Drive<LinearDriveFacade, LinearDrive>.AllowGrab()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_AllowGrab
 [Drive<LinearDriveFacade, LinearDrive>.CalculateValue(DriveAxis.Axis, FloatRange)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateValue_Tilia_Interactions_Controllables_Driver_DriveAxis_Axis_FloatRange_
 [Drive<LinearDriveFacade, LinearDrive>.CalculateDriveLimits(LinearDriveFacade)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateDriveLimits__0_
 [Drive<LinearDriveFacade, LinearDrive>.GetDriveTransform()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GetDriveTransform
@@ -397,8 +420,8 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.SetUpInternals()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUpInternals
 [Drive<LinearDriveFacade, LinearDrive>.SetDriveTargetValue(Vector3)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetDriveTargetValue_Vector3_
 [Drive<LinearDriveFacade, LinearDrive>.EliminateDriveVelocity()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EliminateDriveVelocity
-[Drive<LinearDriveFacade, LinearDrive>.StartMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StartMoving
-[Drive<LinearDriveFacade, LinearDrive>.StopMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StopMoving
+[Drive<LinearDriveFacade, LinearDrive>.EmitStartMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStartMoving
+[Drive<LinearDriveFacade, LinearDrive>.EmitStopMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStopMoving
 [Drive<LinearDriveFacade, LinearDrive>.CheckStepValueChange()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckStepValueChange
 [Drive<LinearDriveFacade, LinearDrive>.CheckTargetValueReached()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckTargetValueReached
 [Drive<LinearDriveFacade, LinearDrive>.GetTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GetTargetValue
@@ -412,6 +435,7 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.EmitStoppedMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStoppedMoving
 [Drive<LinearDriveFacade, LinearDrive>.MoveToInitialTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_MoveToInitialTargetValue
 [Drive<LinearDriveFacade, LinearDrive>.ResetToCacheAfterReachedInitialTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetToCacheAfterReachedInitialTargetValue
+[Drive<LinearDriveFacade, LinearDrive>.OnAfterIsGrabbableChange()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_OnAfterIsGrabbableChange
 [Tilia.Interactions.Controllables.LinearDriver]: README.md
 [DriveAxis.Axis]: ../Driver/DriveAxis.Axis.md
 [LinearDrive.CalculateDriveLimits(Single)]: LinearDrive.md#Tilia_Interactions_Controllables_LinearDriver_LinearDrive_CalculateDriveLimits_System_Single_
