@@ -99,6 +99,24 @@
                 gizmoSphereRadius = value;
             }
         }
+        [Tooltip("The color of the gizmo hinge location line.")]
+        [SerializeField]
+        [Restricted(RestrictedAttribute.Restrictions.Muted)]
+        private Color gizmoColor = Color.yellow;
+        /// <summary>
+        /// The color of the gizmo hinge location line.
+        /// </summary>
+        public Color GizmoColor
+        {
+            get
+            {
+                return gizmoColor;
+            }
+            set
+            {
+                gizmoColor = value;
+            }
+        }
         #endregion
 
         /// <summary>
@@ -150,19 +168,6 @@
             HingeLocation = new Vector3(HingeLocation.x, HingeLocation.y, value);
         }
 
-        protected virtual void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.matrix = transform.localToWorldMatrix;
-            Vector3 origin = HingeLocation;
-            Vector3 direction = DriveAxis.GetAxisDirection(true) * (GizmoLineDistance * 0.5f);
-            Vector3 from = origin - direction;
-            Vector3 to = origin + direction;
-            Gizmos.DrawLine(from, to);
-            Gizmos.DrawSphere(from, GizmoSphereRadius);
-            Gizmos.DrawSphere(to, GizmoSphereRadius);
-        }
-
         /// <summary>
         /// Called after <see cref="DriveLimit"/> has been changed.
         /// </summary>
@@ -177,6 +182,21 @@
         protected virtual void OnAfterHingeLocationChange()
         {
             Drive.SetUp();
+        }
+
+        protected virtual void OnDrawGizmosSelected()
+        {
+            Gizmos.color = GizmoColor;
+            Gizmos.matrix = transform.localToWorldMatrix;
+
+            Vector3 origin = HingeLocation;
+            Vector3 direction = DriveAxis.GetAxisDirection(true) * (GizmoLineDistance * 0.5f);
+            Vector3 from = origin - direction;
+            Vector3 to = origin + direction;
+
+            Gizmos.DrawLine(from, to);
+            Gizmos.DrawSphere(from, GizmoSphereRadius);
+            Gizmos.DrawSphere(to, GizmoSphereRadius);
         }
     }
 }
