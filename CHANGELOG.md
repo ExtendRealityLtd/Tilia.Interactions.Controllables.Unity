@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.4.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.3.2...v2.4.0) (2022-05-30)
+
+#### Features
+
+* **Drive:** add IsGrabbable option ([66df056](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/66df0568bc3ad1f64d65abd2df99a856c3d32c9b))
+  > The IsGrabbable option on the Drive derivatives allows the toggle of whether the Interactable Object is grabbable or not, which can easily simulate locking the drive mechanism.
+  > 
+  > The Interactable reference is now part of Drive so all inherited drives can access the InteractabeFacade as well as the MeshContainer if required.
+  > 
+  > The Gizmo color option has also been moved to the Drive as it isn't something that is needed on the Facade and it can then be shared across all drive types.
+
+#### Bug Fixes
+
+* **Facade:** ensure gizmos draw correct length with parent scale ([71b5234](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/71b523411305ce99e1b46ee537b7d375226f0f5f))
+  > There was an issue where the gizmo was not drawing the correct length if the parent GameObject was scaled as this is affecting the world scale and therefore the gizmo would be affected also.
+  > 
+  > As drive limits are world scale, then the gizmo should represent this by drawing to world scale, which this commit fixes.
+  > 
+  > The gizmo colour is now also an option on the Facade to allow the color to be customised if required.
+
 ### [2.3.2](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.3.1...v2.3.2) (2022-05-28)
 
 #### Miscellaneous Chores
