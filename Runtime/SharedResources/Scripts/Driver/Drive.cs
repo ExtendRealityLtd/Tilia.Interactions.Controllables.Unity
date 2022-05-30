@@ -1,5 +1,6 @@
 ﻿namespace Tilia.Interactions.Controllables.Driver
 {
+    using Tilia.Interactions.Interactables.Interactables;
     using UnityEngine;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Type;
@@ -106,6 +107,42 @@
                 ungrabbedDragEmitter = value;
             }
         }
+        [Tooltip("The InteractableFacade that controls the movement of the drive.")]
+        [SerializeField]
+        [Restricted]
+        private InteractableFacade interactable;
+        /// <summary>
+        /// The <see cref="InteractableFacade"/> that controls the movement of the drive.
+        /// </summary>
+        public InteractableFacade Interactable
+        {
+            get
+            {
+                return interactable;
+            }
+            protected set
+            {
+                interactable = value;
+            }
+        }
+        [Tooltip("The GameObject that contains the meshes for the control.")]
+        [SerializeField]
+        [Restricted]
+        private GameObject interactableMesh;
+        /// <summary>
+        /// The <see cref="GameObject"/> that contains the meshes for the control.
+        /// </summary>
+        public GameObject InteractableMesh
+        {
+            get
+            {
+                return interactableMesh;
+            }
+            protected set
+            {
+                interactableMesh = value;
+            }
+        }
         #endregion
 
         #region Drive Settings
@@ -144,6 +181,27 @@
                 resetDriveOnSetupFirstTimeOnly = value;
             }
         }
+        [Tooltip("Determines whether the drive is grabbable and whether it can be moved.")]
+        [SerializeField]
+        private bool isGrabbable = true;
+        /// <summary>
+        /// Determines whether the drive is grabbable and whether it can be moved.
+        /// </summary>
+        public bool IsGrabbable
+        {
+            get
+            {
+                return isGrabbable;
+            }
+            set
+            {
+                isGrabbable = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterIsGrabbableChange();
+                }
+            }
+        }
         [Tooltip("The value to set the drive speed to when driving the control to the initial start value.")]
         [SerializeField]
         private float initialValueDriveSpeed = 5000f;
@@ -159,6 +217,23 @@
             set
             {
                 initialValueDriveSpeed = value;
+            }
+        }
+        [Tooltip("The color of the gizmo hinge location line.")]
+        [SerializeField]
+        private Color gizmoColor = Color.yellow;
+        /// <summary>
+        /// The color of the gizmo hinge location line.
+        /// </summary>
+        public Color GizmoColor
+        {
+            get
+            {
+                return gizmoColor;
+            }
+            set
+            {
+                gizmoColor = value;
             }
         }
         #endregion
@@ -294,6 +369,7 @@
             ProcessDriveSpeed(Facade.DriveSpeed, Facade.MoveToTargetValue);
             SetTargetValue(Facade.TargetValue);
             ToggleSnapToStepLogic(Facade.SnapToStepOnRelease);
+            ToggleGrabbaleState(IsGrabbable);
         }
 
         /// <summary>
@@ -308,11 +384,11 @@
 
             if (wasDisabled || !Value.ApproxEquals(previousValue))
             {
-                StartMoving();
+                EmitStartMoving();
             }
             else
             {
-                StopMoving();
+                EmitStopMoving();
             }
 
             CheckStepValueChange();
@@ -442,6 +518,48 @@
         }
 
         /// <summary>
+        /// Toggles whether the drive can be grabbed or not.
+        /// </summary>
+        /// <param name="isLocked">Whether can be grabbed.</param>
+        public virtual void ToggleGrabbaleState(bool isGrabbable)
+        {
+            if (isGrabbable)
+            {
+                AllowGrab();
+            }
+            else
+            {
+                PreventGrab();
+            }
+        }
+
+        /// <summary>
+        /// Prevents grabbing the drive.
+        /// </summary>
+        public virtual void PreventGrab()
+        {
+            if (!this.IsValidState() || Interactable == null)
+            {
+                return;
+            }
+
+            Interactable.DisableGrab();
+        }
+
+        /// <summary>
+        /// Allows grabbing the drive.
+        /// </summary>
+        public virtual void AllowGrab()
+        {
+            if (!this.IsValidState() || Interactable == null)
+            {
+                return;
+            }
+
+            Interactable.EnableGrab();
+        }
+
+        /// <summary>
         /// Calculates the current value of the control.
         /// </summary>
         /// <param name="axis">The axis the drive is operating on.</param>
@@ -488,9 +606,9 @@
         protected virtual void EliminateDriveVelocity() { }
 
         /// <summary>
-        /// Starts the drive moving process.
+        /// Emits the drive start moving process.
         /// </summary>
-        protected virtual void StartMoving()
+        protected virtual void EmitStartMoving()
         {
             if (!isMoving && previousValue < float.MaxValue)
             {
@@ -503,9 +621,9 @@
         }
 
         /// <summary>
-        /// Stops the drive moving process.
+        /// Emits the drive stop moving process.
         /// </summary>
-        protected virtual void StopMoving()
+        protected virtual void EmitStopMoving()
         {
             if (isMoving)
             {
@@ -696,6 +814,14 @@
             }
 
             Facade.InitialTargetValueReached?.Invoke(NormalizedValue);
+        }
+
+        /// <summary>
+        /// Called after <see cref="IsGrabbable"/> has been changed.
+        /// </summary>
+        protected virtual void OnAfterIsGrabbableChange()
+        {
+            ToggleGrabbaleState(IsGrabbable);
         }
     }
 }

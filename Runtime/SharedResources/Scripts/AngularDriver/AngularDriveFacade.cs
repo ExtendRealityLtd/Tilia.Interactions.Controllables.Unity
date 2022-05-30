@@ -150,19 +150,6 @@
             HingeLocation = new Vector3(HingeLocation.x, HingeLocation.y, value);
         }
 
-        protected virtual void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.matrix = transform.localToWorldMatrix;
-            Vector3 origin = HingeLocation;
-            Vector3 direction = DriveAxis.GetAxisDirection(true) * (GizmoLineDistance * 0.5f);
-            Vector3 from = origin - direction;
-            Vector3 to = origin + direction;
-            Gizmos.DrawLine(from, to);
-            Gizmos.DrawSphere(from, GizmoSphereRadius);
-            Gizmos.DrawSphere(to, GizmoSphereRadius);
-        }
-
         /// <summary>
         /// Called after <see cref="DriveLimit"/> has been changed.
         /// </summary>
@@ -177,6 +164,21 @@
         protected virtual void OnAfterHingeLocationChange()
         {
             Drive.SetUp();
+        }
+
+        protected virtual void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Drive.GizmoColor;
+            Gizmos.matrix = transform.localToWorldMatrix;
+
+            Vector3 origin = HingeLocation;
+            Vector3 direction = DriveAxis.GetAxisDirection(true) * (GizmoLineDistance * 0.5f);
+            Vector3 from = origin - direction;
+            Vector3 to = origin + direction;
+
+            Gizmos.DrawLine(from, to);
+            Gizmos.DrawSphere(from, GizmoSphereRadius);
+            Gizmos.DrawSphere(to, GizmoSphereRadius);
         }
     }
 }

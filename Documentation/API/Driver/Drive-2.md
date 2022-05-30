@@ -24,8 +24,12 @@ The basis for a mechanism to drive motion on a control.
   * [EmitEvents]
   * [EventOutputContainer]
   * [Facade]
+  * [GizmoColor]
   * [GrabbedDragEmitter]
   * [InitialValueDriveSpeed]
+  * [Interactable]
+  * [InteractableMesh]
+  * [IsGrabbable]
   * [NormalizedStepValue]
   * [NormalizedValue]
   * [ResetDriveOnSetup]
@@ -36,6 +40,7 @@ The basis for a mechanism to drive motion on a control.
   * [UngrabbedDragEmitter]
   * [Value]
 * [Methods]
+  * [AllowGrab()]
   * [CalculateDriveAxis(DriveAxis.Axis)]
   * [CalculateDriveLimits(TFacade)]
   * [CalculateStepValue(TFacade)]
@@ -47,15 +52,19 @@ The basis for a mechanism to drive motion on a control.
   * [EliminateDriveVelocity()]
   * [EmitNormalizedValueChanged()]
   * [EmitStartedMoving()]
+  * [EmitStartMoving()]
   * [EmitStepValueChanged()]
+  * [EmitStopMoving()]
   * [EmitStoppedMoving()]
   * [EmitTargetValueReached()]
   * [EmitValueChanged()]
   * [GetDriveTransform()]
   * [GetTargetValue()]
   * [MoveToInitialTargetValue()]
+  * [OnAfterIsGrabbableChange()]
   * [OnDisable()]
   * [OnEnable()]
+  * [PreventGrab()]
   * [Process()]
   * [ProcessDriveSpeed(Single, Boolean)]
   * [ResetDrive()]
@@ -68,8 +77,7 @@ The basis for a mechanism to drive motion on a control.
   * [SetUngrabbedDrag(Single)]
   * [SetUp()]
   * [SetUpInternals()]
-  * [StartMoving()]
-  * [StopMoving()]
+  * [ToggleGrabbaleState(Boolean)]
   * [ToggleSnapToStepLogic(Boolean)]
 * [Implements]
 
@@ -93,7 +101,7 @@ IProcessable
 ##### Syntax
 
 ```
-public abstract class Drive<TFacade, TSelf> : MonoBehaviour, IProcessable where TFacade : DriveFacade<TSelf, TFacade> where TSelf : Drive<TFacade, TSelf>
+public abstract class Drive<TFacade, TSelf> : MonoBehaviour where TFacade : DriveFacade<TSelf, TFacade> where TSelf : Drive<TFacade, TSelf>
 ```
 
 ##### Type Parameters
@@ -257,6 +265,16 @@ The public interface facade.
 public TFacade Facade { get; protected set; }
 ```
 
+#### GizmoColor
+
+The color of the gizmo hinge location line.
+
+##### Declaration
+
+```
+public Color GizmoColor { get; set; }
+```
+
 #### GrabbedDragEmitter
 
 The Float Emitter for handling grabbed drag.
@@ -275,6 +293,36 @@ The value to set the drive speed to when driving the control to the initial star
 
 ```
 public float InitialValueDriveSpeed { get; set; }
+```
+
+#### Interactable
+
+The InteractableFacade that controls the movement of the drive.
+
+##### Declaration
+
+```
+public InteractableFacade Interactable { get; protected set; }
+```
+
+#### InteractableMesh
+
+The GameObject that contains the meshes for the control.
+
+##### Declaration
+
+```
+public GameObject InteractableMesh { get; protected set; }
+```
+
+#### IsGrabbable
+
+Determines whether the drive is grabbable and whether it can be moved.
+
+##### Declaration
+
+```
+public bool IsGrabbable { get; set; }
 ```
 
 #### NormalizedStepValue
@@ -368,6 +416,16 @@ public virtual float Value { get; }
 ```
 
 ### Methods
+
+#### AllowGrab()
+
+Allows grabbing the drive.
+
+##### Declaration
+
+```
+public virtual void AllowGrab()
+```
 
 #### CalculateDriveAxis(DriveAxis.Axis)
 
@@ -540,6 +598,16 @@ Emits the StartedMoving event.
 protected virtual void EmitStartedMoving()
 ```
 
+#### EmitStartMoving()
+
+Emits the drive start moving process.
+
+##### Declaration
+
+```
+protected virtual void EmitStartMoving()
+```
+
 #### EmitStepValueChanged()
 
 Emits the StepValueChanged event.
@@ -548,6 +616,16 @@ Emits the StepValueChanged event.
 
 ```
 protected virtual void EmitStepValueChanged()
+```
+
+#### EmitStopMoving()
+
+Emits the drive stop moving process.
+
+##### Declaration
+
+```
+protected virtual void EmitStopMoving()
 ```
 
 #### EmitStoppedMoving()
@@ -622,6 +700,16 @@ Moves the drive to the initial target value.
 protected virtual void MoveToInitialTargetValue()
 ```
 
+#### OnAfterIsGrabbableChange()
+
+Called after [IsGrabbable] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterIsGrabbableChange()
+```
+
 #### OnDisable()
 
 ##### Declaration
@@ -636,6 +724,16 @@ protected virtual void OnDisable()
 
 ```
 protected virtual void OnEnable()
+```
+
+#### PreventGrab()
+
+Prevents grabbing the drive.
+
+##### Declaration
+
+```
+public virtual void PreventGrab()
 ```
 
 #### Process()
@@ -789,25 +887,21 @@ Performs any required internal setup.
 protected virtual void SetUpInternals()
 ```
 
-#### StartMoving()
+#### ToggleGrabbaleState(Boolean)
 
-Starts the drive moving process.
-
-##### Declaration
-
-```
-protected virtual void StartMoving()
-```
-
-#### StopMoving()
-
-Stops the drive moving process.
+Toggles whether the drive can be grabbed or not.
 
 ##### Declaration
 
 ```
-protected virtual void StopMoving()
+public virtual void ToggleGrabbaleState(bool isGrabbable)
 ```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Boolean | isGrabbable | n/a |
 
 #### ToggleSnapToStepLogic(Boolean)
 
@@ -841,6 +935,7 @@ IProcessable
 [SetUp()]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUp
 [DriveAxis.Axis]: DriveAxis.Axis.md
 [StepValue]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StepValue
+[IsGrabbable]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_IsGrabbable
 [AxisDirection]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_AxisDirection
 [DriveLimits]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DriveLimits
 [Facade]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Facade
@@ -865,8 +960,12 @@ IProcessable
 [EmitEvents]: #EmitEvents
 [EventOutputContainer]: #EventOutputContainer
 [Facade]: #Facade
+[GizmoColor]: #GizmoColor
 [GrabbedDragEmitter]: #GrabbedDragEmitter
 [InitialValueDriveSpeed]: #InitialValueDriveSpeed
+[Interactable]: #Interactable
+[InteractableMesh]: #InteractableMesh
+[IsGrabbable]: #IsGrabbable
 [NormalizedStepValue]: #NormalizedStepValue
 [NormalizedValue]: #NormalizedValue
 [ResetDriveOnSetup]: #ResetDriveOnSetup
@@ -877,6 +976,7 @@ IProcessable
 [UngrabbedDragEmitter]: #UngrabbedDragEmitter
 [Value]: #Value
 [Methods]: #Methods
+[AllowGrab()]: #AllowGrab
 [CalculateDriveAxis(DriveAxis.Axis)]: #CalculateDriveAxisDriveAxis.Axis
 [CalculateDriveLimits(TFacade)]: #CalculateDriveLimitsTFacade
 [CalculateStepValue(TFacade)]: #CalculateStepValueTFacade
@@ -888,15 +988,19 @@ IProcessable
 [EliminateDriveVelocity()]: #EliminateDriveVelocity
 [EmitNormalizedValueChanged()]: #EmitNormalizedValueChanged
 [EmitStartedMoving()]: #EmitStartedMoving
+[EmitStartMoving()]: #EmitStartMoving
 [EmitStepValueChanged()]: #EmitStepValueChanged
+[EmitStopMoving()]: #EmitStopMoving
 [EmitStoppedMoving()]: #EmitStoppedMoving
 [EmitTargetValueReached()]: #EmitTargetValueReached
 [EmitValueChanged()]: #EmitValueChanged
 [GetDriveTransform()]: #GetDriveTransform
 [GetTargetValue()]: #GetTargetValue
 [MoveToInitialTargetValue()]: #MoveToInitialTargetValue
+[OnAfterIsGrabbableChange()]: #OnAfterIsGrabbableChange
 [OnDisable()]: #OnDisable
 [OnEnable()]: #OnEnable
+[PreventGrab()]: #PreventGrab
 [Process()]: #Process
 [ProcessDriveSpeed(Single, Boolean)]: #ProcessDriveSpeedSingle-Boolean
 [ResetDrive()]: #ResetDrive
@@ -909,7 +1013,6 @@ IProcessable
 [SetUngrabbedDrag(Single)]: #SetUngrabbedDragSingle
 [SetUp()]: #SetUp
 [SetUpInternals()]: #SetUpInternals
-[StartMoving()]: #StartMoving
-[StopMoving()]: #StopMoving
+[ToggleGrabbaleState(Boolean)]: #ToggleGrabbaleStateBoolean
 [ToggleSnapToStepLogic(Boolean)]: #ToggleSnapToStepLogicBoolean
 [Implements]: #Implements

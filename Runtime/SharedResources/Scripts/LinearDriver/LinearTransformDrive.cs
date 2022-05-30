@@ -1,7 +1,6 @@
 ﻿namespace Tilia.Interactions.Controllables.LinearDriver
 {
     using Tilia.Interactions.Controllables.Driver;
-    using Tilia.Interactions.Interactables.Interactables;
     using UnityEngine;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Type;
@@ -16,24 +15,6 @@
     {
         #region Reference Settings
         [Header("Reference Settings")]
-        [Tooltip("The InteractableFacade that controls the movement of the drive.")]
-        [SerializeField]
-        [Restricted]
-        private InteractableFacade interactable;
-        /// <summary>
-        /// The <see cref="InteractableFacade"/> that controls the movement of the drive.
-        /// </summary>
-        public InteractableFacade Interactable
-        {
-            get
-            {
-                return interactable;
-            }
-            protected set
-            {
-                interactable = value;
-            }
-        }
         [Tooltip("The Vector3Restrictor to clamp the position of the drive within the drive limits.")]
         [SerializeField]
         [Restricted]

@@ -8,8 +8,6 @@ A rotational drive that directly manipulates a Transform.rotation to control the
 * [Namespace]
 * [Syntax]
 * [Properties]
-  * [Interactable]
-  * [InteractableMesh]
   * [RotationModifier]
   * [VelocityApplier]
 * [Methods]
@@ -93,11 +91,19 @@ IProcessable
 
 [Drive<AngularDriveFacade, AngularDrive>.UngrabbedDragEmitter]
 
+[Drive<AngularDriveFacade, AngularDrive>.Interactable]
+
+[Drive<AngularDriveFacade, AngularDrive>.InteractableMesh]
+
 [Drive<AngularDriveFacade, AngularDrive>.ResetDriveOnSetup]
 
 [Drive<AngularDriveFacade, AngularDrive>.ResetDriveOnSetupFirstTimeOnly]
 
+[Drive<AngularDriveFacade, AngularDrive>.IsGrabbable]
+
 [Drive<AngularDriveFacade, AngularDrive>.InitialValueDriveSpeed]
+
+[Drive<AngularDriveFacade, AngularDrive>.GizmoColor]
 
 [Drive<AngularDriveFacade, AngularDrive>.TargetValueReachedThreshold]
 
@@ -159,6 +165,12 @@ IProcessable
 
 [Drive<AngularDriveFacade, AngularDrive>.ResetDrive()]
 
+[Drive<AngularDriveFacade, AngularDrive>.ToggleGrabbaleState(Boolean)]
+
+[Drive<AngularDriveFacade, AngularDrive>.PreventGrab()]
+
+[Drive<AngularDriveFacade, AngularDrive>.AllowGrab()]
+
 [Drive<AngularDriveFacade, AngularDrive>.CalculateValue(DriveAxis.Axis, FloatRange)]
 
 [Drive<AngularDriveFacade, AngularDrive>.CalculateDriveLimits(AngularDriveFacade)]
@@ -175,9 +187,9 @@ IProcessable
 
 [Drive<AngularDriveFacade, AngularDrive>.EliminateDriveVelocity()]
 
-[Drive<AngularDriveFacade, AngularDrive>.StartMoving()]
+[Drive<AngularDriveFacade, AngularDrive>.EmitStartMoving()]
 
-[Drive<AngularDriveFacade, AngularDrive>.StopMoving()]
+[Drive<AngularDriveFacade, AngularDrive>.EmitStopMoving()]
 
 [Drive<AngularDriveFacade, AngularDrive>.CheckStepValueChange()]
 
@@ -205,6 +217,8 @@ IProcessable
 
 [Drive<AngularDriveFacade, AngularDrive>.ResetToCacheAfterReachedInitialTargetValue()]
 
+[Drive<AngularDriveFacade, AngularDrive>.OnAfterIsGrabbableChange()]
+
 ##### Namespace
 
 * [Tilia.Interactions.Controllables.AngularDriver]
@@ -212,30 +226,10 @@ IProcessable
 ##### Syntax
 
 ```
-public class AngularTransformDrive : AngularDrive, IProcessable
+public class AngularTransformDrive : AngularDrive
 ```
 
 ### Properties
-
-#### Interactable
-
-The InteractableFacade that controls the movement of the drive.
-
-##### Declaration
-
-```
-public InteractableFacade Interactable { get; protected set; }
-```
-
-#### InteractableMesh
-
-The GameObject that contains the meshes for the control.
-
-##### Declaration
-
-```
-public GameObject InteractableMesh { get; protected set; }
-```
 
 #### RotationModifier
 
@@ -428,9 +422,13 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.SnapToStepContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SnapToStepContainer
 [Drive<AngularDriveFacade, AngularDrive>.GrabbedDragEmitter]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GrabbedDragEmitter
 [Drive<AngularDriveFacade, AngularDrive>.UngrabbedDragEmitter]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_UngrabbedDragEmitter
+[Drive<AngularDriveFacade, AngularDrive>.Interactable]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Interactable
+[Drive<AngularDriveFacade, AngularDrive>.InteractableMesh]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InteractableMesh
 [Drive<AngularDriveFacade, AngularDrive>.ResetDriveOnSetup]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetup
 [Drive<AngularDriveFacade, AngularDrive>.ResetDriveOnSetupFirstTimeOnly]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetupFirstTimeOnly
+[Drive<AngularDriveFacade, AngularDrive>.IsGrabbable]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_IsGrabbable
 [Drive<AngularDriveFacade, AngularDrive>.InitialValueDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialValueDriveSpeed
+[Drive<AngularDriveFacade, AngularDrive>.GizmoColor]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GizmoColor
 [Drive<AngularDriveFacade, AngularDrive>.TargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_TargetValueReachedThreshold
 [Drive<AngularDriveFacade, AngularDrive>.EmitEvents]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitEvents
 [Drive<AngularDriveFacade, AngularDrive>.Value]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Value
@@ -461,6 +459,9 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.SetTargetValue(Single)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetTargetValue_System_Single_
 [Drive<AngularDriveFacade, AngularDrive>.CalculateDriveAxis(DriveAxis.Axis)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateDriveAxis_Tilia_Interactions_Controllables_Driver_DriveAxis_Axis_
 [Drive<AngularDriveFacade, AngularDrive>.ResetDrive()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDrive
+[Drive<AngularDriveFacade, AngularDrive>.ToggleGrabbaleState(Boolean)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ToggleGrabbaleState_System_Boolean_
+[Drive<AngularDriveFacade, AngularDrive>.PreventGrab()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_PreventGrab
+[Drive<AngularDriveFacade, AngularDrive>.AllowGrab()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_AllowGrab
 [Drive<AngularDriveFacade, AngularDrive>.CalculateValue(DriveAxis.Axis, FloatRange)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateValue_Tilia_Interactions_Controllables_Driver_DriveAxis_Axis_FloatRange_
 [Drive<AngularDriveFacade, AngularDrive>.CalculateDriveLimits(AngularDriveFacade)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CalculateDriveLimits__0_
 [Drive<AngularDriveFacade, AngularDrive>.GetDriveTransform()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GetDriveTransform
@@ -469,8 +470,8 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.SetUpInternals()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUpInternals
 [Drive<AngularDriveFacade, AngularDrive>.SetDriveTargetValue(Vector3)]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetDriveTargetValue_Vector3_
 [Drive<AngularDriveFacade, AngularDrive>.EliminateDriveVelocity()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EliminateDriveVelocity
-[Drive<AngularDriveFacade, AngularDrive>.StartMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StartMoving
-[Drive<AngularDriveFacade, AngularDrive>.StopMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StopMoving
+[Drive<AngularDriveFacade, AngularDrive>.EmitStartMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStartMoving
+[Drive<AngularDriveFacade, AngularDrive>.EmitStopMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStopMoving
 [Drive<AngularDriveFacade, AngularDrive>.CheckStepValueChange()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckStepValueChange
 [Drive<AngularDriveFacade, AngularDrive>.CheckTargetValueReached()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckTargetValueReached
 [Drive<AngularDriveFacade, AngularDrive>.GetTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GetTargetValue
@@ -484,6 +485,7 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.EmitStoppedMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStoppedMoving
 [Drive<AngularDriveFacade, AngularDrive>.MoveToInitialTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_MoveToInitialTargetValue
 [Drive<AngularDriveFacade, AngularDrive>.ResetToCacheAfterReachedInitialTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetToCacheAfterReachedInitialTargetValue
+[Drive<AngularDriveFacade, AngularDrive>.OnAfterIsGrabbableChange()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_OnAfterIsGrabbableChange
 [Tilia.Interactions.Controllables.AngularDriver]: README.md
 [AngularDrive.ApplyExistingAngularVelocity(Single)]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_ApplyExistingAngularVelocity_System_Single_
 [AngularDrive.AttemptApplyLimits()]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_AttemptApplyLimits
@@ -494,8 +496,6 @@ IProcessable
 [Namespace]: #Namespace
 [Syntax]: #Syntax
 [Properties]: #Properties
-[Interactable]: #Interactable
-[InteractableMesh]: #InteractableMesh
 [RotationModifier]: #RotationModifier
 [VelocityApplier]: #VelocityApplier
 [Methods]: #Methods

@@ -57,25 +57,33 @@
         }
         #endregion
 
-        protected virtual void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.matrix = transform.localToWorldMatrix;
-            Vector3 origin = Vector3.zero;
-            Vector3 direction = DriveAxis.GetAxisDirection(true) * (DriveLimit * 0.5f);
-            Vector3 from = origin - direction;
-            Vector3 to = origin + direction;
-            Gizmos.DrawLine(from, to);
-            Gizmos.DrawCube(from, GizmoCubeSize);
-            Gizmos.DrawCube(to, GizmoCubeSize);
-        }
-
         /// <summary>
         /// Called after <see cref="DriveLimit"/> has been changed.
         /// </summary>
         protected virtual void OnAfterDriveLimitChange()
         {
             Drive.SetUp();
+        }
+
+        protected virtual void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Drive.GizmoColor;
+            Gizmos.matrix = transform.localToWorldMatrix;
+            Vector3 origin = Vector3.zero;
+
+            float axisWorldScale = DriveAxis.GetAxisScale(transform, false);
+            float scaleOffet = axisWorldScale > 0f ? 1f / axisWorldScale : 0f;
+
+            Vector3 direction = DriveAxis.GetAxisDirection(true) * (DriveLimit * scaleOffet * 0.5f);
+            Vector3 from = origin - direction;
+            Vector3 to = origin + direction;
+
+            Vector3 scaledCubeSize = Vector3.Scale(GizmoCubeSize, DriveAxis.GetAxisDirection() * scaleOffet);
+            Vector3 actualCubeSize = DriveAxis.Overwrite(scaledCubeSize, GizmoCubeSize);
+
+            Gizmos.DrawLine(from, to);
+            Gizmos.DrawCube(from, actualCubeSize);
+            Gizmos.DrawCube(to, actualCubeSize);
         }
     }
 }
