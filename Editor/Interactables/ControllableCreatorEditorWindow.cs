@@ -9,12 +9,14 @@
     [InitializeOnLoad]
     public class ControllableCreatorEditorWindow : EditorWindow
     {
+        private const string windowPath = "Window/Tilia/Interactions/";
         private const string windowTitle = "Controllable Creator";
         private const string angularJointAsset = "Interactions.AngularJointDrive";
         private const string linearJointAsset = "Interactions.LinearJointDrive";
         private const string angularTransformAsset = "Interactions.AngularTransformDrive";
         private const string linearTransformAsset = "Interactions.LinearTransformDrive";
         private const string assetSuffix = ".prefab";
+        private const string buttonText = "Convert";
         private static EditorWindow promptWindow;
         private Vector2 scrollPosition;
         private GameObject angularJointPrefab;
@@ -35,11 +37,11 @@
             using (GUILayout.ScrollViewScope scrollViewScope = new GUILayout.ScrollViewScope(scrollPosition))
             {
                 scrollPosition = scrollViewScope.scrollPosition;
-                GUILayout.Label("Controllable Creator", EditorStyles.boldLabel);
+                GUILayout.Label(windowTitle, EditorStyles.boldLabel);
 
                 prefabTypeIndex = EditorGUILayout.Popup(prefabTypeIndex, prefabTypes);
 
-                if (GUILayout.Button("Convert"))
+                if (GUILayout.Button(buttonText))
                 {
                     switch (prefabTypeIndex)
                     {
@@ -119,7 +121,7 @@
             newInteractable.transform.SetSiblingIndex(siblingIndex);
         }
 
-        [MenuItem("Window/Tilia/Interactions/" + windowTitle)]
+        [MenuItem(windowPath + windowTitle)]
         private static void ShowWindow()
         {
             promptWindow = EditorWindow.GetWindow(typeof(ControllableCreatorEditorWindow));
