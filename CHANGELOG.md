@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.4.0...v2.5.0) (2022-06-16)
+
+#### Features
+
+* **Editor:** use string constants for text labels ([ddb4d60](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/ddb4d60784d7dc7fa36c3697bccfcfe71cbcad91))
+  > The text labels are now string constants to make it clear at the top of the file what the text is.
+
 ## [2.4.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.3.2...v2.4.0) (2022-05-30)
 
 #### Features
