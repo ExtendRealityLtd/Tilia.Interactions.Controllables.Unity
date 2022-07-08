@@ -370,6 +370,8 @@
             SetTargetValue(Facade.TargetValue);
             ToggleSnapToStepLogic(Facade.SnapToStepOnRelease);
             ToggleGrabbaleState(IsGrabbable);
+            SetGrabbedDrag(Facade.GrabbedDrag);
+            SetUngrabbedDrag(Facade.UngrabbedDrag);
         }
 
         /// <summary>
