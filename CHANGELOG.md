@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.5.6](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.5.5...v2.5.6) (2022-07-08)
+
+#### Bug Fixes
+
+* **Drive:** ensure the grabbed/ungrabbed drag values are set on enable ([3a9688c](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/3a9688c408f06bd24df9dfc65ea6c26a6de0801f))
+  > The GrabbedDrag and UngrabbedDrag values were not being propagated to the relevant Float event proxy when the controllable was enabled as the code to set their values was not being called until the property was changed.
+  > 
+  > This fix ensures the data is propagated in the OnEnable call.
+
 ### [2.5.5](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.5.4...v2.5.5) (2022-07-05)
 
 #### Miscellaneous Chores
