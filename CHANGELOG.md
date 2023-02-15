@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.5.10](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.5.9...v2.5.10) (2023-02-15)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.interactions.interactables.unity ([9def116](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/9def116350bbdf2f64311e5fa6a27746b7553f45))
+  > Bumps [io.extendreality.tilia.interactions.interactables.unity](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity) from 2.8.0 to 2.8.1. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Interactions.Interactables.Unity/compare/v2.8.0...v2.8.1)
+
 ### [2.5.9](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.5.8...v2.5.9) (2023-02-13)
 
 #### Miscellaneous Chores
