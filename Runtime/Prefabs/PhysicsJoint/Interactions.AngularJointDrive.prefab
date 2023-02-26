@@ -116,8 +116,10 @@ MonoBehaviour:
   interactableMesh: {fileID: 4656287457731484964}
   resetDriveOnSetup: 1
   resetDriveOnSetupFirstTimeOnly: 1
+  isGrabbable: 1
   initialValueDriveSpeed: 5000
-  targetValueReachedThreshold: 1
+  gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  targetValueReachedThreshold: 0.005
   emitEvents: 1
   joint: {fileID: 1471341665110845562}
   jointContainer: {fileID: 5306551537282979864}
@@ -483,8 +485,7 @@ MonoBehaviour:
       m_Calls: []
   driveAxis: 0
   driveSpeed: 10
-  isGrabbable: 1
-  ungrabbedDrag: 0.01
+  ungrabbedDrag: 0.005
   grabbedDrag: 50
   startAtInitialTargetValue: 0
   initialTargetValue: 0.5
@@ -501,7 +502,6 @@ MonoBehaviour:
   hingeLocation: {x: 0, y: 0, z: 0}
   gizmoLineDistance: 0.2
   gizmoSphereRadius: 0.015
-  gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &6347533617716205701
 MonoBehaviour:
   m_ObjectHideFlags: 0

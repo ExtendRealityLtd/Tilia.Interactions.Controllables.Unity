@@ -124,7 +124,7 @@
         {
             if (Facade.MoveToTargetValue && !driveSpeed.ApproxEquals(0f))
             {
-                GetDriveTransform().localRotation *= Quaternion.Euler(-AxisDirection * driveSpeed * Time.deltaTime);
+                GetDriveTransform().localRotation *= Quaternion.Euler(-AxisDirection * (driveSpeed * 0.5f) * Time.deltaTime);
             }
         }
     }
