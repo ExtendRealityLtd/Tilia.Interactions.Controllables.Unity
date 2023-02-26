@@ -501,8 +501,8 @@ MonoBehaviour:
       m_Calls: []
   driveAxis: 0
   driveSpeed: 10
-  ungrabbedDrag: 0
-  grabbedDrag: 0
+  ungrabbedDrag: 5
+  grabbedDrag: 5
   startAtInitialTargetValue: 0
   initialTargetValue: 0.5
   moveToTargetValue: 0

@@ -912,6 +912,7 @@ MonoBehaviour:
   emitEvents: 1
   positionClamper: {fileID: 7040976076037122787}
   propertyApplier: {fileID: 7040976075776713638}
+  velocityApplier: {fileID: 757490321290066877}
 --- !u!114 &7040976076818030742
 MonoBehaviour:
   m_ObjectHideFlags: 0
