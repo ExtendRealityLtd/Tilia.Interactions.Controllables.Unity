@@ -325,7 +325,6 @@ MonoBehaviour:
       m_Calls: []
   driveAxis: 0
   driveSpeed: 10
-  isGrabbable: 1
   ungrabbedDrag: 5
   grabbedDrag: 5
   startAtInitialTargetValue: 0
@@ -339,7 +338,6 @@ MonoBehaviour:
   snapToStepOnRelease: 0
   driveLimit: 1
   gizmoCubeSize: {x: 0.015, y: 0.015, z: 0.015}
-  gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &2864686000277413890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,8 +905,10 @@ MonoBehaviour:
   interactableMesh: {fileID: 8222894757980743358}
   resetDriveOnSetup: 1
   resetDriveOnSetupFirstTimeOnly: 1
+  isGrabbable: 1
   initialValueDriveSpeed: 5000
-  targetValueReachedThreshold: 0.025
+  gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  targetValueReachedThreshold: 0.0075
   emitEvents: 1
   positionClamper: {fileID: 7040976076037122787}
   propertyApplier: {fileID: 7040976075776713638}
