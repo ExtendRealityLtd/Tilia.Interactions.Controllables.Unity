@@ -362,7 +362,7 @@
                 }
             }
         }
-        [Tooltip("The increment to increase the steps in value by.")]
+        [Tooltip("Attempt to snap to the step value upon releasing the control.")]
         [SerializeField]
         private bool snapToStepOnRelease;
         /// <summary>
