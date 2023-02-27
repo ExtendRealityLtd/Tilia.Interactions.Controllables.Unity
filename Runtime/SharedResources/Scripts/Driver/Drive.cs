@@ -2,6 +2,7 @@
 {
     using Tilia.Interactions.Interactables.Interactables;
     using UnityEngine;
+    using UnityEngine.Events;
     using Zinnia.Data.Attribute;
     using Zinnia.Data.Type;
     using Zinnia.Event.Proxy;
@@ -15,6 +16,18 @@
     /// <typeparam name="TSelf">The actual concrete implementation of the drive being used.</typeparam>
     public abstract class Drive<TFacade, TSelf> : MonoBehaviour, IProcessable where TFacade : DriveFacade<TSelf, TFacade> where TSelf : Drive<TFacade, TSelf>
     {
+        #region Helper Events
+        /// <summary>
+        /// Emitted when the <see cref="Facade.MoveToTargetValue"/> property is enabled.
+        /// </summary>
+        [Header("Helper Events")]
+        public UnityEvent MoveToTargetValueEnabled = new UnityEvent();
+        /// <summary>
+        /// Emitted when the <see cref="Facade.MoveToTargetValue"/> property is disabled.
+        /// </summary>
+        public UnityEvent MoveToTargetValueDisabled = new UnityEvent();
+        #endregion
+
         #region Reference Settings
         [Header("Reference Settings")]
         [Tooltip("The public interface facade.")]
@@ -372,6 +385,7 @@
             ToggleGrabbaleState(IsGrabbable);
             SetGrabbedDrag(Facade.GrabbedDrag);
             SetUngrabbedDrag(Facade.UngrabbedDrag);
+            EmitMoveToTargetValueEvents();
         }
 
         /// <summary>
@@ -772,6 +786,26 @@
             }
 
             Facade.StoppedMoving?.Invoke(0f);
+        }
+
+        /// <summary>
+        /// Emits the relevant MoveToTargetValue event based on the value of <see cref="Facade.MoveToTargetValue"/>.
+        /// </summary>
+        protected virtual void EmitMoveToTargetValueEvents()
+        {
+            if (!EmitEvents)
+            {
+                return;
+            }
+
+            if (Facade.MoveToTargetValue)
+            {
+                MoveToTargetValueEnabled?.Invoke();
+            }
+            else
+            {
+                MoveToTargetValueDisabled?.Invoke();
+            }
         }
 
         /// <summary>
