@@ -386,6 +386,24 @@
         #endregion
 
         /// <summary>
+        /// Whether the <see cref="Drive"/> control is visible or not. Collisions will still occur on a hidden colliders but will only report trigger collisions.
+        /// </summary>
+        public virtual bool IsVisible
+        {
+            get
+            {
+                return Drive != null && Drive.Interactable != null ? Drive.Interactable.IsVisible : false;
+            }
+            set
+            {
+                if (Drive != null && Drive.Interactable != null)
+                {
+                    Drive.Interactable.IsVisible = value;
+                }
+            }
+        }
+
+        /// <summary>
         /// Sets <see cref="DriveAxis"/>.
         /// </summary>
         /// <param name="axisIndex">The index of the <see cref="DriveAxis.Axis"/>.</param>

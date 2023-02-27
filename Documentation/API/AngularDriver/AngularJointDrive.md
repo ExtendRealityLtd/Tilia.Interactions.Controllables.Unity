@@ -48,6 +48,8 @@ IProcessable
 
 [AngularDrive.ActualTargetAngle]
 
+[AngularDrive.TargetValueReachedThresholdRotation]
+
 [AngularDrive.circleDegrees]
 
 [AngularDrive.circleUpperRightQuadrant]
@@ -85,6 +87,10 @@ IProcessable
 [AngularDrive.CalculateRotationMultiplier()]
 
 [AngularDrive.MatchActualTargetAngle(Single)]
+
+[Drive<AngularDriveFacade, AngularDrive>.MoveToTargetValueEnabled]
+
+[Drive<AngularDriveFacade, AngularDrive>.MoveToTargetValueDisabled]
 
 [Drive<AngularDriveFacade, AngularDrive>.Facade]
 
@@ -217,6 +223,8 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.EmitStartedMoving()]
 
 [Drive<AngularDriveFacade, AngularDrive>.EmitStoppedMoving()]
+
+[Drive<AngularDriveFacade, AngularDrive>.EmitMoveToTargetValueEvents()]
 
 [Drive<AngularDriveFacade, AngularDrive>.MoveToInitialTargetValue()]
 
@@ -478,6 +486,7 @@ IProcessable
 [AngularDrive.PreviousActualAngle]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_PreviousActualAngle
 [AngularDrive.CurrentActualAngle]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_CurrentActualAngle
 [AngularDrive.ActualTargetAngle]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_ActualTargetAngle
+[AngularDrive.TargetValueReachedThresholdRotation]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_TargetValueReachedThresholdRotation
 [AngularDrive.circleDegrees]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_circleDegrees
 [AngularDrive.circleUpperRightQuadrant]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_circleUpperRightQuadrant
 [AngularDrive.circleUpperLeftQuadrant]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_circleUpperLeftQuadrant
@@ -497,6 +506,8 @@ IProcessable
 [AngularDrive.CalculateAutoDriveVelocity()]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_CalculateAutoDriveVelocity
 [AngularDrive.CalculateRotationMultiplier()]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_CalculateRotationMultiplier
 [AngularDrive.MatchActualTargetAngle(Single)]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_MatchActualTargetAngle_System_Single_
+[Drive<AngularDriveFacade, AngularDrive>.MoveToTargetValueEnabled]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_MoveToTargetValueEnabled
+[Drive<AngularDriveFacade, AngularDrive>.MoveToTargetValueDisabled]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_MoveToTargetValueDisabled
 [Drive<AngularDriveFacade, AngularDrive>.Facade]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Facade
 [Drive<AngularDriveFacade, AngularDrive>.EventOutputContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EventOutputContainer
 [Drive<AngularDriveFacade, AngularDrive>.SnapToStepContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SnapToStepContainer
@@ -563,6 +574,7 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.EmitTargetValueReached()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitTargetValueReached
 [Drive<AngularDriveFacade, AngularDrive>.EmitStartedMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStartedMoving
 [Drive<AngularDriveFacade, AngularDrive>.EmitStoppedMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStoppedMoving
+[Drive<AngularDriveFacade, AngularDrive>.EmitMoveToTargetValueEvents()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitMoveToTargetValueEvents
 [Drive<AngularDriveFacade, AngularDrive>.MoveToInitialTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_MoveToInitialTargetValue
 [Drive<AngularDriveFacade, AngularDrive>.ResetToCacheAfterReachedInitialTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetToCacheAfterReachedInitialTargetValue
 [Drive<AngularDriveFacade, AngularDrive>.OnAfterIsGrabbableChange()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_OnAfterIsGrabbableChange

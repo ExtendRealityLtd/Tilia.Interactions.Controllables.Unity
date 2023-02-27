@@ -21,6 +21,7 @@ The basis to drive a control in a rotational angle.
   * [ActualTargetAngle]
   * [CurrentActualAngle]
   * [PreviousActualAngle]
+  * [TargetValueReachedThresholdRotation]
 * [Methods]
   * [ApplyExistingAngularVelocity(Single)]
   * [ApplyLimits()]
@@ -54,6 +55,10 @@ The basis to drive a control in a rotational angle.
 IProcessable
 
 ##### Inherited Members
+
+[Drive<AngularDriveFacade, AngularDrive>.MoveToTargetValueEnabled]
+
+[Drive<AngularDriveFacade, AngularDrive>.MoveToTargetValueDisabled]
 
 [Drive<AngularDriveFacade, AngularDrive>.Facade]
 
@@ -186,6 +191,8 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.EmitStartedMoving()]
 
 [Drive<AngularDriveFacade, AngularDrive>.EmitStoppedMoving()]
+
+[Drive<AngularDriveFacade, AngularDrive>.EmitMoveToTargetValueEvents()]
 
 [Drive<AngularDriveFacade, AngularDrive>.MoveToInitialTargetValue()]
 
@@ -323,6 +330,16 @@ The previous rotation angle of the control.
 
 ```
 protected virtual float PreviousActualAngle { get; }
+```
+
+#### TargetValueReachedThresholdRotation
+
+The unnormalized threshold rotation for the drive.
+
+##### Declaration
+
+```
+protected virtual float TargetValueReachedThresholdRotation { get; }
 ```
 
 ### Methods
@@ -578,6 +595,8 @@ IProcessable
 [AngularDrive]: AngularDrive.md
 [AngularJointDrive]: AngularJointDrive.md
 [AngularTransformDrive]: AngularTransformDrive.md
+[Drive<AngularDriveFacade, AngularDrive>.MoveToTargetValueEnabled]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_MoveToTargetValueEnabled
+[Drive<AngularDriveFacade, AngularDrive>.MoveToTargetValueDisabled]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_MoveToTargetValueDisabled
 [Drive<AngularDriveFacade, AngularDrive>.Facade]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Facade
 [Drive<AngularDriveFacade, AngularDrive>.EventOutputContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EventOutputContainer
 [Drive<AngularDriveFacade, AngularDrive>.SnapToStepContainer]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SnapToStepContainer
@@ -644,6 +663,7 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.EmitTargetValueReached()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitTargetValueReached
 [Drive<AngularDriveFacade, AngularDrive>.EmitStartedMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStartedMoving
 [Drive<AngularDriveFacade, AngularDrive>.EmitStoppedMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStoppedMoving
+[Drive<AngularDriveFacade, AngularDrive>.EmitMoveToTargetValueEvents()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitMoveToTargetValueEvents
 [Drive<AngularDriveFacade, AngularDrive>.MoveToInitialTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_MoveToInitialTargetValue
 [Drive<AngularDriveFacade, AngularDrive>.ResetToCacheAfterReachedInitialTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetToCacheAfterReachedInitialTargetValue
 [Drive<AngularDriveFacade, AngularDrive>.OnAfterIsGrabbableChange()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_OnAfterIsGrabbableChange
@@ -667,6 +687,7 @@ IProcessable
 [ActualTargetAngle]: #ActualTargetAngle
 [CurrentActualAngle]: #CurrentActualAngle
 [PreviousActualAngle]: #PreviousActualAngle
+[TargetValueReachedThresholdRotation]: #TargetValueReachedThresholdRotation
 [Methods]: #Methods
 [ApplyExistingAngularVelocity(Single)]: #ApplyExistingAngularVelocitySingle
 [ApplyLimits()]: #ApplyLimits

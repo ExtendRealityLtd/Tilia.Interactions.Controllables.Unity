@@ -78,6 +78,8 @@ The public interface into any RotationalDrive prefab.
 
 [DriveFacade<AngularDrive, AngularDriveFacade>.SnapToStepOnRelease]
 
+[DriveFacade<AngularDrive, AngularDriveFacade>.IsVisible]
+
 [DriveFacade<AngularDrive, AngularDriveFacade>.SetDriveAxis(Int32)]
 
 [DriveFacade<AngularDrive, AngularDriveFacade>.SetStepRangeMinimum(Single)]
@@ -304,6 +306,7 @@ public virtual void SetHingeLocationZ(float value)
 [DriveFacade<AngularDrive, AngularDriveFacade>.StepRange]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepRange
 [DriveFacade<AngularDrive, AngularDriveFacade>.StepIncrement]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_StepIncrement
 [DriveFacade<AngularDrive, AngularDriveFacade>.SnapToStepOnRelease]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SnapToStepOnRelease
+[DriveFacade<AngularDrive, AngularDriveFacade>.IsVisible]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_IsVisible
 [DriveFacade<AngularDrive, AngularDriveFacade>.SetDriveAxis(Int32)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetDriveAxis_System_Int32_
 [DriveFacade<AngularDrive, AngularDriveFacade>.SetStepRangeMinimum(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetStepRangeMinimum_System_Single_
 [DriveFacade<AngularDrive, AngularDriveFacade>.SetStepRangeMaximum(Single)]: Tilia.Interactions.Controllables.Driver.DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_SetStepRangeMaximum_System_Single_
