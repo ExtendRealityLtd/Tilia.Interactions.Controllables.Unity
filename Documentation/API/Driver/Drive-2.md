@@ -14,6 +14,8 @@ The basis for a mechanism to drive motion on a control.
   * [cachedTargetValue]
   * [isMoving]
   * [isMovingToInitialTargetValue]
+  * [MoveToTargetValueDisabled]
+  * [MoveToTargetValueEnabled]
   * [previousStepValue]
   * [previousTargetValueReached]
   * [previousValue]
@@ -50,6 +52,7 @@ The basis for a mechanism to drive motion on a control.
   * [CheckTargetValueReached()]
   * [ConfigureAutoDrive(Boolean)]
   * [EliminateDriveVelocity()]
+  * [EmitMoveToTargetValueEvents()]
   * [EmitNormalizedValueChanged()]
   * [EmitStartedMoving()]
   * [EmitStartMoving()]
@@ -171,6 +174,26 @@ Whether the drive is moving to the initial target value.
 
 ```
 protected bool isMovingToInitialTargetValue
+```
+
+#### MoveToTargetValueDisabled
+
+Emitted when the Facade.MoveToTargetValue property is disabled.
+
+##### Declaration
+
+```
+public UnityEvent MoveToTargetValueDisabled
+```
+
+#### MoveToTargetValueEnabled
+
+Emitted when the Facade.MoveToTargetValue property is enabled.
+
+##### Declaration
+
+```
+public UnityEvent MoveToTargetValueEnabled
 ```
 
 #### previousStepValue
@@ -578,6 +601,16 @@ Removes any velocity being applied to the drive.
 protected virtual void EliminateDriveVelocity()
 ```
 
+#### EmitMoveToTargetValueEvents()
+
+Emits the relevant MoveToTargetValue event based on the value of Facade.MoveToTargetValue.
+
+##### Declaration
+
+```
+protected virtual void EmitMoveToTargetValueEvents()
+```
+
 #### EmitNormalizedValueChanged()
 
 Emits the NormalizedValueChanged event.
@@ -950,6 +983,8 @@ IProcessable
 [cachedTargetValue]: #cachedTargetValue
 [isMoving]: #isMoving
 [isMovingToInitialTargetValue]: #isMovingToInitialTargetValue
+[MoveToTargetValueDisabled]: #MoveToTargetValueDisabled
+[MoveToTargetValueEnabled]: #MoveToTargetValueEnabled
 [previousStepValue]: #previousStepValue
 [previousTargetValueReached]: #previousTargetValueReached
 [previousValue]: #previousValue
@@ -986,6 +1021,7 @@ IProcessable
 [CheckTargetValueReached()]: #CheckTargetValueReached
 [ConfigureAutoDrive(Boolean)]: #ConfigureAutoDriveBoolean
 [EliminateDriveVelocity()]: #EliminateDriveVelocity
+[EmitMoveToTargetValueEvents()]: #EmitMoveToTargetValueEvents
 [EmitNormalizedValueChanged()]: #EmitNormalizedValueChanged
 [EmitStartedMoving()]: #EmitStartedMoving
 [EmitStartMoving()]: #EmitStartMoving

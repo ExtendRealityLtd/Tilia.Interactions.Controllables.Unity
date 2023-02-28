@@ -7,6 +7,7 @@
     using Zinnia.Data.Type.Transformation;
     using Zinnia.Extension;
     using Zinnia.Tracking.Modification;
+    using Zinnia.Tracking.Velocity;
 
     /// <summary>
     /// A directional drive that manipulates a <see cref="Transform.position"/> to control the linear translation movement without the use of any physics.
@@ -49,6 +50,24 @@
             protected set
             {
                 propertyApplier = value;
+            }
+        }
+        [Tooltip("The ArtificialVelocityApplier that applies artificial velocity to the control after releasing.")]
+        [SerializeField]
+        [Restricted]
+        private ArtificialVelocityApplier velocityApplier;
+        /// <summary>
+        /// The <see cref="ArtificialVelocityApplier"/> that applies artificial velocity to the control after releasing.
+        /// </summary>
+        public ArtificialVelocityApplier VelocityApplier
+        {
+            get
+            {
+                return velocityApplier;
+            }
+            protected set
+            {
+                velocityApplier = value;
             }
         }
         #endregion

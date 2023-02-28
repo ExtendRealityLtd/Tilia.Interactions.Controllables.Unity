@@ -131,8 +131,11 @@
         /// <inheritdoc />
         protected override void ProcessAutoDrive(float driveSpeed)
         {
-            jointMotor.targetVelocity = driveSpeed;
-            Joint.motor = jointMotor;
+            if (!driveSpeed.ApproxEquals(joint.motor.targetVelocity))
+            {
+                jointMotor.targetVelocity = driveSpeed;
+                Joint.motor = jointMotor;
+            }
         }
 
         /// <inheritdoc />

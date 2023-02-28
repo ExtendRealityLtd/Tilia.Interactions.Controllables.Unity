@@ -21,6 +21,7 @@ The basis of the public interface that will drive a control in relation to a spe
   * [DriveSpeed]
   * [GrabbedDrag]
   * [InitialTargetValue]
+  * [IsVisible]
   * [LinkedInteractableFacade]
   * [LinkedMaxReached]
   * [LinkedMidReached]
@@ -201,6 +202,16 @@ The normalized value to attempt to drive the control to when it is first enabled
 
 ```
 public float InitialTargetValue { get; set; }
+```
+
+#### IsVisible
+
+Whether the [Drive] control is visible or not. Collisions will still occur on a hidden colliders but will only report trigger collisions.
+
+##### Declaration
+
+```
+public virtual bool IsVisible { get; set; }
 ```
 
 #### LinkedInteractableFacade
@@ -567,6 +578,7 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [InitialTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_InitialTargetValue
 [TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
 [DriveUnityEvent]: DriveUnityEvent.md
+[Drive]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_Drive
 [TargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_TargetValue
 [InitialTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_InitialTargetValue
 [MoveToTargetValue]: DriveFacade-2.md#Tilia_Interactions_Controllables_Driver_DriveFacade_2_MoveToTargetValue
@@ -604,6 +616,7 @@ public virtual void SetTargetValueByStepValue(float stepValue)
 [DriveSpeed]: #DriveSpeed
 [GrabbedDrag]: #GrabbedDrag
 [InitialTargetValue]: #InitialTargetValue
+[IsVisible]: #IsVisible
 [LinkedInteractableFacade]: #LinkedInteractableFacade
 [LinkedMaxReached]: #LinkedMaxReached
 [LinkedMidReached]: #LinkedMidReached

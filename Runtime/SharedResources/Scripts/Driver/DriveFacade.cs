@@ -362,7 +362,7 @@
                 }
             }
         }
-        [Tooltip("The increment to increase the steps in value by.")]
+        [Tooltip("Attempt to snap to the step value upon releasing the control.")]
         [SerializeField]
         private bool snapToStepOnRelease;
         /// <summary>
@@ -384,6 +384,24 @@
             }
         }
         #endregion
+
+        /// <summary>
+        /// Whether the <see cref="Drive"/> control is visible or not. Collisions will still occur on a hidden colliders but will only report trigger collisions.
+        /// </summary>
+        public virtual bool IsVisible
+        {
+            get
+            {
+                return Drive != null && Drive.Interactable != null ? Drive.Interactable.IsVisible : false;
+            }
+            set
+            {
+                if (Drive != null && Drive.Interactable != null)
+                {
+                    Drive.Interactable.IsVisible = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Sets <see cref="DriveAxis"/>.

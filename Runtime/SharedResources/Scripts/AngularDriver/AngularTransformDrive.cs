@@ -124,8 +124,18 @@
         {
             if (Facade.MoveToTargetValue && !driveSpeed.ApproxEquals(0f))
             {
-                GetDriveTransform().localRotation *= Quaternion.Euler(-AxisDirection * driveSpeed * Time.deltaTime);
+                GetDriveTransform().localRotation *= Quaternion.Euler(-AxisDirection * CalculatedDriveSpeed(driveSpeed));
             }
+        }
+
+        /// <summary>
+        /// Calculates the drive speed.
+        /// </summary>
+        /// <param name="driveSpeed">The raw drive speed.</param>
+        /// <returns>The calculated drive speed.</returns>
+        protected virtual float CalculatedDriveSpeed(float driveSpeed)
+        {
+            return (driveSpeed * 0.5f) * Time.deltaTime;
         }
     }
 }
