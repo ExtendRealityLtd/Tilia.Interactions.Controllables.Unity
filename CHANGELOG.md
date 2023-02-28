@@ -1,5 +1,39 @@
 # Changelog
 
+## [2.6.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.5.18...v2.6.0) (2023-02-28)
+
+#### Features
+
+* **Drive:** add helper events for move to target value ([02ee092](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/02ee092ae5e5ec18f46fc12708e9e233dca9c23b))
+  > Two new helper events have been added to the internal drive component that will emit when the Facade.MoveToTargetValue property is changed so extra processing can be done on that event occurring if needed.
+  > 
+  > These events will also be processed on enable of the drive so initial values will be taken into consideration.
+* **DriveFacade:** expose Interactable IsVisible property on Facade ([faa2bf1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/faa2bf1161f974cf6dd72c6d7891df549339b479))
+  > The InteractableFacade has an IsVisible property that can be used to get the visibility status of the Interactable or set whether the Interactable is visible or not.
+  > 
+  > This is now bubbled up and exposed on the Controllable DriveFacade so it is easier to access.
+* **LinearTransformDrive:** add reference to artificial velocity ([9554dd5](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/9554dd515baf76b47b03df0e951bed044ec8804a))
+  > The LinearTransformDrive now has a reference to the Artificial Velocity Applier component that is used when the Interactable Object is ungrabbed. This is to keep it inline with the AngularTransformDrive which also has a reference to the same component.
+  > 
+  > The ungrabbed/grabbed drag options on both Linear drives has also been set to 5/5 for consistency.
+
+#### Bug Fixes
+
+* **AngularDrive:** ensure target value threshold is normalized value ([bd69659](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/bd69659d5666dd747ecfae2bbe9717adbb32ad4c))
+  > The targetValueReachedThreshold property should be a normalized value as both InitialTargetValue and TargetValue are normalized properties.
+  > 
+  > But on the AngularDrive it was being treated as the actual rotation value threshold, which caused confusion as it was different between drive types and also caused certain events to break as they were expecting to check off the normalized value.
+  > 
+  > All prefabs have had their default targetValueReachedThreshold set to `0.0075` as this is a decent default normalized threshold to consider the drive is at the target value.
+* **AngularJointDrive:** stop motor process every frame if not needed ([5260849](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/5260849e8c975676aee039efb61e746a5932fb12))
+  > The ProcessAutoDrive method is called in the MomentProcess every frame and this would cause the motor to be set every frame even if nothing had changed, which would cause the rigidbodies to be affected every frame causing potential issues with collisions.
+  > 
+  > This has been fixed by only updating the motor if the drive speed has changed from the existing velocity.
+* **AngularTransformDrive:** process drive speed correctly on auto drive ([32f7257](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/32f7257f782c8df108cfcb075f0e0495427b9913))
+  > The drive speed on the auto drive function on the transform drive is twice as fast as the joint drive. This fix just halves the drive speed when setting the rotation as it should be half of the speed to set the actual speed like the joint motor does.
+* **DriveFacade:** set tooltip to correct text ([5f7944f](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/5f7944fedd1b0bf5c2d2deeb90bcd468133afbda))
+  > The SnapToStepOnRelease property had the wrong tooltip text and this has now been updated to match the property documentation summary.
+
 ### [2.5.18](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.5.17...v2.5.18) (2023-02-26)
 
 #### Miscellaneous Chores
