@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.6.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.6.0...v2.6.1) (2023-02-28)
+
+#### Bug Fixes
+
+* **Prefabs:** provide better angular joint drive drag settings ([6673d15](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/6673d15c2a8c13436b6bf6ad5edb7f4907ee4e40))
+  > The drag settings for the Angular Joint Drive prefab have been updated so they are firstly more inline with the transform drive and so the grabbed drag is not so high as this will just refuse to work on certain refresh rate settings as physics is tied to the headset refresh rate.
+
 ## [2.6.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.5.18...v2.6.0) (2023-02-28)
 
 #### Features
