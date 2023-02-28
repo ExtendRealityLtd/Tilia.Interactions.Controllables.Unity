@@ -107,6 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af99561528269574abb32e5a1cc733b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveToTargetValueEnabled:
+    m_PersistentCalls:
+      m_Calls: []
+  MoveToTargetValueDisabled:
+    m_PersistentCalls:
+      m_Calls: []
   facade: {fileID: 7220336169150892439}
   eventOutputContainer: {fileID: 6704188405665079684}
   snapToStepContainer: {fileID: 7646694525606933574}
@@ -485,8 +491,8 @@ MonoBehaviour:
       m_Calls: []
   driveAxis: 0
   driveSpeed: 10
-  ungrabbedDrag: 0.01
-  grabbedDrag: 50
+  ungrabbedDrag: 0.5
+  grabbedDrag: 10
   startAtInitialTargetValue: 0
   initialTargetValue: 0.5
   moveToTargetValue: 0
