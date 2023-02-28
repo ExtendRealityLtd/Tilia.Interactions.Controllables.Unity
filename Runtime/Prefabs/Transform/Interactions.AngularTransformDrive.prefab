@@ -195,6 +195,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae75150f46dab4ea33112c08abb6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveToTargetValueEnabled:
+    m_PersistentCalls:
+      m_Calls: []
+  MoveToTargetValueDisabled:
+    m_PersistentCalls:
+      m_Calls: []
   facade: {fileID: 2116566820272827043}
   eventOutputContainer: {fileID: 6134235524921124102}
   snapToStepContainer: {fileID: 496144475861545701}
