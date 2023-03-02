@@ -116,7 +116,7 @@
             PropertyApplier.enabled = moveToTargetValue;
             if (PropertyApplier.enabled)
             {
-                if (Interactable.Configuration.ConsumerRigidbody != null)
+                if (Interactable.Configuration.ConsumerRigidbody != null && !Interactable.Configuration.ConsumerRigidbody.isKinematic)
                 {
                     Interactable.Configuration.ConsumerRigidbody.velocity = Vector3.zero;
                 }

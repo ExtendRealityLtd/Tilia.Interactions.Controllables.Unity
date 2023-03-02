@@ -109,6 +109,11 @@
         /// <inheritdoc />
         protected override void EliminateDriveVelocity()
         {
+            if (jointRigidbody.isKinematic)
+            {
+                return;
+            }
+
             jointRigidbody.velocity = Vector3.zero;
             jointRigidbody.angularVelocity = Vector3.zero;
         }
