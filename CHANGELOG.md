@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.6.2](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.6.1...v2.6.2) (2023-03-02)
+
+#### Bug Fixes
+
+* **Drive:** prevent applying velocies to a kinematic rigidbody ([f917fc5](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/f917fc5c650a034d9b1b0dde4ec3866dcf1fda92))
+  > There is no point in applying a velocity to a kinematic rigidbody as it can accept no forces anyway, so these checks just make sure the rigidbody is not kinematic before applying velocities to it.
+
 ### [2.6.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.6.0...v2.6.1) (2023-02-28)
 
 #### Bug Fixes
