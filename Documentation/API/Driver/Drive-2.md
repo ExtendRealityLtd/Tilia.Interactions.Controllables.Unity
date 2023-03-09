@@ -22,6 +22,7 @@ The basis for a mechanism to drive motion on a control.
   * [wasDisabled]
 * [Properties]
   * [AxisDirection]
+  * [DecreaseInitialValueDriveSpeedEachProcessMultiplier]
   * [DriveLimits]
   * [EmitEvents]
   * [EventOutputContainer]
@@ -51,6 +52,7 @@ The basis for a mechanism to drive motion on a control.
   * [CheckStepValueChange()]
   * [CheckTargetValueReached()]
   * [ConfigureAutoDrive(Boolean)]
+  * [DecreaseDriveSpeedOnInitialMove()]
   * [EliminateDriveVelocity()]
   * [EmitMoveToTargetValueEvents()]
   * [EmitNormalizedValueChanged()]
@@ -246,6 +248,16 @@ The calculated direction for the drive axis.
 
 ```
 public virtual Vector3 AxisDirection { get; protected set; }
+```
+
+#### DecreaseInitialValueDriveSpeedEachProcessMultiplier
+
+"Decreases the drive speed each process by this muliplier if it is running the initial value routine.
+
+##### Declaration
+
+```
+public float DecreaseInitialValueDriveSpeedEachProcessMultiplier { get; set; }
 ```
 
 #### DriveLimits
@@ -590,6 +602,16 @@ public virtual void ConfigureAutoDrive(bool autoDrive)
 | Type | Name | Description |
 | --- | --- | --- |
 | System.Boolean | autoDrive | Whether the drive can automatically drive the control. |
+
+#### DecreaseDriveSpeedOnInitialMove()
+
+Drecreases the Facade.DriveSpeed by multiplying it by [DecreaseInitialValueDriveSpeedEachProcessMultiplier] if its moving to the initial target value.
+
+##### Declaration
+
+```
+protected virtual void DecreaseDriveSpeedOnInitialMove()
+```
 
 #### EliminateDriveVelocity()
 
@@ -968,6 +990,7 @@ IProcessable
 [SetUp()]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_SetUp
 [DriveAxis.Axis]: DriveAxis.Axis.md
 [StepValue]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_StepValue
+[DecreaseInitialValueDriveSpeedEachProcessMultiplier]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DecreaseInitialValueDriveSpeedEachProcessMultiplier
 [IsGrabbable]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_IsGrabbable
 [AxisDirection]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_AxisDirection
 [DriveLimits]: Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DriveLimits
@@ -991,6 +1014,7 @@ IProcessable
 [wasDisabled]: #wasDisabled
 [Properties]: #Properties
 [AxisDirection]: #AxisDirection
+[DecreaseInitialValueDriveSpeedEachProcessMultiplier]: #DecreaseInitialValueDriveSpeedEachProcessMultiplier
 [DriveLimits]: #DriveLimits
 [EmitEvents]: #EmitEvents
 [EventOutputContainer]: #EventOutputContainer
@@ -1020,6 +1044,7 @@ IProcessable
 [CheckStepValueChange()]: #CheckStepValueChange
 [CheckTargetValueReached()]: #CheckTargetValueReached
 [ConfigureAutoDrive(Boolean)]: #ConfigureAutoDriveBoolean
+[DecreaseDriveSpeedOnInitialMove()]: #DecreaseDriveSpeedOnInitialMove
 [EliminateDriveVelocity()]: #EliminateDriveVelocity
 [EmitMoveToTargetValueEvents()]: #EmitMoveToTargetValueEvents
 [EmitNormalizedValueChanged()]: #EmitNormalizedValueChanged
