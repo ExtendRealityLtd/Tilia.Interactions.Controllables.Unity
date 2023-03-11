@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.6.5](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.6.4...v2.6.5) (2023-03-11)
+
+#### Bug Fixes
+
+* **Drive:** decrease initial drive speed each frame for accuracy ([03ea2af](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/03ea2af0f1f2bf186a6aeca553787ebc48a77ed6))
+  > There was an issue where a high initial drive speed would mean a drive (specifically a joint drive) would never reach the initial target value as it would just keep overshooting and a small threshold was never enough to ensure it could reach the target. A larger threshold would just cause drive issues.
+  > 
+  > The solution is to ensure the initial drive speed starts high, but over each frame reduces by a certain amount (e.g. by half each frame) and therefore the fidelity of the drive will get tighter with each frame meaning it slows down but will have an increasing higher chance of reaching its initial target.
+
 ### [2.6.4](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.6.3...v2.6.4) (2023-03-11)
 
 #### Miscellaneous Chores
