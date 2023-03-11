@@ -56,6 +56,8 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.InitialValueDriveSpeed]
 
+[Drive<LinearDriveFacade, LinearDrive>.DecreaseInitialValueDriveSpeedEachProcessMultiplier]
+
 [Drive<LinearDriveFacade, LinearDrive>.GizmoColor]
 
 [Drive<LinearDriveFacade, LinearDrive>.TargetValueReachedThreshold]
@@ -145,6 +147,8 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.EmitStopMoving()]
 
 [Drive<LinearDriveFacade, LinearDrive>.CheckStepValueChange()]
+
+[Drive<LinearDriveFacade, LinearDrive>.DecreaseDriveSpeedOnInitialMove()]
 
 [Drive<LinearDriveFacade, LinearDrive>.CheckTargetValueReached()]
 
@@ -302,6 +306,7 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.ResetDriveOnSetupFirstTimeOnly]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetupFirstTimeOnly
 [Drive<LinearDriveFacade, LinearDrive>.IsGrabbable]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_IsGrabbable
 [Drive<LinearDriveFacade, LinearDrive>.InitialValueDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialValueDriveSpeed
+[Drive<LinearDriveFacade, LinearDrive>.DecreaseInitialValueDriveSpeedEachProcessMultiplier]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DecreaseInitialValueDriveSpeedEachProcessMultiplier
 [Drive<LinearDriveFacade, LinearDrive>.GizmoColor]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GizmoColor
 [Drive<LinearDriveFacade, LinearDrive>.TargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_TargetValueReachedThreshold
 [Drive<LinearDriveFacade, LinearDrive>.EmitEvents]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitEvents
@@ -347,6 +352,7 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.EmitStartMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStartMoving
 [Drive<LinearDriveFacade, LinearDrive>.EmitStopMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStopMoving
 [Drive<LinearDriveFacade, LinearDrive>.CheckStepValueChange()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckStepValueChange
+[Drive<LinearDriveFacade, LinearDrive>.DecreaseDriveSpeedOnInitialMove()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DecreaseDriveSpeedOnInitialMove
 [Drive<LinearDriveFacade, LinearDrive>.CheckTargetValueReached()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckTargetValueReached
 [Drive<LinearDriveFacade, LinearDrive>.GetTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GetTargetValue
 [Drive<LinearDriveFacade, LinearDrive>.CanMoveToTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CanMoveToTargetValue

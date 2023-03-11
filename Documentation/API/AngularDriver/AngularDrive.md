@@ -82,6 +82,8 @@ IProcessable
 
 [Drive<AngularDriveFacade, AngularDrive>.InitialValueDriveSpeed]
 
+[Drive<AngularDriveFacade, AngularDrive>.DecreaseInitialValueDriveSpeedEachProcessMultiplier]
+
 [Drive<AngularDriveFacade, AngularDrive>.GizmoColor]
 
 [Drive<AngularDriveFacade, AngularDrive>.TargetValueReachedThreshold]
@@ -171,6 +173,8 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.EmitStopMoving()]
 
 [Drive<AngularDriveFacade, AngularDrive>.CheckStepValueChange()]
+
+[Drive<AngularDriveFacade, AngularDrive>.DecreaseDriveSpeedOnInitialMove()]
 
 [Drive<AngularDriveFacade, AngularDrive>.CheckTargetValueReached()]
 
@@ -608,6 +612,7 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.ResetDriveOnSetupFirstTimeOnly]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ResetDriveOnSetupFirstTimeOnly
 [Drive<AngularDriveFacade, AngularDrive>.IsGrabbable]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_IsGrabbable
 [Drive<AngularDriveFacade, AngularDrive>.InitialValueDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialValueDriveSpeed
+[Drive<AngularDriveFacade, AngularDrive>.DecreaseInitialValueDriveSpeedEachProcessMultiplier]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DecreaseInitialValueDriveSpeedEachProcessMultiplier
 [Drive<AngularDriveFacade, AngularDrive>.GizmoColor]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GizmoColor
 [Drive<AngularDriveFacade, AngularDrive>.TargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_TargetValueReachedThreshold
 [Drive<AngularDriveFacade, AngularDrive>.EmitEvents]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitEvents
@@ -653,6 +658,7 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.EmitStartMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStartMoving
 [Drive<AngularDriveFacade, AngularDrive>.EmitStopMoving()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitStopMoving
 [Drive<AngularDriveFacade, AngularDrive>.CheckStepValueChange()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckStepValueChange
+[Drive<AngularDriveFacade, AngularDrive>.DecreaseDriveSpeedOnInitialMove()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DecreaseDriveSpeedOnInitialMove
 [Drive<AngularDriveFacade, AngularDrive>.CheckTargetValueReached()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CheckTargetValueReached
 [Drive<AngularDriveFacade, AngularDrive>.GetTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GetTargetValue
 [Drive<AngularDriveFacade, AngularDrive>.CanMoveToTargetValue()]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_CanMoveToTargetValue

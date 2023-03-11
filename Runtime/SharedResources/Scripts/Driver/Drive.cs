@@ -232,6 +232,23 @@
                 initialValueDriveSpeed = value;
             }
         }
+        [Tooltip("Decreases the drive speed each process by this muliplier if it is running the initial value routine.")]
+        [SerializeField]
+        private float decreaseInitialValueDriveSpeedEachProcessMultiplier = 1f;
+        /// <summary>
+        /// "Decreases the drive speed each process by this muliplier if it is running the initial value routine.
+        /// </summary>
+        public float DecreaseInitialValueDriveSpeedEachProcessMultiplier
+        {
+            get
+            {
+                return decreaseInitialValueDriveSpeedEachProcessMultiplier;
+            }
+            set
+            {
+                decreaseInitialValueDriveSpeedEachProcessMultiplier = value;
+            }
+        }
         [Tooltip("The color of the gizmo hinge location line.")]
         [SerializeField]
         private Color gizmoColor = Color.yellow;
@@ -409,6 +426,7 @@
 
             CheckStepValueChange();
             CheckTargetValueReached();
+            DecreaseDriveSpeedOnInitialMove();
 
             wasDisabled = false;
         }
@@ -657,6 +675,17 @@
             {
                 previousStepValue = StepValue;
                 EmitStepValueChanged();
+            }
+        }
+
+        /// <summary>
+        /// Drecreases the <see cref="Facade.DriveSpeed"/> by multiplying it by <see cref="DecreaseInitialValueDriveSpeedEachProcessMultiplier"/> if its moving to the initial target value.
+        /// </summary>
+        protected virtual void DecreaseDriveSpeedOnInitialMove()
+        {
+            if (isMovingToInitialTargetValue)
+            {
+                Facade.DriveSpeed *= DecreaseInitialValueDriveSpeedEachProcessMultiplier;
             }
         }
 
