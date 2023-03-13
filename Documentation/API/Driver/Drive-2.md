@@ -21,6 +21,7 @@ The basis for a mechanism to drive motion on a control.
   * [previousValue]
   * [wasDisabled]
 * [Properties]
+  * [ActualTargetValueReachedThreshold]
   * [AxisDirection]
   * [DecreaseInitialValueDriveSpeedEachProcessMultiplier]
   * [DriveLimits]
@@ -29,6 +30,7 @@ The basis for a mechanism to drive motion on a control.
   * [Facade]
   * [GizmoColor]
   * [GrabbedDragEmitter]
+  * [InitialTargetValueReachedThreshold]
   * [InitialValueDriveSpeed]
   * [Interactable]
   * [InteractableMesh]
@@ -240,6 +242,16 @@ protected bool wasDisabled
 
 ### Properties
 
+#### ActualTargetValueReachedThreshold
+
+The actual target value reached threshold to use based on whether it is doing an initial target move or just a general target move.
+
+##### Declaration
+
+```
+protected float ActualTargetValueReachedThreshold { get; }
+```
+
 #### AxisDirection
 
 The calculated direction for the drive axis.
@@ -318,6 +330,16 @@ The Float Emitter for handling grabbed drag.
 
 ```
 public FloatEventProxyEmitter GrabbedDragEmitter { get; protected set; }
+```
+
+#### InitialTargetValueReachedThreshold
+
+The threshold that the current normalized value of the control can be within to consider the target value has been reached when moving on the initial target value.
+
+##### Declaration
+
+```
+public float InitialTargetValueReachedThreshold { get; set; }
 ```
 
 #### InitialValueDriveSpeed
@@ -1013,6 +1035,7 @@ IProcessable
 [previousValue]: #previousValue
 [wasDisabled]: #wasDisabled
 [Properties]: #Properties
+[ActualTargetValueReachedThreshold]: #ActualTargetValueReachedThreshold
 [AxisDirection]: #AxisDirection
 [DecreaseInitialValueDriveSpeedEachProcessMultiplier]: #DecreaseInitialValueDriveSpeedEachProcessMultiplier
 [DriveLimits]: #DriveLimits
@@ -1021,6 +1044,7 @@ IProcessable
 [Facade]: #Facade
 [GizmoColor]: #GizmoColor
 [GrabbedDragEmitter]: #GrabbedDragEmitter
+[InitialTargetValueReachedThreshold]: #InitialTargetValueReachedThreshold
 [InitialValueDriveSpeed]: #InitialValueDriveSpeed
 [Interactable]: #Interactable
 [InteractableMesh]: #InteractableMesh

@@ -25,7 +25,7 @@
         /// <summary>
         /// The unnormalized threshold rotation for the drive.
         /// </summary>
-        protected virtual float TargetValueReachedThresholdRotation => (DriveLimits.maximum - DriveLimits.minimum) * TargetValueReachedThreshold;
+        protected virtual float TargetValueReachedThresholdRotation => (DriveLimits.maximum - DriveLimits.minimum) * ActualTargetValueReachedThreshold;
 
         /// <summary>
         /// The total number of degrees in a circle.

@@ -270,6 +270,23 @@
 
         #region Target Settings
         [Header("Target Settings")]
+        [Tooltip("The threshold that the current normalized value of the control can be within to consider the target value has been reached when moving on the initial target value.")]
+        [SerializeField]
+        private float initialTargetValueReachedThreshold = 0.025f;
+        /// <summary>
+        /// The threshold that the current normalized value of the control can be within to consider the target value has been reached when moving on the initial target value.
+        /// </summary>
+        public float InitialTargetValueReachedThreshold
+        {
+            get
+            {
+                return initialTargetValueReachedThreshold;
+            }
+            set
+            {
+                initialTargetValueReachedThreshold = value;
+            }
+        }
         [Tooltip("The threshold that the current normalized value of the control can be within to consider the target value has been reached.")]
         [SerializeField]
         private float targetValueReachedThreshold = 0.025f;
@@ -330,6 +347,11 @@
         /// The calculated limits for the drive.
         /// </summary>
         public virtual FloatRange DriveLimits { get; protected set; }
+
+        /// <summary>
+        /// The actual target value reached threshold to use based on whether it is doing an initial target move or just a general target move.
+        /// </summary>
+        protected float ActualTargetValueReachedThreshold => isMovingToInitialTargetValue ? InitialTargetValueReachedThreshold : TargetValueReachedThreshold;
 
         /// <summary>
         /// The previous state of <see cref="Value"/>.
@@ -695,7 +717,7 @@
         protected virtual void CheckTargetValueReached()
         {
             float targetValue = GetTargetValue();
-            bool targetValueReached = NormalizedValue.ApproxEquals(targetValue, TargetValueReachedThreshold);
+            bool targetValueReached = NormalizedValue.ApproxEquals(targetValue, ActualTargetValueReachedThreshold);
             bool shouldEmitEvent = !previousTargetValueReached && targetValueReached;
             previousTargetValueReached = targetValueReached;
 
@@ -751,7 +773,7 @@
         /// </summary>
         protected virtual void EmitNormalizedValueChanged()
         {
-            if (isMovingToInitialTargetValue && NormalizedValue.ApproxEquals(Facade.InitialTargetValue, TargetValueReachedThreshold))
+            if (isMovingToInitialTargetValue && NormalizedValue.ApproxEquals(Facade.InitialTargetValue, ActualTargetValueReachedThreshold))
             {
                 ResetToCacheAfterReachedInitialTargetValue();
                 return;
