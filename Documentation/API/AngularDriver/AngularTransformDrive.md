@@ -8,7 +8,7 @@ A rotational drive that directly manipulates a Transform.rotation to control the
 * [Namespace]
 * [Syntax]
 * [Properties]
-  * [RotationModifier]
+  * [RotationModifiers]
   * [VelocityApplier]
 * [Methods]
   * [ApplyExistingAngularVelocity(Single)]
@@ -244,14 +244,14 @@ public class AngularTransformDrive : AngularDrive
 
 ### Properties
 
-#### RotationModifier
+#### RotationModifiers
 
-The TransformPositionDifferenceRotation to drive the rotation of the control.
+A TransformPositionDifferenceRotation collection to drive the rotation of the control.
 
 ##### Declaration
 
 ```
-public TransformPositionDifferenceRotation RotationModifier { get; protected set; }
+public List<TransformPositionDifferenceRotation> RotationModifiers { get; protected set; }
 ```
 
 #### VelocityApplier
@@ -537,7 +537,7 @@ IProcessable
 [Namespace]: #Namespace
 [Syntax]: #Syntax
 [Properties]: #Properties
-[RotationModifier]: #RotationModifier
+[RotationModifiers]: #RotationModifiers
 [VelocityApplier]: #VelocityApplier
 [Methods]: #Methods
 [ApplyExistingAngularVelocity(Single)]: #ApplyExistingAngularVelocitySingle

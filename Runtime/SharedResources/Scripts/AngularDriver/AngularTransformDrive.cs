@@ -1,5 +1,6 @@
 ﻿namespace Tilia.Interactions.Controllables.AngularDriver
 {
+    using System.Collections.Generic;
     using Tilia.Interactions.Controllables.Driver;
     using UnityEngine;
     using Zinnia.Data.Attribute;
@@ -15,22 +16,22 @@
     {
         #region Reference Settings
         [Header("Reference Settings")]
-        [Tooltip("The TransformPositionDifferenceRotation to drive the rotation of the control.")]
+        [Tooltip("A TransformPositionDifferenceRotation collection to drive the rotation of the control.")]
         [SerializeField]
         [Restricted]
-        private TransformPositionDifferenceRotation rotationModifier;
+        private List<TransformPositionDifferenceRotation> rotationModifiers = new List<TransformPositionDifferenceRotation>();
         /// <summary>
-        /// The <see cref="TransformPositionDifferenceRotation"/> to drive the rotation of the control.
+        /// A <see cref="TransformPositionDifferenceRotation"/> collection to drive the rotation of the control.
         /// </summary>
-        public TransformPositionDifferenceRotation RotationModifier
+        public List<TransformPositionDifferenceRotation> RotationModifiers
         {
             get
             {
-                return rotationModifier;
+                return rotationModifiers;
             }
             protected set
             {
-                rotationModifier = value;
+                rotationModifiers = value;
             }
         }
         [Tooltip("The ArtificialVelocityApplier that applies artificial angular velocity to the control after releasing.")]
@@ -62,17 +63,21 @@
             }
 
             Vector3 axisDirection = base.CalculateDriveAxis(driveAxis);
-            switch (driveAxis)
+
+            foreach (TransformPositionDifferenceRotation rotationModifier in rotationModifiers)
             {
-                case DriveAxis.Axis.XAxis:
-                    RotationModifier.FollowOnAxis = Vector3State.XOnly;
-                    break;
-                case DriveAxis.Axis.YAxis:
-                    RotationModifier.FollowOnAxis = Vector3State.YOnly;
-                    break;
-                case DriveAxis.Axis.ZAxis:
-                    RotationModifier.FollowOnAxis = Vector3State.ZOnly;
-                    break;
+                switch (driveAxis)
+                {
+                    case DriveAxis.Axis.XAxis:
+                        rotationModifier.FollowOnAxis = Vector3State.XOnly;
+                        break;
+                    case DriveAxis.Axis.YAxis:
+                        rotationModifier.FollowOnAxis = Vector3State.YOnly;
+                        break;
+                    case DriveAxis.Axis.ZAxis:
+                        rotationModifier.FollowOnAxis = Vector3State.ZOnly;
+                        break;
+                }
             }
 
             return axisDirection;
