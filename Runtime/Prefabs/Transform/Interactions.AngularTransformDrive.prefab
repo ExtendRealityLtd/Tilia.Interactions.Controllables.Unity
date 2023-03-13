@@ -219,6 +219,7 @@ MonoBehaviour:
   initialValueDriveSpeed: 3500
   decreaseInitialValueDriveSpeedEachProcessMultiplier: 0.5
   gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  initialTargetValueReachedThreshold: 0.0075
   targetValueReachedThreshold: 0.0075
   emitEvents: 1
   rotationModifiers:

@@ -118,6 +118,8 @@ IProcessable
 
 [Drive<AngularDriveFacade, AngularDrive>.GizmoColor]
 
+[Drive<AngularDriveFacade, AngularDrive>.InitialTargetValueReachedThreshold]
+
 [Drive<AngularDriveFacade, AngularDrive>.TargetValueReachedThreshold]
 
 [Drive<AngularDriveFacade, AngularDrive>.EmitEvents]
@@ -133,6 +135,8 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.AxisDirection]
 
 [Drive<AngularDriveFacade, AngularDrive>.DriveLimits]
+
+[Drive<AngularDriveFacade, AngularDrive>.ActualTargetValueReachedThreshold]
 
 [Drive<AngularDriveFacade, AngularDrive>.previousValue]
 
@@ -525,6 +529,7 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.InitialValueDriveSpeed]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialValueDriveSpeed
 [Drive<AngularDriveFacade, AngularDrive>.DecreaseInitialValueDriveSpeedEachProcessMultiplier]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DecreaseInitialValueDriveSpeedEachProcessMultiplier
 [Drive<AngularDriveFacade, AngularDrive>.GizmoColor]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GizmoColor
+[Drive<AngularDriveFacade, AngularDrive>.InitialTargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialTargetValueReachedThreshold
 [Drive<AngularDriveFacade, AngularDrive>.TargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_TargetValueReachedThreshold
 [Drive<AngularDriveFacade, AngularDrive>.EmitEvents]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitEvents
 [Drive<AngularDriveFacade, AngularDrive>.Value]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Value
@@ -533,6 +538,7 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.NormalizedStepValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_NormalizedStepValue
 [Drive<AngularDriveFacade, AngularDrive>.AxisDirection]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_AxisDirection
 [Drive<AngularDriveFacade, AngularDrive>.DriveLimits]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_DriveLimits
+[Drive<AngularDriveFacade, AngularDrive>.ActualTargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_ActualTargetValueReachedThreshold
 [Drive<AngularDriveFacade, AngularDrive>.previousValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_previousValue
 [Drive<AngularDriveFacade, AngularDrive>.previousStepValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_previousStepValue
 [Drive<AngularDriveFacade, AngularDrive>.previousTargetValueReached]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_previousTargetValueReached
