@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.7.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.6.8...v2.7.0) (2023-03-13)
+
+#### Features
+
+* **AngularDrive:** allow multiple rotation modifiers ([957a720](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/957a720994ebdcab8c9379ae47266b7e798ff2a4))
+  > The AngularTransformDrive now can take multiple rotation modifiers in case the actions are both follow and need to both affect the rotation modifiers inside the actions.
+* **Drive:** add initial target value reached threshold ([5d3aff2](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/5d3aff21ec08406de084d60c9e51e6e6f3215418))
+  > The target value reached threshold has been extended to have another property for the initial target value, so if the drive is moving to the initial target position then a different threshold can be provided as the initial drive speed is generally much higher so a higher threshold may be required.
+
 ### [2.6.8](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.6.7...v2.6.8) (2023-03-13)
 
 #### Miscellaneous Chores
