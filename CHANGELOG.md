@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.7.2](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.7.1...v2.7.2) (2023-03-13)
+
+#### Bug Fixes
+
+* **Prefabs:** ensure prefabs are built for Unity 2018 ([969c4bc](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/969c4bcd5b458904d00de0667c1ab3469d720504))
+  > The previous commit updated the prefabs for Unity 2021 which struggle to be backward compatible. The prefabs should always be in the 2018 format as this is the earliest version of Unity that is supported.
+
 ### [2.7.1](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.7.0...v2.7.1) (2023-03-13)
 
 #### Miscellaneous Chores
