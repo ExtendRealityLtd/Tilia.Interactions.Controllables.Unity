@@ -90,6 +90,8 @@ IProcessable
 
 [Drive<AngularDriveFacade, AngularDrive>.TargetValueReachedThreshold]
 
+[Drive<AngularDriveFacade, AngularDrive>.GrabbedTargetValueReachedThreshold]
+
 [Drive<AngularDriveFacade, AngularDrive>.EmitEvents]
 
 [Drive<AngularDriveFacade, AngularDrive>.Value]
@@ -620,6 +622,7 @@ IProcessable
 [Drive<AngularDriveFacade, AngularDrive>.GizmoColor]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GizmoColor
 [Drive<AngularDriveFacade, AngularDrive>.InitialTargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialTargetValueReachedThreshold
 [Drive<AngularDriveFacade, AngularDrive>.TargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_TargetValueReachedThreshold
+[Drive<AngularDriveFacade, AngularDrive>.GrabbedTargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GrabbedTargetValueReachedThreshold
 [Drive<AngularDriveFacade, AngularDrive>.EmitEvents]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitEvents
 [Drive<AngularDriveFacade, AngularDrive>.Value]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Value
 [Drive<AngularDriveFacade, AngularDrive>.NormalizedValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_NormalizedValue

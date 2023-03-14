@@ -76,6 +76,8 @@ IProcessable
 
 [Drive<LinearDriveFacade, LinearDrive>.TargetValueReachedThreshold]
 
+[Drive<LinearDriveFacade, LinearDrive>.GrabbedTargetValueReachedThreshold]
+
 [Drive<LinearDriveFacade, LinearDrive>.EmitEvents]
 
 [Drive<LinearDriveFacade, LinearDrive>.Value]
@@ -398,6 +400,7 @@ IProcessable
 [Drive<LinearDriveFacade, LinearDrive>.GizmoColor]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GizmoColor
 [Drive<LinearDriveFacade, LinearDrive>.InitialTargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_InitialTargetValueReachedThreshold
 [Drive<LinearDriveFacade, LinearDrive>.TargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_TargetValueReachedThreshold
+[Drive<LinearDriveFacade, LinearDrive>.GrabbedTargetValueReachedThreshold]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_GrabbedTargetValueReachedThreshold
 [Drive<LinearDriveFacade, LinearDrive>.EmitEvents]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_EmitEvents
 [Drive<LinearDriveFacade, LinearDrive>.Value]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_Value
 [Drive<LinearDriveFacade, LinearDrive>.NormalizedValue]: Tilia.Interactions.Controllables.Driver.Drive-2.md#Tilia_Interactions_Controllables_Driver_Drive_2_NormalizedValue

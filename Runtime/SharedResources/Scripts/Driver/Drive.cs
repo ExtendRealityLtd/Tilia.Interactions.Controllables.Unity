@@ -304,6 +304,23 @@
                 targetValueReachedThreshold = value;
             }
         }
+        [Tooltip("The threshold that the current normalized value of the control can be within to consider the target value has been reached when the control is grabbed.")]
+        [SerializeField]
+        private float grabbedTargetValueReachedThreshold = 0.00001f;
+        /// <summary>
+        /// The threshold that the current normalized value of the control can be within to consider the target value has been reached when the control is grabbed.
+        /// </summary>
+        public float GrabbedTargetValueReachedThreshold
+        {
+            get
+            {
+                return grabbedTargetValueReachedThreshold;
+            }
+            set
+            {
+                grabbedTargetValueReachedThreshold = value;
+            }
+        }
         [Tooltip("Determines whether to emit the drive events.")]
         [SerializeField]
         private bool emitEvents = true;
@@ -349,9 +366,9 @@
         public virtual FloatRange DriveLimits { get; protected set; }
 
         /// <summary>
-        /// The actual target value reached threshold to use based on whether it is doing an initial target move or just a general target move.
+        /// The actual target value reached threshold to use based on whether it is doing an initial target move or just a general target move whether grabbed or not.
         /// </summary>
-        protected float ActualTargetValueReachedThreshold => isMovingToInitialTargetValue ? InitialTargetValueReachedThreshold : TargetValueReachedThreshold;
+        protected float ActualTargetValueReachedThreshold => isMovingToInitialTargetValue ? InitialTargetValueReachedThreshold : (Interactable == null || !Interactable.IsGrabbed ? TargetValueReachedThreshold : GrabbedTargetValueReachedThreshold);
 
         /// <summary>
         /// The previous state of <see cref="Value"/>.
