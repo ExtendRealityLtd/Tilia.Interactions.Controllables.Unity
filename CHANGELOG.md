@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.8.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.7.2...v2.8.0) (2023-03-14)
+
+#### Features
+
+* **Drive:** add grabbed target threshold ([b24b3fe](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/b24b3fea4e51c5fa3dc882e5c197ddc65e481408))
+  > The Target Value Reached threshold is usually larger for an auto moving drive so it cannot overshoot, but for a grabbed drive the target threshold can tend to be too large causing a jitter when the grabbed drive is moved to the extremes.
+  > 
+  > This adds a new threshold value for when the drive is grabbed so it can be even more refined for a better experience.
+
 ### [2.7.2](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.7.1...v2.7.2) (2023-03-13)
 
 #### Bug Fixes
