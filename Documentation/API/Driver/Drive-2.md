@@ -30,6 +30,7 @@ The basis for a mechanism to drive motion on a control.
   * [Facade]
   * [GizmoColor]
   * [GrabbedDragEmitter]
+  * [GrabbedTargetValueReachedThreshold]
   * [InitialTargetValueReachedThreshold]
   * [InitialValueDriveSpeed]
   * [Interactable]
@@ -244,7 +245,7 @@ protected bool wasDisabled
 
 #### ActualTargetValueReachedThreshold
 
-The actual target value reached threshold to use based on whether it is doing an initial target move or just a general target move.
+The actual target value reached threshold to use based on whether it is doing an initial target move or just a general target move whether grabbed or not.
 
 ##### Declaration
 
@@ -330,6 +331,16 @@ The Float Emitter for handling grabbed drag.
 
 ```
 public FloatEventProxyEmitter GrabbedDragEmitter { get; protected set; }
+```
+
+#### GrabbedTargetValueReachedThreshold
+
+The threshold that the current normalized value of the control can be within to consider the target value has been reached when the control is grabbed.
+
+##### Declaration
+
+```
+public float GrabbedTargetValueReachedThreshold { get; set; }
 ```
 
 #### InitialTargetValueReachedThreshold
@@ -1044,6 +1055,7 @@ IProcessable
 [Facade]: #Facade
 [GizmoColor]: #GizmoColor
 [GrabbedDragEmitter]: #GrabbedDragEmitter
+[GrabbedTargetValueReachedThreshold]: #GrabbedTargetValueReachedThreshold
 [InitialTargetValueReachedThreshold]: #InitialTargetValueReachedThreshold
 [InitialValueDriveSpeed]: #InitialValueDriveSpeed
 [Interactable]: #Interactable
