@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.9.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.8.0...v2.9.0) (2023-03-16)
+
+#### Features
+
+* **AngularDriver:** auto set up twist axis settings ([9f4f3aa](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/9f4f3aa0c1462b8dffc49077be87cdb37547b03b))
+  > The AngularTransformDrive can have the `FollowRotateAroundAngularVelocity` Follow Tracking setting but it never automatically set up the axis the drive was set on.
+  > 
+  > This now allows for it to automatically set up the axis based on what axis is selected on the Drive Facade.
+
 ## [2.8.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.7.2...v2.8.0) (2023-03-14)
 
 #### Features
