@@ -9,6 +9,7 @@ A rotational drive that directly manipulates a Transform.rotation to control the
 * [Syntax]
 * [Properties]
   * [RotationModifiers]
+  * [TwistRotationModifiers]
   * [VelocityApplier]
 * [Methods]
   * [ApplyExistingAngularVelocity(Single)]
@@ -19,6 +20,8 @@ A rotational drive that directly manipulates a Transform.rotation to control the
   * [EliminateDriveVelocity()]
   * [GetDriveTransform()]
   * [ProcessAutoDrive(Single)]
+  * [SetupRotationModifiers(DriveAxis.Axis)]
+  * [SetupTwistRotationModifiers(DriveAxis.Axis)]
 * [Implements]
 
 ## Details
@@ -260,6 +263,16 @@ A TransformPositionDifferenceRotation collection to drive the rotation of the co
 public List<TransformPositionDifferenceRotation> RotationModifiers { get; protected set; }
 ```
 
+#### TwistRotationModifiers
+
+A RotateAroundAngularVelocity collection to drive the twist rotation of the control.
+
+##### Declaration
+
+```
+public List<RotateAroundAngularVelocity> TwistRotationModifiers { get; protected set; }
+```
+
 #### VelocityApplier
 
 The ArtificialVelocityApplier that applies artificial angular velocity to the control after releasing.
@@ -428,6 +441,38 @@ protected override void ProcessAutoDrive(float driveSpeed)
 
 [AngularDrive.ProcessAutoDrive(Single)]
 
+#### SetupRotationModifiers(DriveAxis.Axis)
+
+Sets up the [RotationModifiers] collection with the given drive axis.
+
+##### Declaration
+
+```
+protected virtual void SetupRotationModifiers(DriveAxis.Axis driveAxis)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| [DriveAxis.Axis] | driveAxis | The selected drive axis to set the modifiers to work on. |
+
+#### SetupTwistRotationModifiers(DriveAxis.Axis)
+
+Sets up the [TwistRotationModifiers] collection with the given drive axis.
+
+##### Declaration
+
+```
+protected virtual void SetupTwistRotationModifiers(DriveAxis.Axis driveAxis)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| [DriveAxis.Axis] | driveAxis | The selected drive axis to set the modifiers to work on. |
+
 ### Implements
 
 IProcessable
@@ -542,11 +587,14 @@ IProcessable
 [DriveAxis.Axis]: ../Driver/DriveAxis.Axis.md
 [AngularDrive.CalculateHingeLocation(Vector3)]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_CalculateHingeLocation_Vector3_
 [AngularDrive.ProcessAutoDrive(Single)]: AngularDrive.md#Tilia_Interactions_Controllables_AngularDriver_AngularDrive_ProcessAutoDrive_System_Single_
+[RotationModifiers]: AngularTransformDrive.md#RotationModifiers
+[TwistRotationModifiers]: AngularTransformDrive.md#TwistRotationModifiers
 [Inheritance]: #Inheritance
 [Namespace]: #Namespace
 [Syntax]: #Syntax
 [Properties]: #Properties
 [RotationModifiers]: #RotationModifiers
+[TwistRotationModifiers]: #TwistRotationModifiers
 [VelocityApplier]: #VelocityApplier
 [Methods]: #Methods
 [ApplyExistingAngularVelocity(Single)]: #ApplyExistingAngularVelocitySingle
@@ -557,4 +605,6 @@ IProcessable
 [EliminateDriveVelocity()]: #EliminateDriveVelocity
 [GetDriveTransform()]: #GetDriveTransform
 [ProcessAutoDrive(Single)]: #ProcessAutoDriveSingle
+[SetupRotationModifiers(DriveAxis.Axis)]: #SetupRotationModifiersDriveAxis.Axis
+[SetupTwistRotationModifiers(DriveAxis.Axis)]: #SetupTwistRotationModifiersDriveAxis.Axis
 [Implements]: #Implements
