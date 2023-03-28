@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.9.8...v2.10.0) (2023-03-28)
+
+#### Features
+
+* **Drive:** replace isActiveAndEnabled ([8dbe70b](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/8dbe70bc354a29061ac1d25d78928cdd772bcbfd))
+  > The isActiveAndEnabled call has been replaced with CheckIsActiveAndEnabled as this is more consistent.
+
 ### [2.9.8](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.9.7...v2.9.8) (2023-03-28)
 
 #### Miscellaneous Chores
