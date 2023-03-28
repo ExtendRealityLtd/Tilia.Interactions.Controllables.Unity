@@ -17,7 +17,7 @@
         /// <returns>The minimum and maximum local space limit the drive can reach.</returns>
         public virtual FloatRange CalculateDriveLimits(float newLimit)
         {
-            if (!isActiveAndEnabled)
+            if (!this.CheckIsActiveAndEnabled())
             {
                 return FloatRange.MinMax;
             }
