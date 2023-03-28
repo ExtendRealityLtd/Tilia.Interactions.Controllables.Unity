@@ -58,7 +58,7 @@
         /// <inheritdoc />
         public override FloatRange CalculateDriveLimits(float newLimit)
         {
-            if (!isActiveAndEnabled)
+            if (!this.CheckIsActiveAndEnabled())
             {
                 return FloatRange.MinMax;
             }
