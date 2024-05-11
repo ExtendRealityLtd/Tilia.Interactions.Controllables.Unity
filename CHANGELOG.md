@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.10.24](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.10.23...v2.10.24) (2024-05-11)
+
+#### Bug Fixes
+
+* **Editor:** disable custom inspector if ignore custom editor is set ([63e6de0](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/commit/63e6de0d95a6e48065ea3c6d2451095d8bc671dc))
+  > If the ZINNIA_IGNORE_CUSTOM_INSPECTOR_EDITOR ifdef is set then the custom editor must also be disabled otherwise an error will occur.
+
 ### [2.10.23](https://github.com/ExtendRealityLtd/Tilia.Interactions.Controllables.Unity/compare/v2.10.22...v2.10.23) (2024-04-17)
 
 #### Miscellaneous Chores
