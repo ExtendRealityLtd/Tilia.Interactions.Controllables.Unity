@@ -1,5 +1,7 @@
 ﻿namespace Tilia.Interactions.Controllables.LinearDriver
 {
+#if ZINNIA_IGNORE_CUSTOM_INSPECTOR_EDITOR
+#else
     using System;
     using UnityEditor;
     using UnityEngine;
@@ -87,4 +89,5 @@
             return Vector3.zero;
         }
     }
+#endif
 }
